@@ -1,32 +1,31 @@
 # ADR / Spec: Stop Times Extraction & Spatial-Temporal Interpolation (`stop_times.txt`)
 
-## 1. Context & Problem Statement
-The official DFTrans REST API (`sistemas.dftrans.df.gov.br`) provides:
-- Departure schedules from the origin terminal (`/horario/linha/{sequencial}`).
-- Ordered or spatial bus stops per direction (`/parada/linha/{sequencial}/geo`).
-- Route polyline geometry in EPSG:3857 meters (`/percurso/linha/numero/{numero}/`).
+## 1. Context & Problem Statement (Updated)
 
-However, the API does **not** directly expose a static schedule of arrival/departure times for each intermediate bus stop (`stop_times.txt` in GTFS). Meanwhile, the front-end web app (`dfnoponto.com.br/pesquisa-geral/`) displays estimated pass-through times per stop (e.g., Line `0.110`: 16h34 at Rodoviária -> 16h35 at Biblioteca Nacional -> 16h45 at UnB CDT).
+While `sistemas.dftrans.df.gov.br` only exposes origin terminal departure times (`/horario/linha/{sequencial}`), `dfnoponto.com.br` exposes two distinct front-end modules:
 
-## 2. Investigation & Extraction Strategy
+1. **`/pesquisa-geral/`:** Displays estimated pass-through times per intermediate stop (e.g., Line `0.110`: `16h 34` at Terminal Rodoviário -> `16h 35` at Biblioteca Nacional -> `16h 45` at UnB CDT -> `16h 49` at UNB Área 1).
+2. **`/pesquisa-por-linhas/`:** Embeds a third-party schedule and route viewer powered by **Bus2** (`bus2.info/reports/2you/3c189`), which provides departure tables (`View as departures` / `View as table`), effective dates (`Effective from: 23/08/2025`), and a `Stops and route` view.
 
-### Step 1: Verify Hidden XHR Endpoints on `dfnoponto.com.br/pesquisa-geral/`
-Before computing synthetically, inspect the SPA network traffic when selecting a line in `dfnoponto.com.br/pesquisa-geral/`:
-1. Open Chrome DevTools -> **Network** -> Filter by **Fetch/XHR**.
-2. Click on a line (e.g., `0.110 - Rodoviária / UnB`)[cite: 3] and inspect responses for endpoints containing `previsao`, `estimativa`, `itinerario`, or `parada`.
-3. **Check if the SPA calculates times locally:** Search the loaded `.js` bundles in DevTools (`Ctrl+Shift+F`) for terms like `velocidade`, `previsao`, `getDistance`, or `horario`.
+## 2. Investigation & Extraction Strategy (Updated)
 
-### Step 2: Algorithmic Generation via Linear Referencing (Fallback / Standard GTFS Synthesis)
-Because `percurso` coordinates are already in **EPSG:3857 (meters)**, calculating exact cumulative distances along the route polyline is straightforward and fast using `shapely`.
+### Path A: Direct Extraction from Bus2 (`bus2.info`) & `pesquisa-geral` APIs
 
-#### Mathematical Model
+1. Inspect XHR traffic on `https://bus2.info/reports/2you/3c189` when toggling **Schedules -> View as table** and **Stops and route**.
+2. Inspect XHR traffic on `https://dfnoponto.com.br/pesquisa-geral/` when selecting a line and direction to capture the JSON payload that populates the `PREVISÃO` / `PONTO DE PARADA` sidebar.
+3. If the backend returns pre-calculated stop offsets (or segment travel times), map them directly to GTFS `stop_times.txt`.
+
+### Path B: Algorithmic Generation via Linear Referencing (Fallback)
+
 Given:
+
 - Route polyline $L$ with total length $D_{\text{total}}$ (in meters).
 - Ordered sequence of stops $S = \{s_0, s_1, \dots, s_n\}$.
 - Departure time at origin terminal $t_0$ (from `/horario/linha/{sequencial}`).
 - Estimated total trip duration $T_{\text{trip}}$ (or average operational speed $v_{\text{avg}}$, typically $18\text{–}25\text{ km/h}$ in urban Brasília, or derived from GPS feed `/gps/linha/{numero}/geo/recent`).
 
 For each stop $s_i$:
+
 1. Project $s_i$ onto polyline $L$ to obtain cumulative distance along the route:
    $$d_i = \text{project}(L, s_i)$$
 2. Compute arrival time $t_i$:
@@ -110,3 +109,4 @@ def generate_stop_times(numero_linha: str, sequencial: int, departure_hhmm: str,
         })
 
     return stop_times_output
+```
