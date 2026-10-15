@@ -26,6 +26,7 @@ Extract bus route geometries (polylines) and bus stop coordinates for the Federa
     Obtained the following JSON array of bus lines from running the following script in the browser console on <https://brasiliamobilidade.com.br>. Is is similar to <https://www.sistemas.dftrans.df.gov.br/linha/find/110> but shorter (numero matches, but there is no 'slug' field on the official one, and descrição is somewhat duplicated. 'url' refers to the brasiliamobilidade.com.br site)
 
 ### JSON
+
 ```json
 [
     {
@@ -40,6 +41,7 @@ Extract bus route geometries (polylines) and bus stop coordinates for the Federa
 ```
 
 ### JS on the console
+
 ```javascript
     const linhas = Array.from(document.querySelectorAll('[data-linha]')).map(el => {
       const fav = el.querySelector('[data-fav-numero]');
@@ -62,6 +64,8 @@ Extract bus route geometries (polylines) and bus stop coordinates for the Federa
 * **Coordinate Order:** GeoJSON endpoints return standard `[longitude, latitude]` (inverse of Leaflet).
 * **Key Endpoints:**
   * **Search/List Lines:** `GET /linha/find/{termo}`
+    * **Server Limit Note:** This search endpoint is hard-capped on the server side to **30 records** per response (both wildcard `%25` and digit queries `find/0` through `find/9` yield at most 30 items). Therefore, it cannot be used alone for full network discovery.
+    * **Master Catalog Source:** The master catalog of all **961 active lines** is provided in `data/lines.json` (extracted from the comprehensive DOM catalog). Lines are then queried individually via `GET /linha/numero/{numero}` which performs an exact lookup without result caps.
   * **Line Metadata (returns internal `sequencial` ID):** `GET /linha/numero/{numero}`
   * **Route Geometry (GeoJSON `LineString`):** `GET /percurso/linha/numero/{numero}/geo` or `GET /percurso/linha/{sequencial}/geo`
   * **Bus Stops per Line (GeoJSON):** `GET /parada/linha/{sequencial}/geo` or `GET /parada/geo/paradas/linha/{numero}`

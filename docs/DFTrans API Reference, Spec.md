@@ -9,6 +9,10 @@
 3. **Coordinate Reference System (CRS) Warning:**
    - The endpoint `GET /percurso/linha/numero/{numero}/` returns coordinates in **EPSG:3857 (Web Mercator / meters)**, e.g., `[-5341795.614957, -1805015.442655]`.
    - These must be reprojected to **EPSG:4326 (WGS84 / `[lat, lon]` or `[lon, lat]`)** for standard GIS/Leaflet usage.
+4. **Server-Side Limit on `/linha/find/{termo}` (Hard Cap: 30 records):**
+   - Empirical testing confirmed that `GET /linha/find/{termo}` enforces a hard server-side limit of **30 records** per query (e.g., `find/%25` and every digit `find/0` through `find/9` all return exactly 30 items).
+   - Therefore, `/linha/find/` cannot be used to scrape the entire network exhaustively.
+   - **Solution**: The master catalog is provided by `data/lines.json` (961 unique active lines extracted from the complete DOM catalog). Each line number is then queried directly against `GET /linha/numero/{numero}`, which performs an exact lookup without the 30-record limit, reliably retrieving all directional metadata and `sequencial` IDs.
 
 ## 2. Reprojection & Extraction Script (Python)
 
