@@ -23,6 +23,38 @@ Extract bus route geometries (polylines) and bus stop coordinates for the Federa
     JSON.parse(document.getElementById('mapa-trajeto').getAttribute('data-percurso'));
     ```
 
+    Obtained the following JSON array of bus lines from running the following script in the browser console on <https://brasiliamobilidade.com.br>. Is is similar to <https://www.sistemas.dftrans.df.gov.br/linha/find/110> but shorter (numero matches, but there is no 'slug' field on the official one, and descrição is somewhat duplicated. 'url' refers to the brasiliamobilidade.com.br site)
+
+### JSON
+```json
+[
+    {
+        "numero": "0.110",
+        "slug": "0.110",
+        "url": "/linhas/0.110",
+        "descricao": "0.110 0.110 Rodoviária do Plano Piloto / UNB   Plano Piloto"
+    },
+    [...]
+]
+
+```
+
+### JS on the console
+```javascript
+    const linhas = Array.from(document.querySelectorAll('[data-linha]')).map(el => {
+      const fav = el.querySelector('[data-fav-numero]');
+      const link = el.querySelector('a');
+      return {
+        numero: (fav && fav.getAttribute('data-fav-numero')) || el.getAttribute('data-linha'),
+        slug: (fav && fav.getAttribute('data-fav-slug')) || null,
+        url: link ? link.getAttribute('href') : null,
+        descricao: el.getAttribute('data-busca')
+      };
+    });
+    copy(linhas);
+    linhas;
+```
+
 ### Source B: Official DFTrans / Semob REST API
 
 * **Base URL:** `https://www.sistemas.dftrans.df.gov.br`
