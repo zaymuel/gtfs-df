@@ -1,10 +1,10 @@
-# 00 - Project Context: Transit Data Extraction & Source Evolution
+# 01 - Project Context: Transit Data Extraction & Source Evolution
 
 > **Project:** DF Bus Route & Stop Data Extraction (Brasília / Distrito Federal)  
 > **Academic Context:** Transport Modeling Course, Graduate Program in Transport (PPGT / UnB)  
 > **Goal:** Synthesize a validated, static GTFS feed (`gtfs_df.zip`) for multimodal accessibility and spatial equity analysis with `r5py`.  
 > **Series Hierarchy:**  
-> `00-initial-project-context.md` ➔ `01-dftrans-api-knowledge.md` ➔ `03-bus2-reverse-engineering.md` ➔ `04-handoff-DFTrans-Bus2-data-extraction.md` ➔ `05-methodology-data-filtering.md`
+> `01-initial-project-context.md` ➔ `02-dftrans-api-knowledge.md` ➔ `03-bus2-reverse-engineering.md` ➔ `05-dfnoponto-main-page-audit.md` ➔ `05-methodology-data-filtering.md`
 
 ---
 
@@ -109,7 +109,7 @@ During reverse-engineering, three distinct sources were evaluated. Their roles h
   2. **Validity Horizons:** Metadata indicating service effective dates (e.g., `Effective from: 23/08/2025`).
 * **URL Parameter Structure:**
   Uses auto-incrementing integer primary keys encoded in **Base36** (e.g., Agency `3c189` = `5600313`; Route `kt6a` = `970930`).
-* *Detailed documentation:* See [`03-bus2-reverse-engineering.md`](03-bus2-reverse-engineering.md) and [`04-handoff-DFTrans-Bus2-data-extraction.md`](04-handoff-DFTrans-Bus2-data-extraction.md).
+* *Detailed documentation:* See [`03-bus2-reverse-engineering.md`](03-bus2-reverse-engineering.md).
 
 ---
 

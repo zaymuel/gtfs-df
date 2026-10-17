@@ -1,6 +1,6 @@
 # Knowledge Base: Official DFTrans REST API & Data Extraction Spec
 
-> **Status:** Authoritative Spatial Reference (Updated with Handoff 04 Knowledge)  
+> **Status:** Authoritative Spatial Reference  
 > **Primary System:** DFTrans / Semob-DF REST API (`https://www.sistemas.dftrans.df.gov.br`)  
 > **Role:** Primary Source of Truth for Network Topology, Geometries, Stops, and Line Definitions  
 
@@ -8,7 +8,7 @@
 
 ## 1. Architectural Role & Source Hierarchy
 
-As established in [`04-handoff-DFTrans-Bus2-data-extraction.md`](04-handoff-DFTrans-Bus2-data-extraction.md), transit network data extraction follows a strict two-tier source hierarchy:
+As established in [`01-initial-project-context.md`](01-initial-project-context.md), transit network data extraction follows a strict two-tier source hierarchy:
 
 ```
                       ┌────────────────────────────────────────┐
