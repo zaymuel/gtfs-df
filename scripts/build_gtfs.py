@@ -1,13 +1,16 @@
 """
 build_gtfs.py - Compilador GTFS Estático para o Distrito Federal (DFTrans / Semob-DF).
 
-Ticket 04:
+Tickets 04, 05, 14, 15:
 - Lê dados brutos em data/raw/*.json e paradas mestres em data/all_stops_df.geojson.
 - Converte geometrias e coordenadas de EPSG:3857 (Web Mercator) para EPSG:4326 (WGS84).
 - Realiza linear referencing com Shapely para ordenar paradas monotonicamente ao longo do percurso.
-- Calcula tempos de passagem interpolados diferenciando velocidade convencional (20 km/h) e BRT (40 km/h) + 30s dwell.
+- Calcula tempos de passagem interpolados diferenciando BRT troncal (40 km/h) e convencional/alimentadoras (20 km/h) + 30s dwell.
+- Aplica identidade visual oficial das Bacias (1 a 5) em route_color e route_text_color (Ticket 14).
+- Mapeia faixas tarifárias em fare_attributes.txt e fare_rules.txt para custos generalizados de viagem (Ticket 05).
+- Suporta todas as 56 linhas sem ponto (.) do sistema BRT Sul (troncais 22xx/23xx/24xx e alimentadoras 32xx/33xx como 3320) (Ticket 15).
 - Envia linhas incompletas ou inválidas para data/catalog/skipped_lines.json.
-- Gera agency.txt, routes.txt, stops.txt, trips.txt, stop_times.txt, calendar.txt, shapes.txt e compacta em gtfs_df.zip.
+- Gera agency.txt, routes.txt, stops.txt, trips.txt, stop_times.txt, calendar.txt, shapes.txt, fare_attributes.txt, fare_rules.txt e compacta em gtfs_df.zip.
 """
 
 import csv
@@ -22,6 +25,9 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 import pyproj
 from shapely.geometry import LineString, Point
@@ -77,6 +83,8 @@ def load_master_stops() -> Dict[str, Dict[str, Any]]:
         logger.warning("Inventário mestre de paradas não encontrado em %s", master_path)
         return stops
 
+    out_of_bounds_stops: List[Dict[str, Any]] = []
+
     try:
         with open(master_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -87,19 +95,43 @@ def load_master_stops() -> Dict[str, Dict[str, Any]]:
                 continue
             x, y = geom["coordinates"][:2]
             lon, lat = to_wgs84(x, y)
-            if not is_in_bbox(lat, lon):
-                continue
             stop_id = str(props.get("sequencial") or props.get("codDftrans") or f"P_{x}_{y}")
+
+            if not is_in_bbox(lat, lon):
+                # Trata e audita paradas fora da bounding box do DF (ex: conexões no Entorno ou erros cadastrais)
+                out_of_bounds_stops.append({
+                    "stop_id": stop_id,
+                    "descricao": props.get("descricao") or props.get("logradouro") or f"Parada {stop_id}",
+                    "lat": lat,
+                    "lon": lon,
+                    "x_3857": x,
+                    "y_3857": y,
+                    "reason": "Coordenadas fora da bounding box regulamentar do DF (config.DF_BBOX)"
+                })
+                continue
+
             stops[stop_id] = {
                 "stop_id": stop_id,
                 "stop_name": props.get("descricao") or props.get("logradouro") or f"Parada {stop_id}",
                 "stop_lat": lat,
                 "stop_lon": lon,
+                # '3857' refere-se ao código EPSG:3857 (WGS 84 / Pseudo-Mercator / Web Mercator).
+                # A API do DFTrans serve geometrias nativamente em coordenadas métricas projetadas nessa projeção
+                # plana (x ~ -5.330.000m, y ~ -1.780.000m). Mantemos as coordenadas em metros em 'x_3857' e
+                # 'y_3857' para permitir cálculos euclidianos e projeção linear com Shapely (LineString.project),
+                # enquanto 'stop_lat' e 'stop_lon' (EPSG:4326 em graus WGS84) são exportados para o feed GTFS.
                 "x_3857": x,
                 "y_3857": y,
                 "point_geom": Point(x, y)
             }
         logger.info("Carregadas %d paradas mestres válidas do DF", len(stops))
+
+        if out_of_bounds_stops:
+            out_file = config.CATALOG_DIR / "out_of_bounds_stops.json"
+            with open(out_file, "w", encoding="utf-8") as f:
+                json.dump(out_of_bounds_stops, f, indent=2, ensure_ascii=False)
+            logger.warning("Registradas %d paradas fora da bounding box do DF em %s",
+                           len(out_of_bounds_stops), out_file)
     except Exception as e:
         logger.error("Erro ao ler inventário mestre de paradas: %s", e)
     return stops
@@ -110,6 +142,7 @@ class GtfsCompiler:
         config.GTFS_DIR.mkdir(parents=True, exist_ok=True)
         config.CATALOG_DIR.mkdir(parents=True, exist_ok=True)
 
+        self.catalog_map: Dict[str, Dict[str, Any]] = self.load_catalog_map()
         self.master_stops = load_master_stops()
         self.stop_points = [s["point_geom"] for s in self.master_stops.values()]
         self.stop_keys = list(self.master_stops.keys())
@@ -121,17 +154,53 @@ class GtfsCompiler:
         self.stops: Dict[str, Dict[str, Any]] = {}
         self.stop_times: List[Dict[str, Any]] = []
         self.shapes: List[Dict[str, Any]] = []
+        self.fare_attributes: Dict[str, Dict[str, Any]] = {}
+        self.fare_rules: List[Dict[str, Any]] = []
         self.skipped_lines: List[Dict[str, Any]] = []
 
-    def is_brt(self, numero: str, tipos_onibus: Optional[List[Dict[str, Any]]]) -> bool:
-        if numero in config.BRT_LINE_NUMBERS:
-            return True
-        if tipos_onibus and isinstance(tipos_onibus, list):
-            for t in tipos_onibus:
-                desc = t.get("descricao", "").upper()
-                if config.BRT_VEHICLE_KEYWORD in desc:
-                    return True
-        return False
+    def load_catalog_map(self) -> Dict[str, Dict[str, Any]]:
+        """Carrega dados cadastrais consolidados (cor, operadora, tarifa) de data/catalog/lines.json."""
+        cat_map = {}
+        cat_path = config.CATALOG_PATH
+        if cat_path.exists():
+            try:
+                with open(cat_path, "r", encoding="utf-8") as f:
+                    items = json.load(f)
+                if isinstance(items, list):
+                    for item in items:
+                        if isinstance(item, dict) and "numero" in item:
+                            cat_map[str(item["numero"]).strip()] = item
+            except Exception as e:
+                logger.warning("Falha ao carregar catálogo mestre %s: %s", cat_path, e)
+        return cat_map
+
+    def get_line_speed(self, numero: str, tipos_onibus: Optional[List[Dict[str, Any]]]) -> Tuple[float, bool]:
+        """Determina velocidade de operação e flag de BRT troncal (Ticket 15)."""
+        if config.is_brt_trunk(numero, tipos_onibus):
+            return config.SPEED_BRT_KMH, True
+        return config.SPEED_CONVENTIONAL_KMH, False
+
+    def get_route_colors(self, numero: str, is_brt: bool) -> Tuple[str, str]:
+        """Obtém route_color e route_text_color de alto contraste baseados na Bacia/Operadora (Ticket 14)."""
+        cat_info = self.catalog_map.get(numero, {})
+        cor_hex = cat_info.get("cor")
+        if cor_hex and isinstance(cor_hex, str):
+            clean_hex = cor_hex.strip().lstrip("#").upper()
+            if len(clean_hex) == 6:
+                try:
+                    r = int(clean_hex[0:2], 16)
+                    g = int(clean_hex[2:4], 16)
+                    b = int(clean_hex[4:6], 16)
+                    luminance = 0.299 * r + 0.587 * g + 0.114 * b
+                    text_color = "000000" if luminance > 140 else "FFFFFF"
+                    return clean_hex, text_color
+                except ValueError:
+                    pass
+
+        # Fallback padronizado
+        if is_brt:
+            return "E60000", "FFFFFF"
+        return "175898", "FFFFFF"
 
     def compile_all(self):
         logger.info("Iniciando compilação GTFS a partir de %s...", config.RAW_DIR)
@@ -156,31 +225,65 @@ class GtfsCompiler:
             self.skipped_lines.append({"numero": numero, "reason": f"Erro de leitura JSON: {e}"})
             return
 
-        linha_meta = data.get("linha", {})
-        percursos = data.get("percursos", {})
-        horarios = data.get("horarios", {})
-        bus2_data = data.get("bus2", {})
+        # Suporte a formatos novos (extract.py) e amostras legadas (harvest_dftrans.py)
+        linha_meta = data.get("linha") or (data.get("metadata")[0] if isinstance(data.get("metadata"), list) and len(data.get("metadata")) > 0 else {}) or {}
+        percursos = data.get("percursos") or {}
+        if not percursos and "percurso" in data:
+            percursos = {"default": data["percurso"]}
+        horarios = data.get("horarios") or data.get("horario") or {}
+        bus2_data = data.get("bus2") or {}
 
         if not percursos:
             self.skipped_lines.append({"numero": numero, "reason": "Sem dados de percurso geométrico"})
             return
 
+        cat_info = self.catalog_map.get(numero, {})
+        speed_kmh, is_brt_line = self.get_line_speed(numero, linha_meta.get("tiposOnibus"))
+        speed_mps = (speed_kmh * 1000.0) / 3600.0
+        route_color, route_text_color = self.get_route_colors(numero, is_brt_line)
+
         # Cadastra rota em routes.txt
         route_id = f"R_{numero}"
-        is_brt_line = self.is_brt(numero, linha_meta.get("tiposOnibus"))
-        speed_kmh = config.SPEED_BRT_KMH if is_brt_line else config.SPEED_CONVENTIONAL_KMH
-        speed_mps = (speed_kmh * 1000.0) / 3600.0
-
-        desc = linha_meta.get("descricao") or f"Linha {numero}"
+        desc = linha_meta.get("descricao") or cat_info.get("descricao") or f"Linha {numero}"
         self.routes.append({
             "route_id": route_id,
             "agency_id": config.AGENCY["agency_id"],
             "route_short_name": numero,
             "route_long_name": desc,
             "route_type": "3",  # Bus
-            "route_color": "E60000" if is_brt_line else "175898",
-            "route_text_color": "FFFFFF"
+            "route_color": route_color,
+            "route_text_color": route_text_color
         })
+
+        # Modelagem Tarifária (Ticket 05)
+        tarifa: Optional[float] = None
+        faixa = linha_meta.get("faixaTarifaria")
+        if isinstance(faixa, dict) and "tarifa" in faixa and faixa["tarifa"] is not None:
+            try:
+                tarifa = float(faixa["tarifa"])
+            except ValueError:
+                pass
+        elif cat_info.get("tarifa") is not None:
+            try:
+                tarifa = float(cat_info["tarifa"])
+            except ValueError:
+                pass
+
+        if tarifa is not None and tarifa > 0:
+            fare_id = f"F_{int(round(tarifa * 100)):03d}"
+            if fare_id not in self.fare_attributes:
+                self.fare_attributes[fare_id] = {
+                    "fare_id": fare_id,
+                    "price": f"{tarifa:.2f}",
+                    "currency_type": "BRL",
+                    "payment_method": "0",  # Pago a bordo
+                    "transfers": "",        # Permite modelagem flexível de integração
+                    "agency_id": config.AGENCY["agency_id"]
+                }
+            self.fare_rules.append({
+                "fare_id": fare_id,
+                "route_id": route_id
+            })
 
         # Processa cada direção/percurso
         for sentido_key, percurso_data in percursos.items():
@@ -449,8 +552,22 @@ class GtfsCompiler:
             w.writeheader()
             w.writerows(self.stop_times)
 
-        logger.info("Tabelas GTFS gravadas com sucesso: %d rotas, %d viagens, %d paradas, %d stop_times, %d pontos de shape.",
-                    len(self.routes), len(self.trips), len(self.stops), len(self.stop_times), len(self.shapes))
+        # 8. fare_attributes.txt (Ticket 05)
+        with open(gtfs_dir / "fare_attributes.txt", "w", encoding="utf-8", newline="") as f:
+            fields = ["fare_id", "price", "currency_type", "payment_method", "transfers", "agency_id"]
+            w = csv.DictWriter(f, fieldnames=fields)
+            w.writeheader()
+            w.writerows(self.fare_attributes.values())
+
+        # 9. fare_rules.txt (Ticket 05)
+        with open(gtfs_dir / "fare_rules.txt", "w", encoding="utf-8", newline="") as f:
+            fields = ["fare_id", "route_id"]
+            w = csv.DictWriter(f, fieldnames=fields)
+            w.writeheader()
+            w.writerows(self.fare_rules)
+
+        logger.info("Tabelas GTFS gravadas com sucesso: %d rotas, %d viagens, %d paradas, %d stop_times, %d tarifas.",
+                    len(self.routes), len(self.trips), len(self.stops), len(self.stop_times), len(self.fare_attributes))
 
     def save_skipped_lines(self):
         out_path = config.SKIPPED_LINES_PATH
@@ -460,7 +577,11 @@ class GtfsCompiler:
 
     def create_zip(self):
         zip_path = config.GTFS_DIR / "gtfs_df.zip"
-        files_to_zip = ["agency.txt", "calendar.txt", "routes.txt", "stops.txt", "trips.txt", "stop_times.txt", "shapes.txt"]
+        files_to_zip = [
+            "agency.txt", "calendar.txt", "routes.txt", "stops.txt",
+            "trips.txt", "stop_times.txt", "shapes.txt",
+            "fare_attributes.txt", "fare_rules.txt"
+        ]
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
             for fname in files_to_zip:
                 fpath = config.GTFS_DIR / fname
@@ -476,4 +597,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
