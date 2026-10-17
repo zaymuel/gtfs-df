@@ -1,0 +1,5570 @@
+{
+  "0.005": {
+    "route_id": "kto0",
+    "agency_id": "1pq6",
+    "long_name": "Circular Vicente Pires/Feira Do Produtor(Ruas 4, 6, 8, 10, São José)",
+    "price": 2.7
+  },
+  "0.006": {
+    "route_id": "kt5h",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro/Sudoeste/W3 Sul/Octogonal",
+    "price": 3.8
+  },
+  "0.008": {
+    "route_id": "ktmo",
+    "agency_id": "1pq7",
+    "long_name": "Circular Águas Claras(Tag. Shopping/Católica)",
+    "price": 2.7
+  },
+  "0.009": {
+    "route_id": "t9lg",
+    "agency_id": "1pq7",
+    "long_name": "Guará I e II (Park Shopping) / Aeroporto",
+    "price": 3.8
+  },
+  "0.010": {
+    "route_id": "t9lh",
+    "agency_id": "1pq7",
+    "long_name": "Guará I e II (QE 38 a 58)",
+    "price": 2.7
+  },
+  "0.011": {
+    "route_id": "ktam",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Asa Norte(Entrequadras Norte)/Esplanada(L2 Norte)/Aeroporto(Eixão Sul)",
+    "price": 3.8
+  },
+  "0.016": {
+    "route_id": "kt8c",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul/Epig/Setor Noroeste",
+    "price": 3.8
+  },
+  "0.018": {
+    "route_id": "ktf5",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá Parque/W3 Norte(Via Ponte Jk)",
+    "price": 5.5
+  },
+  "0.019": {
+    "route_id": "ktr7",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul(P3, P1)/Por do Sol/Metrô Ceilândia Centro / JK Shopping",
+    "price": 2.7
+  },
+  "0.020": {
+    "route_id": "ktni",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (P4) / Pôr do Sol / Metrô Centro Metropolitano / QNJ / Taguacenter / JK Shopping",
+    "price": 2.7
+  },
+  "0.021": {
+    "route_id": "nghh",
+    "agency_id": "1pq2",
+    "long_name": "Circular - Terminal de São Sebastião / Morro da Cruz (Zumbi dos Palmares)",
+    "price": null
+  },
+  "0.022": {
+    "route_id": "kt6u",
+    "agency_id": "1pq3",
+    "long_name": "Estação Asa Sul/W3 Sul-L2 Norte/W3 Norte(Sdn)/L2 Sul-Vila Telebrasília",
+    "price": 3.8
+  },
+  "0.023": {
+    "route_id": "kt63",
+    "agency_id": "1pq3",
+    "long_name": "Term. Asa Sul/ L2 Sul/ W3 Norte/ V. Telebrasília (SQN 212/213)/ L2 Norte/ W3 Sul",
+    "price": 3.8
+  },
+  "0.024": {
+    "route_id": "kt81",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro/Octogonal-Sudoeste/Esplanada(Cnb)",
+    "price": 3.8
+  },
+  "0.025": {
+    "route_id": "kt3t",
+    "agency_id": "1pq3",
+    "long_name": "Rod Plano P/Sudoeste-Octogonal/F. Dos Importados/SIA(Trecho 2 E 17)/Setor Inflamável",
+    "price": 3.8
+  },
+  "0.026": {
+    "route_id": "o7pf",
+    "agency_id": "1pq2",
+    "long_name": "Park Way(QD 7 a 13, 26 a 29) Park Shopping",
+    "price": 3.8
+  },
+  "0.027": {
+    "route_id": "o7pg",
+    "agency_id": "1pq2",
+    "long_name": "Parkway/Aeroporto",
+    "price": 3.8
+  },
+  "0.028": {
+    "route_id": "o7ph",
+    "agency_id": "1pq2",
+    "long_name": "Park Way(Qds. 14 A 25)",
+    "price": 2.7
+  },
+  "0.030": {
+    "route_id": "ktfj",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Asa Norte(Sqn 212-213)/W3 Norte-Sul/Aeroporto",
+    "price": 3.8
+  },
+  "0.031": {
+    "route_id": "kt60",
+    "agency_id": "1pq3",
+    "long_name": "Term. Asa Sul / W3 S-N / L2 N-S(Esplanada)",
+    "price": 3.8
+  },
+  "0.032": {
+    "route_id": "kt7e",
+    "agency_id": "1pq3",
+    "long_name": "Term. Asa Sul / L2 S-N(Esplanada) / W3 - N-S",
+    "price": 3.8
+  },
+  "0.035": {
+    "route_id": "kt7h",
+    "agency_id": "1pq3",
+    "long_name": "Rod. P. Piloto/Sudoeste/Octogonal/F. Importados/SIA(Trecho 2 E 17)St. Cargas",
+    "price": 3.8
+  },
+  "0.038": {
+    "route_id": "ktsv",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo I/Taguatinga Sul-Norte(Areal-Pistão Sul-Samdu Norte-QNL)",
+    "price": 3.8
+  },
+  "0.039": {
+    "route_id": "ktpd",
+    "agency_id": "1pq6",
+    "long_name": "Qnr/Sol Nascente(Trecho III)/Setor O(Via Leste)/Tag. Centro(Via Estádio)/Arniqueira",
+    "price": 3.8
+  },
+  "0.041": {
+    "route_id": "kts3",
+    "agency_id": "1pq6",
+    "long_name": "Cond. Privê/Celândia(Via O3)/Taguatinga Centro/Águas Claras(Tag. Shopping)",
+    "price": 3.8
+  },
+  "0.043": {
+    "route_id": "kth0",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (P3) / Taguatinga (Av. Elmo Serejo - Comercial e SAMDU Norte) / Vicente Pires",
+    "price": 3.8
+  },
+  "0.047": {
+    "route_id": "ktqg",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II)/Taguatinga Centro/Via Estádio/Taguatinga Shopping/Águas Claras",
+    "price": 3.8
+  },
+  "0.049": {
+    "route_id": "ktpc",
+    "agency_id": "1pq6",
+    "long_name": "M Norte/Tag. Centro(QNL/Tag. Shopping)/Colônia Agrícola Samambaia",
+    "price": 3.8
+  },
+  "0.050": {
+    "route_id": "ktr1",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(Qn 423-425)/Taguacenter(Samdu N/S-Av. Central)",
+    "price": 3.8
+  },
+  "0.053": {
+    "route_id": "ktsd",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(1ª Av.)/Taguatinga(Boca Da Mata-Pistão Sul-Av. Central-Sa",
+    "price": 3.8
+  },
+  "0.054": {
+    "route_id": "ktp6",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(2ª Av.)/Taguatinga(Samdu Sul/Norte-Av. Central-HRT)",
+    "price": 3.8
+  },
+  "0.056": {
+    "route_id": "ktva",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(2ª Avenida)/''p'' Sul(Av. Hélio Prates-Via-P1-P3)",
+    "price": 3.8
+  },
+  "0.082": {
+    "route_id": "kthl",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante(Metropolitana)/EPIA(Park Shopping)/SAAN/RCG/Água Mineral",
+    "price": 3.8
+  },
+  "0.087": {
+    "route_id": "ktg6",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II - I / Núcleo Bandeirante (SOF Sul - SIA) / Cruzeiro",
+    "price": 3.8
+  },
+  "0.089": {
+    "route_id": "ktr4",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (Av. das Palmeiras) / Av. Comercial e SAMDU Norte / Guará I-II (Park Shopping) / Faculdade Euroamericana",
+    "price": 3.8
+  },
+  "0.090": {
+    "route_id": "ktg4",
+    "agency_id": "1pq7",
+    "long_name": "Guará(Qe 44/46)/SIA(Trecho 2-Feira Dos Importados)/SAAN",
+    "price": 3.8
+  },
+  "0.092": {
+    "route_id": "ktue",
+    "agency_id": "1pq5",
+    "long_name": "Guará I-II/Núcleo Bandeirante/Taguatinga(EPNB-Pistão Sul-Norte)",
+    "price": 3.8
+  },
+  "0.102": {
+    "route_id": "ktd8",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto/Aeroporto",
+    "price": 3.8
+  },
+  "0.103": {
+    "route_id": "kt53",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Avenida Das Nações Sul",
+    "price": 3.8
+  },
+  "0.104": {
+    "route_id": "kt3l",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Vila Planalto/Palácio Da Alvorada/Setor De Club",
+    "price": 2.7
+  },
+  "0.107": {
+    "route_id": "kt7b",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Plano Piloto/W3-L2 Sul(Esplanada)",
+    "price": 3.8
+  },
+  "0.110": {
+    "route_id": "kt6a",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Unb",
+    "price": 3.8
+  },
+  "0.111": {
+    "route_id": "kted",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto/Presídio Nacional(Papuda)",
+    "price": 3.8
+  },
+  "0.114": {
+    "route_id": "kt5k",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/L2-W3 Sul",
+    "price": 3.8
+  },
+  "0.116": {
+    "route_id": "kt5r",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3-L2 Norte",
+    "price": 3.8
+  },
+  "0.126": {
+    "route_id": "ktfa",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Nova Betânia/Chapada",
+    "price": 2.7
+  },
+  "0.128": {
+    "route_id": "kt3e",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Plano Piloto/W3 Norte/Granja Do Torto",
+    "price": 3.8
+  },
+  "0.129": {
+    "route_id": "ktr2",
+    "agency_id": "1pq5",
+    "long_name": "Núcleo Bandeirante(Aeroporto)/Paranoá/Itapoã",
+    "price": 5.5
+  },
+  "0.132": {
+    "route_id": "ktuf",
+    "agency_id": "1pq4",
+    "long_name": "Laranjeiras/Vargem Bonita/Epvb/EPIA/W3 Sul/Rodoviária Do Plano Piloto",
+    "price": 3.8
+  },
+  "0.136": {
+    "route_id": "kt8k",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3 Norte/Clube Do Congresso(Hospital Sarah)/L2 Norte",
+    "price": 3.8
+  },
+  "0.140": {
+    "route_id": "kt5m",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Rodoviária Plano Piloto/Vila Planalto/Avenida Das Nações Norte/",
+    "price": 3.8
+  },
+  "0.143": {
+    "route_id": "kt7r",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/Hosp. Da Criança/RCG",
+    "price": 3.8
+  },
+  "0.147": {
+    "route_id": "ktfg",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res. Bosque)/L2 Sul/Rodovária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.150": {
+    "route_id": "kt83",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Plano Piloto / Eixo Sul / Octogonal / Cruzeiro",
+    "price": 3.8
+  },
+  "0.151": {
+    "route_id": "kt48",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro/W3 Sul(Administração/Memorial Jk)",
+    "price": 3.8
+  },
+  "0.152": {
+    "route_id": "kt4l",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/Sud./Oct./Cruz./SIG/Esplanada",
+    "price": 3.8
+  },
+  "0.153": {
+    "route_id": "ktk3",
+    "agency_id": "1pq7",
+    "long_name": "Guará II-I/Rodoviária Do Plano Piloto(SIA-Eixo)",
+    "price": 3.8
+  },
+  "0.156": {
+    "route_id": "ktr5",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II/W3 Sul",
+    "price": 3.8
+  },
+  "0.159": {
+    "route_id": "ktog",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural(EPTG)/Hélio Prates/Setor Habitacional Sol Nascente Trecho 2(Condomínio Pinheiros)",
+    "price": 3.8
+  },
+  "0.160": {
+    "route_id": "ktg8",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante(Zoológico)/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 3.8
+  },
+  "0.161": {
+    "route_id": "ktlj",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante(EPNB-EPIA-Parkshopping)/Cruzeiro(Feira Dos Importados-Smu)",
+    "price": 3.8
+  },
+  "0.162": {
+    "route_id": "ktjb",
+    "agency_id": "1pq7",
+    "long_name": "Guará II (QE 32-58) / Rodoviária do Plano Piloto (W3 Sul Zoo)",
+    "price": 3.8
+  },
+  "0.163": {
+    "route_id": "ktha",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante(Parkshopping)/W3 Sul(SIG-Setor Policial Sul)",
+    "price": 3.8
+  },
+  "0.164": {
+    "route_id": "ktkk",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Núcleo Bandeirante/Vila Cauhy(Via Av. Central/3ª Av.)",
+    "price": 2.7
+  },
+  "0.166": {
+    "route_id": "kt8s",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Cruzeiro(Administração)/Memorial Jk/L2 Sul/Octogonal",
+    "price": 3.8
+  },
+  "0.167": {
+    "route_id": "ktl9",
+    "agency_id": "1pq7",
+    "long_name": "Guará II-I/L2 Sul-Norte(Unb)",
+    "price": 3.8
+  },
+  "0.168": {
+    "route_id": "kt78",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro / Sudoeste / L2 Norte (UNB ) / W3 Norte",
+    "price": 3.8
+  },
+  "0.169": {
+    "route_id": "kt47",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro/Sudoeste/W3 Norte/L2 Norte(Unb)",
+    "price": 3.8
+  },
+  "0.170": {
+    "route_id": "ktd4",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto(L2 Sul)/Lago Sul(Ponte Das Garças)/Barreiros(E",
+    "price": 5.5
+  },
+  "0.171": {
+    "route_id": "kti7",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante(EPIA-Zoológico)/W3 Sul-Norte",
+    "price": 3.8
+  },
+  "0.172": {
+    "route_id": "ktgi",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo I(EPNB)/Rodoviária Do Plano Piloto(Zoológico-Eixo)",
+    "price": 3.8
+  },
+  "0.173": {
+    "route_id": "ktlq",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo I(Av. Riacho Fundo)/Colônia Agrícola Sucupira",
+    "price": 2.7
+  },
+  "0.175": {
+    "route_id": "ktlg",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo(EPNB-EPIA-Zoológico)/W3 Sul-Norte",
+    "price": 3.8
+  },
+  "0.176": {
+    "route_id": "ktif",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo(EPNB-EPIA-Zoológico)/L2 Sul-Norte/Esplanada/Unb/Term",
+    "price": 3.8
+  },
+  "0.177": {
+    "route_id": "kthr",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo(EPNB-Parkshopping)/W3 Sul(SIG-Setor Policial Sul)",
+    "price": 3.8
+  },
+  "0.178": {
+    "route_id": "ktlr",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo I/Instituto De Saúde Mental",
+    "price": 2.7
+  },
+  "0.180": {
+    "route_id": "kta6",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Morro Da Cruz/João Cândido/Itaipú/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "0.181": {
+    "route_id": "ktbo",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque)/Paranoá/Itapoã(Lago Sul-Qi 23)",
+    "price": 3.8
+  },
+  "0.182": {
+    "route_id": "kte9",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque)/SAAN(Zoológico-Parkshopping-SIA",
+    "price": 5.5
+  },
+  "0.185": {
+    "route_id": "ktde",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Paranoá Park/Itapoã/Rodoviária Do Plano Piloto(Eixo Sul)",
+    "price": 5.5
+  },
+  "0.186": {
+    "route_id": "kt9t",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Lago Sul(Ponte Das Garças)/Rodoviária Do Plano Piloto(Eixo S",
+    "price": 5.5
+  },
+  "0.188": {
+    "route_id": "ktuv",
+    "agency_id": "1pq4",
+    "long_name": "Paranoá/Itapoã/Altiplano Leste",
+    "price": 5.5
+  },
+  "0.194": {
+    "route_id": "ktci",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Bairo São Francisco-Quadra 09)/W3 Sul(Ponte Jk)",
+    "price": 5.5
+  },
+  "0.195": {
+    "route_id": "kter",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residecial Do Bosque)/Lago Sul(Qi 15-Ponte Das Garças)/Rod",
+    "price": 5.5
+  },
+  "0.196": {
+    "route_id": "ktan",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque)/Lago Norte(Ponte Jk-Setor De Clubes Norte)",
+    "price": 5.5
+  },
+  "0.197": {
+    "route_id": "ktda",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque-Vila São José-Quadra 100 E 200)/W3 Norte",
+    "price": 5.5
+  },
+  "0.198": {
+    "route_id": "kte1",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res. Bosque)/Guará I-II(Núcleo Bandeirante)",
+    "price": 5.5
+  },
+  "0.199": {
+    "route_id": "ktdo",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque)/Cruzeiro(Sudoeste-Octogonal)",
+    "price": 5.5
+  },
+  "0.205": {
+    "route_id": "ktjt",
+    "agency_id": "1pq7",
+    "long_name": "Gama Sul-Leste/Setor M Norte(Samdu/Comercial)",
+    "price": 5.5
+  },
+  "0.215": {
+    "route_id": "ktkb",
+    "agency_id": "1pq7",
+    "long_name": "Gama Sul-Leste/Núcleo Bandeirante/Guará",
+    "price": 5.5
+  },
+  "0.216": {
+    "route_id": "ktln",
+    "agency_id": "1pq7",
+    "long_name": "Gama Oeste/Núcleo Bandeirante/Guará I-II",
+    "price": 5.5
+  },
+  "0.224": {
+    "route_id": "ktbt",
+    "agency_id": "1pq2",
+    "long_name": "Gama/Rodoviária Do Plano Piloto(Corujão)",
+    "price": 5.5
+  },
+  "0.225": {
+    "route_id": "kt9l",
+    "agency_id": "1pq2",
+    "long_name": "Gama/Setor O",
+    "price": 5.5
+  },
+  "0.234": {
+    "route_id": "ktiv",
+    "agency_id": "1pq7",
+    "long_name": "Gama Oeste-Leste/Águas Claras",
+    "price": 5.5
+  },
+  "0.253": {
+    "route_id": "ktem",
+    "agency_id": "1pq2",
+    "long_name": "Santa Maria/Setor O(Br-040-Samambaia)",
+    "price": 5.5
+  },
+  "0.255": {
+    "route_id": "ktfc",
+    "agency_id": "1pq2",
+    "long_name": "Terminal BRT Santa Maria / Taguatinga (SAMDU/Comercial)",
+    "price": 5.5
+  },
+  "0.273": {
+    "route_id": "ktdb",
+    "agency_id": "1pq2",
+    "long_name": "Santa Maria(Qd.400)/Setor \"o\"(Br-040-Samambaia)",
+    "price": 5.5
+  },
+  "0.300": {
+    "route_id": "ktlm",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (P4) / Rodoviária Plano Piloto (EPTG - Eixo)",
+    "price": 5.5
+  },
+  "0.301": {
+    "route_id": "ktj3",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (P4) / W3 Sul (EPTG - SIG)",
+    "price": 5.5
+  },
+  "0.305": {
+    "route_id": "ktk0",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul / W3 Sul (EPTG - SIG)",
+    "price": 5.5
+  },
+  "0.306": {
+    "route_id": "ktim",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul / Rodoviária do Plano Piloto (EPTG - Setor Policial Sul - Eixo)",
+    "price": 5.5
+  },
+  "0.310": {
+    "route_id": "ktqo",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 5.5
+  },
+  "0.311": {
+    "route_id": "ktp1",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via M2)/W3 Sul(EPTG-SIG)",
+    "price": 5.5
+  },
+  "0.312": {
+    "route_id": "ktpq",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(M2)/Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.313": {
+    "route_id": "ktmr",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via O3)/Pistão Norte(EPTG)/W3 Sul(SIG)",
+    "price": 5.5
+  },
+  "0.317": {
+    "route_id": "ktgd",
+    "agency_id": "1pq1",
+    "long_name": "Setor M Norte/Guará I-II/Núcleo Bandeirante",
+    "price": 3.8
+  },
+  "0.322": {
+    "route_id": "ktqp",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte(Via Lj2)/Rodoviária Do Plano Piloto(EPTG-Eixo)",
+    "price": 5.5
+  },
+  "0.323": {
+    "route_id": "ktng",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte(Via Lj2)/W3 Sul(EPTG-SIG)",
+    "price": 5.5
+  },
+  "0.324": {
+    "route_id": "ktrf",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"m\" Norte/Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.330": {
+    "route_id": "ktpi",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5-Sol Nascente-Trecho 3(Ceilândia Norte-Sul)/EPTG-SIG/W3 Norte",
+    "price": 5.5
+  },
+  "0.331": {
+    "route_id": "ktp0",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"o\"(Via N2)Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.332": {
+    "route_id": "kto2",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II-Hrc)/Tag Centro(Tag. Shopping)/Areal",
+    "price": 3.8
+  },
+  "0.333": {
+    "route_id": "kts9",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P2 Norte)/Taguatinga(Via Estádio-Taguatinga Shopping-Católica)",
+    "price": 3.8
+  },
+  "0.334": {
+    "route_id": "ktnd",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão)/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 5.5
+  },
+  "0.335": {
+    "route_id": "ktob",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/Expansão Setor O/P 2 Norte/Guariroba/EPTG/SIG/W3 Sul",
+    "price": 5.5
+  },
+  "0.336": {
+    "route_id": "ktrc",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Rodoviária Plano Piloto (EPTG - Setor Policial Sul - Eixo)",
+    "price": 5.5
+  },
+  "0.338": {
+    "route_id": "ktm5",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão-P2 Norte)/L2 Sul-Norte/Unb/Terminal Asa Norte(Semie",
+    "price": 5.5
+  },
+  "0.339": {
+    "route_id": "ktkl",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Terminal Asa Norte (Estrutural - L2 Norte - UnB)",
+    "price": 5.5
+  },
+  "0.340": {
+    "route_id": "ktia",
+    "agency_id": "1pq1",
+    "long_name": "Terminal De Samambaia Sul/Água Quente",
+    "price": 2.7
+  },
+  "0.341": {
+    "route_id": "ktvf",
+    "agency_id": "1pq5",
+    "long_name": "Qnr(Setor O-Expansão)/Taguatinga Centro/EPTG/Guará I-II/Núcleo Bandeirante",
+    "price": 3.8
+  },
+  "0.343": {
+    "route_id": "ktnf",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"o\" Expansão/Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.345": {
+    "route_id": "kti1",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / L2 Sul (Estrutural)",
+    "price": 5.5
+  },
+  "0.346": {
+    "route_id": "ktvg",
+    "agency_id": "1pq5",
+    "long_name": "Qnr 5(P2 Norte-Comercial)/EPTG/Guará I-II(Parkshopping)/Núcleo Bandei",
+    "price": 3.8
+  },
+  "0.347": {
+    "route_id": "ktub",
+    "agency_id": "1pq5",
+    "long_name": "Setor P Sul / Guará I - II / Núcleo Bandeirante",
+    "price": 3.8
+  },
+  "0.348": {
+    "route_id": "ktmi",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/L2 Sul-Norte/Unb/Terminal Asa Norte(Semiexpressa)",
+    "price": 5.5
+  },
+  "0.349": {
+    "route_id": "ktig",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul E Norte/Estrutural/EPIA/Setor Militar/L2 Sul-Norte(Unb)",
+    "price": 5.5
+  },
+  "0.350": {
+    "route_id": "ktpk",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(Expansão)/Sol Nascente Tr. III-Taguatinga Sul(Pista Estádio-Areal)",
+    "price": 3.8
+  },
+  "0.353": {
+    "route_id": "ktpt",
+    "agency_id": "1pq6",
+    "long_name": "Terminal Qnr/Sol Nascente Trecho III/Setor O(Via M3/Taguatinga Shopping)",
+    "price": 3.8
+  },
+  "0.355": {
+    "route_id": "ktk6",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Taguatinga Norte(Samdu-Comercial-QNG-Feira Dos Goianos)",
+    "price": 2.7
+  },
+  "0.357": {
+    "route_id": "ktio",
+    "agency_id": "1pq7",
+    "long_name": "Circular Taguatinga Sul-Norte/Nova QNL/Samdu/Católica",
+    "price": 2.7
+  },
+  "0.360": {
+    "route_id": "ktql",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte(Via M2)/Hélio Prates/Comercial/Samdú/Taguatinga Centro",
+    "price": 3.8
+  },
+  "0.361": {
+    "route_id": "ktje",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Taguatinga Centro (Taguatinga Shoppin) / UCB",
+    "price": 3.8
+  },
+  "0.362": {
+    "route_id": "ktq3",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"o\"/Taguatinga Sul(N2/Pista Do Estádio-Areal-Qs 11-Veredão)",
+    "price": 3.8
+  },
+  "0.363": {
+    "route_id": "ktiq",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Taguatinga Centro (Av. Hélio Prates - Comercial e SAMDU Norte - Centro - Taguatinga Shopping)",
+    "price": 3.8
+  },
+  "0.364": {
+    "route_id": "ktns",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte(QNL)/Taguatinga Centro(Via Estádio)",
+    "price": 2.7
+  },
+  "0.366": {
+    "route_id": "ktk2",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2ª Avenida-Estação Furnas)/Samambaia Sul(1ª Avenida-Estação Samambaia)",
+    "price": 2.7
+  },
+  "0.367": {
+    "route_id": "ktma",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(2 Avenida)/Taguatinga Sul(Católica)",
+    "price": 3.8
+  },
+  "0.368": {
+    "route_id": "ktso",
+    "agency_id": "1pq5",
+    "long_name": "Setor M Norte/Taguatinga Centro/Católica/Riacho Fundo(QNL-Estádio)",
+    "price": 3.8
+  },
+  "0.369": {
+    "route_id": "ktkh",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Taguatinga Sul (Areal - ADE)",
+    "price": 3.8
+  },
+  "0.370": {
+    "route_id": "kto6",
+    "agency_id": "1pq6",
+    "long_name": "Ceilândia(Qnr 5)/Expansão Setor O/Estrutural/L2 Norte/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.371": {
+    "route_id": "kts4",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte/L2 Norte(Estrutural-Unb)",
+    "price": 5.5
+  },
+  "0.372": {
+    "route_id": "ktsp",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(2ª Avenida)/Taguacenter",
+    "price": 3.8
+  },
+  "0.373": {
+    "route_id": "ktkm",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2 Avenida)/Rodoviária Do Plano Piloto(EPNB-Eixo)",
+    "price": 5.5
+  },
+  "0.374": {
+    "route_id": "ktol",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via Leste)/EPTG/SIG/W3 Norte/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.375": {
+    "route_id": "ktpr",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via N2)/EPTG/SIG/W3 Norte/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.376": {
+    "route_id": "ktjq",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "0.377": {
+    "route_id": "ktmd",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte/EPTG/SIG/W3 Norte/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.378": {
+    "route_id": "ktkc",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Terminal Asa Norte (EPTG - SIG - W3 Norte)",
+    "price": 5.5
+  },
+  "0.379": {
+    "route_id": "ktpe",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via Hélio Prates/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "0.380": {
+    "route_id": "kth3",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2 Avenida)/Rodoviária Do Plano Piloto(EPTG-SIG)",
+    "price": 5.5
+  },
+  "0.382": {
+    "route_id": "kton",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via Leste)/Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.383": {
+    "route_id": "kthi",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Rodoviária Plano Piloto (Estrutural)",
+    "price": 5.5
+  },
+  "0.385": {
+    "route_id": "ktm7",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P1 Norte-P1 Sul)/Rodoviária Do Plano Piloto(EPTG-Eixo)",
+    "price": 5.5
+  },
+  "0.391": {
+    "route_id": "ktk4",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2 Avenida-Avenida Leste)/W3 Sul E Norte(EPNB-EPIA-Parkshoping-Setor Policial Sul)",
+    "price": 5.5
+  },
+  "0.392": {
+    "route_id": "ktle",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(1ª Avenida-EPNB)/L2 Sul-Norte/Esplanada/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.393": {
+    "route_id": "ktvh",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(1ª Avenida)/Taguacenter(Boca Da Mata)",
+    "price": 3.8
+  },
+  "0.394": {
+    "route_id": "ktjh",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(1 Avenida)/Rodoviária Do Plano Piloto(EPTG)",
+    "price": 5.5
+  },
+  "0.397": {
+    "route_id": "ktt9",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(2 Avenida)/Setor O",
+    "price": 3.8
+  },
+  "0.399": {
+    "route_id": "ktur",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(1 Avenida)/Setor P Sul",
+    "price": 3.8
+  },
+  "0.400": {
+    "route_id": "ktmk",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-240 Incra 8)/Rodoviária Do Plano Piloto(EPTG-Eixo)",
+    "price": 5.5
+  },
+  "0.401": {
+    "route_id": "ktrk",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-240)/Taguatinga Sul(Católica)",
+    "price": 5.5
+  },
+  "0.402": {
+    "route_id": "ktop",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-180)/Ceilândia(Av. Hélio Prates)/Taguatinga Centro(Samdu Norte-Comercial Norte)",
+    "price": 5.5
+  },
+  "0.403": {
+    "route_id": "ktmq",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-240-Incra 8)/Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.404": {
+    "route_id": "ktn1",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-180)/Rodoviária Do Plano Piloto(EPTG-Eixo)",
+    "price": 5.5
+  },
+  "0.405": {
+    "route_id": "ktpv",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-180)/Rodoviária Do Plano Piloto(Estrutural)",
+    "price": 5.5
+  },
+  "0.406": {
+    "route_id": "ktmt",
+    "agency_id": "1pq6",
+    "long_name": "Circular Brazlândia(Hrbz-Expansão)",
+    "price": 2.7
+  },
+  "0.410": {
+    "route_id": "ktpa",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Almécegas(Hrb/Br 080)",
+    "price": 3.8
+  },
+  "0.411": {
+    "route_id": "ktos",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-180)/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "0.413": {
+    "route_id": "ktoi",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/W3 Sul(EPTG-SIG)",
+    "price": 5.5
+  },
+  "0.414": {
+    "route_id": "ktoj",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Bucanhão(Br 080/Radiobrás/DF 220)",
+    "price": 3.8
+  },
+  "0.415": {
+    "route_id": "ktqf",
+    "agency_id": "1pq6",
+    "long_name": "Taguatinga Centro(Via Estádio-Via Leste-Av. Hélio Prates)/Brazlândia-Co",
+    "price": 5.5
+  },
+  "0.416": {
+    "route_id": "ktq1",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Incra 8",
+    "price": 2.7
+  },
+  "0.420": {
+    "route_id": "ktrh",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-430)/Rodoviária Do Plano Piloto(Estrutural-Epvl-Eixo)",
+    "price": 5.5
+  },
+  "0.421": {
+    "route_id": "ktoh",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-430)/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "0.423": {
+    "route_id": "ktmb",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-430)/W3 Sul(Estrutural-EPIA-SIG)",
+    "price": 5.5
+  },
+  "0.424": {
+    "route_id": "ktqc",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-430)/W3 Sul E Norte(Estrutural-EPIA)",
+    "price": 5.5
+  },
+  "0.450": {
+    "route_id": "nkg2",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Setor O/Taguacenter",
+    "price": 5.5
+  },
+  "0.501": {
+    "route_id": "kt5q",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/Eixo N - S(Rod. Plano Piloto)/Term. Asa sul",
+    "price": 5.5
+  },
+  "0.503": {
+    "route_id": "kt49",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I (Qd. 18) / SAAN / SIA / SGCV / Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.504": {
+    "route_id": "kt62",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(DF-128/Estância)/Sobradinho",
+    "price": 3.8
+  },
+  "0.509": {
+    "route_id": "kt45",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd. 18)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.510": {
+    "route_id": "ktd0",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Núcleo Rural Córrego Do Meio(Capão Da Erva)/Fazenda Velha(Beraca)",
+    "price": 3.8
+  },
+  "0.511": {
+    "route_id": "kt6l",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd 18)/Condomínio Rk/DF-001(Santuário De Schoenstatt)/Itapoã Parque Paranoá(Rua Alta Tensão)",
+    "price": 5.5
+  },
+  "0.512": {
+    "route_id": "kt76",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.513": {
+    "route_id": "kt6f",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd 18)/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.515": {
+    "route_id": "kt5d",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/Basevi/Nucleo Rural Lago Oeste",
+    "price": 5.5
+  },
+  "0.516": {
+    "route_id": "kt5j",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/Grande Colorado(DF-425-DF-150)/Eixo Norte/Catedral",
+    "price": 5.5
+  },
+  "0.517": {
+    "route_id": "kt41",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II (DF-150)/W3 Norte-Sul/Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.518": {
+    "route_id": "kt66",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/Esplanada Dos Ministérios",
+    "price": 5.5
+  },
+  "0.519": {
+    "route_id": "kt4h",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II(Mansões-Condomínio Sansão)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.520": {
+    "route_id": "kt69",
+    "agency_id": "1pq3",
+    "long_name": "Setor Oeste De Sobradinho/Eixo Norte-Sul",
+    "price": 5.5
+  },
+  "0.521": {
+    "route_id": "kt6o",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd 18-Cond. Rk)/L2 Norte-Sul(Unb-Esplanada)/Terminal As",
+    "price": 5.5
+  },
+  "0.522": {
+    "route_id": "kt7t",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd 18)/Sobradinho II(Setor Oeste-DF-150)/L2 Norte-Sul(Unb-Esplanada)/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.525": {
+    "route_id": "kt64",
+    "agency_id": "1pq3",
+    "long_name": "Nova Colina De Sobradinho/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.526": {
+    "route_id": "kt40",
+    "agency_id": "1pq3",
+    "long_name": "Nova Colina De Sobradinho/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.527": {
+    "route_id": "kt68",
+    "agency_id": "1pq3",
+    "long_name": "Nova Colina/Sobradinho(Qd.18)/Cruzeiro(EPIA-Eixo Monumental-SIG)",
+    "price": 5.5
+  },
+  "0.531": {
+    "route_id": "kt4d",
+    "agency_id": "1pq3",
+    "long_name": "Ciplan-Fercal/W3 Norte-Sul",
+    "price": 5.5
+  },
+  "0.533": {
+    "route_id": "kt4f",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/Arrozal",
+    "price": 2.7
+  },
+  "0.540": {
+    "route_id": "kttv",
+    "agency_id": "1pq4",
+    "long_name": "Sobradinho I-II/Assentamento Contagem",
+    "price": 5.5
+  },
+  "0.550": {
+    "route_id": "ktvc",
+    "agency_id": "1pq4",
+    "long_name": "Córrego Do Ouro(Ribeirão)/Sobradinho I-II",
+    "price": 5.5
+  },
+  "0.551": {
+    "route_id": "ktp8",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via M2)/W3 Sul(Semiexpresso)/EPTG-SIG",
+    "price": 5.5
+  },
+  "0.553": {
+    "route_id": "kto5",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/W3 Sul(Expansão-P2 Norte-Guariroba)Semiexpressa",
+    "price": 5.5
+  },
+  "0.556": {
+    "route_id": "ktm4",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5/Rodoviaria Do Plano Piloto(P 2 Norte-Via Leste)Semiexpressa",
+    "price": 5.5
+  },
+  "0.557": {
+    "route_id": "ktnm",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P Norte)/W3 Sul Via Leste-Semiexpressa",
+    "price": 5.5
+  },
+  "0.558": {
+    "route_id": "kto7",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Ceilândia Norte-Sul)/EPTG/Eixo Sul/Rodov.do Plano Piloto(Semiexpressa)",
+    "price": 5.5
+  },
+  "0.600": {
+    "route_id": "kt43",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/V. Buritis/V. Vicentina/ST. Tradicional/Eixo N-Sd/Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.601": {
+    "route_id": "kt3c",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina Tradicional/Eixo Norte-Sul(Eas)",
+    "price": 5.5
+  },
+  "0.602": {
+    "route_id": "kt3u",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Vila Buritis/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.603": {
+    "route_id": "kt3o",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga(Planaltina)/Sobradinho I/Lago Norte",
+    "price": 5.5
+  },
+  "0.604": {
+    "route_id": "kt5s",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Buriti III)/SAAN/SIA/Tas",
+    "price": 5.5
+  },
+  "0.605": {
+    "route_id": "kt7i",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/L2 Norte-Sul(Unb)/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.611": {
+    "route_id": "kt6t",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/N.r. Taquara/Ass. Oziel Alves/N. R. Pipiripau/Planaltina",
+    "price": 5.5
+  },
+  "0.612": {
+    "route_id": "ktae",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Planaltina/Núcleo Rural São José",
+    "price": 5.5
+  },
+  "0.615": {
+    "route_id": "ktu4",
+    "agency_id": "1pq4",
+    "long_name": "Rodoviária de Planaltina(RA VI)/IFB/Núcleo Rural Córrego do Meio",
+    "price": 3.8
+  },
+  "0.616": {
+    "route_id": "kt52",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga / Eixo Norte - Sul / Rod. Plano Piloto / Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.617": {
+    "route_id": "kt3j",
+    "agency_id": "1pq3",
+    "long_name": "Vale Do Amanhecer/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.620": {
+    "route_id": "kt8a",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Vila Buritis/Vila Vicentina/Setor Tradicional/Eixo Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.622": {
+    "route_id": "kt7q",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul/Eixo Sul-Norte/Planaltina(Ifb)",
+    "price": 5.5
+  },
+  "0.624": {
+    "route_id": "kt4k",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Eixo Norte/Esplanada(Catedral)",
+    "price": 5.5
+  },
+  "0.627": {
+    "route_id": "kt7f",
+    "agency_id": "1pq3",
+    "long_name": "Mestre D'armas/Eixo N-S/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.631": {
+    "route_id": "kt7n",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Arapoanga/Estâncias/SobradinhoI(Rua 07)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.638": {
+    "route_id": "kt4t",
+    "agency_id": "1pq4",
+    "long_name": "Jardim II(Pad-DF/Cariru/Café Sem Troco/Quebrada De Neris)/Planaltina(DF-130)",
+    "price": 5.5
+  },
+  "0.640": {
+    "route_id": "kt8r",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina / Vila Buritis / Vila Vicentina / Setor Tradicional / W3 Norte - Sul / Terminal da Asa Sul",
+    "price": 5.5
+  },
+  "0.641": {
+    "route_id": "kt8p",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Buritis/Jardim Roriz/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.642": {
+    "route_id": "kt3n",
+    "agency_id": "1pq3",
+    "long_name": "Estâncias/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "0.643": {
+    "route_id": "kt7l",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/ Arapoanga(DF-230)/W3 Norte-Sul/Term. Asa Sul",
+    "price": 5.5
+  },
+  "0.648": {
+    "route_id": "kt80",
+    "agency_id": "1pq3",
+    "long_name": "Vale Do Amanhecer-Estâncias/Sudoeste(SIG)",
+    "price": 5.5
+  },
+  "0.649": {
+    "route_id": "kt6k",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Quintas Do Maranhão/Palmeiras(Monjolo/Jardim Morumbi)",
+    "price": 5.5
+  },
+  "0.670": {
+    "route_id": "ktu1",
+    "agency_id": "1pq4",
+    "long_name": "Planaltina(DF-130)/Paranoá",
+    "price": 5.5
+  },
+  "0.756": {
+    "route_id": "ktfb",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Itapoã/SAAN/SIG/Sudoeste",
+    "price": 5.5
+  },
+  "0.759": {
+    "route_id": "kta8",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Água De Coco)/Rodoviária Do Plano Piloto(W3 Norte)",
+    "price": 5.5
+  },
+  "0.760": {
+    "route_id": "ktao",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/L2 Norte(Unb)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.761": {
+    "route_id": "ktcl",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "0.762": {
+    "route_id": "ktc2",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá(Condomínio Del Lago)/Rodoviária Do Plano Piloto(Eixo Norte)",
+    "price": 5.5
+  },
+  "0.763": {
+    "route_id": "ktd6",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã / L2 Sul ( Lago Sul - Ponte Das Garças)/Rodoviária Do Plano Piloto(L2 Sul)",
+    "price": 5.5
+  },
+  "0.764": {
+    "route_id": "ktca",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Rodoviária Do Plano Piloto(Via Ponte Jk)",
+    "price": 3.8
+  },
+  "0.765": {
+    "route_id": "ktjp",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Lago Sul(Ponte Das Garças)/W3 Sul/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.768": {
+    "route_id": "ktfm",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Itapoã/SAAN/Sudoeste",
+    "price": 5.5
+  },
+  "0.769": {
+    "route_id": "ktcv",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/L2 Norte(Unb)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.771": {
+    "route_id": "ktfr",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Condomínio La Font-DF 250)/Paranoá/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 5.5
+  },
+  "0.773": {
+    "route_id": "ktcb",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Paranoá/Eixo Sul(Via Ponte Jk)",
+    "price": 5.5
+  },
+  "0.780": {
+    "route_id": "ktaj",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Fórum-Rua Do Baixinho)/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "0.781": {
+    "route_id": "ktat",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Rua Do Baixinho-La Font)/Rodoviária Do Plano Piloto(W3 Norte)",
+    "price": 5.5
+  },
+  "0.782": {
+    "route_id": "ktug",
+    "agency_id": "1pq8",
+    "long_name": "Circular Itapoã / Paranoá / Lago Sul (Gilberto Salomão - CNPQ)",
+    "price": 3.8
+  },
+  "0.783": {
+    "route_id": "ktut",
+    "agency_id": "1pq8",
+    "long_name": "Condominio La Font / Itapoã / Paranoá / Lago Norte",
+    "price": 3.8
+  },
+  "0.784": {
+    "route_id": "ktar",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá Parque/Avenida Paranoá",
+    "price": 2.7
+  },
+  "0.805": {
+    "route_id": "ktt3",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Taguacenter(Buritinga-Feira Dos Goianos)",
+    "price": 3.8
+  },
+  "0.806": {
+    "route_id": "kthd",
+    "agency_id": "1pq1",
+    "long_name": "CAUB I (BRT Sul- Estação CAUB I) / Riacho Fundo II (CAUB II) / Metrô (Estação Furnas)",
+    "price": 2.7
+  },
+  "0.807": {
+    "route_id": "kthn",
+    "agency_id": "1pq1",
+    "long_name": "Avenida Recanto Das Emas",
+    "price": 2.7
+  },
+  "0.808": {
+    "route_id": "ktsm",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Setor O",
+    "price": 3.8
+  },
+  "0.809": {
+    "route_id": "kti5",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 5.5
+  },
+  "0.810": {
+    "route_id": "ktfs",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Rodoviária Do Plano Piloto(EPNB-SIG)",
+    "price": 5.5
+  },
+  "0.811": {
+    "route_id": "ktjf",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (QS 18) CAUB II/W3 Sul - Norte (EPNB)",
+    "price": 5.5
+  },
+  "0.812": {
+    "route_id": "ktsj",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Avenida Elmo Serejo(Estádio)/P3 Sul/P2 Norte/Expansão",
+    "price": 3.8
+  },
+  "0.813": {
+    "route_id": "kti9",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/W3 Sul-Norte(EPTG-Espm)",
+    "price": 5.5
+  },
+  "0.814": {
+    "route_id": "kth6",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Samambaia Norte-Sul(Expansão)",
+    "price": 3.8
+  },
+  "0.816": {
+    "route_id": "ktft",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(EPNB-EPIA-Zoológico)/L2 Sul-Norte/Esplanada/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.817": {
+    "route_id": "ktkp",
+    "agency_id": "1pq1",
+    "long_name": "Taguatinga Norte/Samambaia Sul/Recanto Das Emas(Q.800)/Riacho Fundo II(Qs 18)",
+    "price": 5.5
+  },
+  "0.818": {
+    "route_id": "kttn",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/SIA-Cruzeiro-SAAN",
+    "price": 5.5
+  },
+  "0.819": {
+    "route_id": "ktgo",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Quadra 800)/L2 Sul-Norte/Esplanada/Unb/Terminal Asa Norte(EPNB)",
+    "price": 5.5
+  },
+  "0.821": {
+    "route_id": "kti2",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(1 Avenida)/Rodoviária Do Plano Piloto(EPNB)",
+    "price": 5.5
+  },
+  "0.822": {
+    "route_id": "ktgq",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Lago Sul(Aeroporto)",
+    "price": 5.5
+  },
+  "0.823": {
+    "route_id": "ktp7",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Guará(Parkshopping)",
+    "price": 5.5
+  },
+  "0.825": {
+    "route_id": "kthv",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/Rodoviária Do Plano Piloto(EPNB)",
+    "price": 5.5
+  },
+  "0.830": {
+    "route_id": "kthe",
+    "agency_id": "1pq1",
+    "long_name": "Taguanorte/Samambaia Sul(1 Avenida)/Samambaia Norte(2 Avenida)",
+    "price": 5.5
+  },
+  "0.834": {
+    "route_id": "ktj2",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2 Avenida)/Lago Sul(Aeroporto)",
+    "price": 5.5
+  },
+  "0.835": {
+    "route_id": "ktjk",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/Lago Sul(Aeroporto)",
+    "price": 5.5
+  },
+  "0.841": {
+    "route_id": "ktsc",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(1 Avenida)/SIA/Cruzeiro/SAAN(EPTG)",
+    "price": 5.5
+  },
+  "0.842": {
+    "route_id": "1108g",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul (1 Avenida)/ SIA/ CRUZEIRO/ SAAN(EPTG)",
+    "price": null
+  },
+  "0.844": {
+    "route_id": "kttf",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(2 Avenida)/SIA/Cruzeiro/SAAN(EPTG)",
+    "price": 5.5
+  },
+  "0.845": {
+    "route_id": "ktui",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(2 Avenida)/SIA/Cruzeiro/SAAN(EPTG)",
+    "price": 5.5
+  },
+  "0.850": {
+    "route_id": "ktra",
+    "agency_id": "1pq7",
+    "long_name": "Samambaia Sul(2 Avenida)/Guará I E II(Via Pistão Sul)",
+    "price": 5.5
+  },
+  "0.851": {
+    "route_id": "kthm",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(1 Avenida-EPNB-EPIA)/L2 Sul-Norte/Esplanada/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.853": {
+    "route_id": "ktk7",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2ª Avenida-EPNB-EPIA)/L2 Sul-Norte/Esplanada/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.871": {
+    "route_id": "ktgm",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Quadra 800)/Rodoviária Do Plano Piloto(EPTG-SIG)",
+    "price": 5.5
+  },
+  "0.872": {
+    "route_id": "kttu",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas(Q.800)/Riacho Fundo II/Taguacenter(Feira Dos Goianos)",
+    "price": 3.8
+  },
+  "0.873": {
+    "route_id": "ktu6",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas(Q. 800)/Riacho Fundo II/Setor O",
+    "price": 3.8
+  },
+  "0.876": {
+    "route_id": "ktsn",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo II (QS 18) / SIA - Cruzeiro - SAAN",
+    "price": 5.5
+  },
+  "0.878": {
+    "route_id": "ktto",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas(Quadra 600/800)-SIA-SAAN",
+    "price": 5.5
+  },
+  "0.881": {
+    "route_id": "kti3",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (QS 18)- CAUB II/ Rodoviaria do Plano Piloto (SIG-Pistão Sul)",
+    "price": 5.5
+  },
+  "0.882": {
+    "route_id": "ktgb",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (QS 18)/ Rodoviaria do Plano Piloto (EPNB-SIG)",
+    "price": 5.5
+  },
+  "0.883": {
+    "route_id": "ktst",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo II (QS 18) - CAUB II / Setor O",
+    "price": 3.8
+  },
+  "0.884": {
+    "route_id": "ktk5",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (QS 18 - EPNB - Zoológico) / L2 Sul - Norte / Esplanada / UNB / Terminal Asa Norte",
+    "price": 5.5
+  },
+  "0.886": {
+    "route_id": "kttm",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo I/Setor \"o\"(Av. Comercial Norte)",
+    "price": 3.8
+  },
+  "0.898": {
+    "route_id": "ktsl",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo II (QS 18) / Setor P Sul (Pistão Sul - Estadio)",
+    "price": 3.8
+  },
+  "0.900": {
+    "route_id": "ktkt",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Esplanada(Estrutural)",
+    "price": 5.5
+  },
+  "0.902": {
+    "route_id": "ktkr",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Esplanada (QNL - Estrutural)",
+    "price": 5.5
+  },
+  "0.903": {
+    "route_id": "kth2",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Esplanada (QNN - Estrutural)",
+    "price": 5.5
+  },
+  "0.906": {
+    "route_id": "ktqd",
+    "agency_id": "1pq6",
+    "long_name": "Terminal Qnr/Sol Nascente(Setor O-Expansão)/Rodoviária Do Plano Piloto(Via Estrutural)",
+    "price": 5.5
+  },
+  "0.907": {
+    "route_id": "ktqt",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente Trecho II/Rodoviária Do Plano Piloto(Via Estrutural)",
+    "price": 5.5
+  },
+  "0.910": {
+    "route_id": "ktiu",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / EPTG / SIA (Trecho 2/3 - Feira dos Importados) / Cruzeiro / Sudoeste",
+    "price": 5.5
+  },
+  "0.911": {
+    "route_id": "ktoo",
+    "agency_id": "1pq6",
+    "long_name": "Setor O Expansão/SIA-Cruzeiro-Comercial Sudoeste/Rodoviária Do Plano Pil",
+    "price": 5.5
+  },
+  "0.913": {
+    "route_id": "ktor",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(Expansão)/Cruzeiro/Sudoeste(Estrutural)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.914": {
+    "route_id": "ktg0",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / SAAN (QNM-QNN - Estrutural)",
+    "price": 5.5
+  },
+  "0.918": {
+    "route_id": "ktmf",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via O2)/M Norte/SIA Tr. 3/Cruzeiro/Sudoeste",
+    "price": 5.5
+  },
+  "0.920": {
+    "route_id": "ktnt",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via Leste)/EPTG/Eixo Sul/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.921": {
+    "route_id": "ktpl",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(Via Leste)/W3 Sul(EPTG)",
+    "price": 5.5
+  },
+  "0.926": {
+    "route_id": "ktr6",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Condomínio Privê-Via Leste)/Ceilândia Centro(Via M3-Via Estádio)",
+    "price": 2.7
+  },
+  "0.927": {
+    "route_id": "kto8",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via Oeste)/Ceilândia Centro(Via M3-Via Estádio)",
+    "price": 2.7
+  },
+  "0.928": {
+    "route_id": "kto3",
+    "agency_id": "1pq6",
+    "long_name": "Qnr(P1 Norte-Sol Nascente Trecho III)/Ceilândia Centro(Via M3-Via Estádio)",
+    "price": 2.7
+  },
+  "0.929": {
+    "route_id": "ktn0",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão-P2 Norte)/Ceilândia Centro(Via M3-Via Estádio)",
+    "price": 2.7
+  },
+  "0.930": {
+    "route_id": "ktqn",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5/Sol Nascente Trecho III(Via Estádio)/(EPTG-W3 Sul)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.932": {
+    "route_id": "ktn7",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "0.933": {
+    "route_id": "kth8",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Norte/Setor P Sul",
+    "price": 5.5
+  },
+  "0.934": {
+    "route_id": "ktp3",
+    "agency_id": "1pq6",
+    "long_name": "Taguatinga Norte/Setor O(Ceilândia Norte-Sol Nascente Trecho III E II)",
+    "price": 5.5
+  },
+  "0.942": {
+    "route_id": "ktl0",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Terminal Asa Norte (QNL-QNJ - Estrutural - W3 Norte)",
+    "price": 5.5
+  },
+  "0.946": {
+    "route_id": "ktqb",
+    "agency_id": "1pq6",
+    "long_name": "Vicente Pires/Rodoviária Do Plano Piloto(Eixo-Esplanada)",
+    "price": 5.5
+  },
+  "0.949": {
+    "route_id": "ktmm",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via O-2)/M Norte/Taguatinga Centro/Arniqueiras(Ade)/Águas Claras",
+    "price": 2.7
+  },
+  "0.951": {
+    "route_id": "ktjv",
+    "agency_id": "1pq7",
+    "long_name": "Circular Católica/Taguatinga Shopping/Águas Claras(Qd 301)/Taguatinga Centro",
+    "price": 2.7
+  },
+  "0.953": {
+    "route_id": "ktmj",
+    "agency_id": "1pq6",
+    "long_name": "Vicente Pires/W3 Sul-Norte",
+    "price": 5.5
+  },
+  "0.954": {
+    "route_id": "ktke",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Expansão Setor O / BR-070 / EPIA / Lago Norte (Hospital SARAH)",
+    "price": 5.5
+  },
+  "0.956": {
+    "route_id": "ktnv",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P2 Norte-Av. Hélio Prates)/Vicente Pires(Feira Do Produtor)",
+    "price": 3.8
+  },
+  "0.957": {
+    "route_id": "ktrq",
+    "agency_id": "1pq6",
+    "long_name": "Qnr(Setor O-Expansão-Via Leste)/Vicente Pires(EPTG)",
+    "price": 3.8
+  },
+  "0.958": {
+    "route_id": "ktn6",
+    "agency_id": "1pq6",
+    "long_name": "Ceilândia(Qnr 5-Expansão Setor O)/Via Estrutural(Br 095)/EPIA Norte/Lago Norte(Hospital Sarah)",
+    "price": 5.5
+  },
+  "0.959": {
+    "route_id": "ktii",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul(Católica-Vila Dimas)/Taguatinga Norte/Colônia Agrícola Samambaia",
+    "price": 2.7
+  },
+  "0.960": {
+    "route_id": "kttj",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Vicente Pires(Pistão Norte-Sul)",
+    "price": 3.8
+  },
+  "0.962": {
+    "route_id": "ktnr",
+    "agency_id": "1pq6",
+    "long_name": "Vicente Pires/SIG(EPTG-Rodoviária Do Plano Piloto-Esplanada)",
+    "price": 5.5
+  },
+  "0.963": {
+    "route_id": "t8ki",
+    "agency_id": "1pq6",
+    "long_name": "Terminal QNR / QNR 5/BR-070 (IKEDA)",
+    "price": null
+  },
+  "0.965": {
+    "route_id": "ktnb",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural/26 De Setembro/Ceilândia(A. Hélio Prates).",
+    "price": 3.8
+  },
+  "0.966": {
+    "route_id": "ktq0",
+    "agency_id": "1pq6",
+    "long_name": "Colônia Agrícola 26 De Setembro/Rodoviária Plano Piloto",
+    "price": 5.5
+  },
+  "018.1": {
+    "route_id": "qjh7",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã Parque/Terminal Do Paranoá",
+    "price": 2.7
+  },
+  "020.2": {
+    "route_id": "ktbv",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria(Res. Santos Dumond-Av. Santa Maria)/Gama Leste-Oeste-Sul",
+    "price": 2.7
+  },
+  "021.1": {
+    "route_id": "td89",
+    "agency_id": "1pq2",
+    "long_name": "Terminal de São Sebastião / Morro da Cruz",
+    "price": null
+  },
+  "022.1": {
+    "route_id": "ktbm",
+    "agency_id": "1pq3",
+    "long_name": "Circular Garagem Piracicabana/Palácio Do Buriti-Noroeste",
+    "price": 3.8
+  },
+  "023.1": {
+    "route_id": "prva",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul-Tas/Zoológico",
+    "price": 2.7
+  },
+  "025.1": {
+    "route_id": "kta9",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Pp/Sud-Octog/F. Dos Importados/SIA(Tr. 2 E 17)/St. Cargas/Inflamável",
+    "price": 3.8
+  },
+  "031.1": {
+    "route_id": "kt56",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/Eixo Norte/Varjão/Eixo Norte-Sul",
+    "price": 3.8
+  },
+  "031.2": {
+    "route_id": "kt55",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/W3 Sul - Av. Das Nações(P Lago Sul)",
+    "price": 3.8
+  },
+  "031.3": {
+    "route_id": "s0t4",
+    "agency_id": "1pq3",
+    "long_name": "Vila Planalto/Esplanada/W3 Sul/Terminal Asa Sul",
+    "price": 3.8
+  },
+  "031.4": {
+    "route_id": "v33t",
+    "agency_id": "1pq3",
+    "long_name": "Term. Asa Sul/ W3 Sul/ SAUS/ Esplanada",
+    "price": null
+  },
+  "035.1": {
+    "route_id": "kt9d",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/Guará I-II/Núcleo Bandeirante/Riacho",
+    "price": 3.8
+  },
+  "038.1": {
+    "route_id": "ktts",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo I/Taguatinga Sul-Norte(Areal-QNL-Samdu)",
+    "price": 3.8
+  },
+  "056.2": {
+    "route_id": "ktqm",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(1ª Avenida)/Setor P Sul(P2-P3-P4)",
+    "price": 3.8
+  },
+  "056.4": {
+    "route_id": "ktv6",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte (2 Avenida) / P Sul (Hélio Prates - P4-P3-P2)",
+    "price": 3.8
+  },
+  "062.1": {
+    "route_id": "un43",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/ Sobradinho I",
+    "price": null
+  },
+  "062.3": {
+    "route_id": "kten",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho/(Condomínio Rk/DF-001)/Posto Colorado",
+    "price": 2.7
+  },
+  "062.4": {
+    "route_id": "ktei",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/Gr. Colorado(DF-425)/P. Colorado",
+    "price": 2.7
+  },
+  "062.5": {
+    "route_id": "kt7c",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/Gr. Colorado/P. Colorado/Br-020/Cond.RK",
+    "price": 2.7
+  },
+  "062.6": {
+    "route_id": "kt6m",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I-II ( Rua 04-Morro do Sansão) / Buritizinho / Contagem",
+    "price": 2.7
+  },
+  "062.7": {
+    "route_id": "kt6n",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I-II(Rua 05-06)/Dnocs/Vila Rabelo",
+    "price": 2.7
+  },
+  "062.8": {
+    "route_id": "kt5c",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I - II/(Rua - 04 - APAE - Buritizinho ) /Morro do Sansão /Contagem",
+    "price": 2.7
+  },
+  "062.9": {
+    "route_id": "kt71",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I - II / Vila Rabelo / Vale das Acácias",
+    "price": 2.7
+  },
+  "063.1": {
+    "route_id": "kt7p",
+    "agency_id": "1pq3",
+    "long_name": "N. Colina/Sobr. I E II(Uberaba/Contagem/Versalles/Dignéia)",
+    "price": 2.7
+  },
+  "063.2": {
+    "route_id": "ktai",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I E II/Residencial Versalles(DF-150)",
+    "price": 2.7
+  },
+  "063.3": {
+    "route_id": "ktbd",
+    "agency_id": "1pq3",
+    "long_name": "Cond. Uberaba/Nova Colina/Sobradinho I",
+    "price": 2.7
+  },
+  "063.4": {
+    "route_id": "kte4",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Condomínio Uberaba/Pôr Do Sol/Nova Dignéia/Sobradinho I-II(Rua 4-6)/Morro Do Sansão",
+    "price": 2.7
+  },
+  "064.1": {
+    "route_id": "kt72",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Vila Buritis)/Arapoanga",
+    "price": 2.7
+  },
+  "066.1": {
+    "route_id": "kt92",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Planaltina/Cond. Estância/Cond. Total Ville",
+    "price": 2.7
+  },
+  "066.2": {
+    "route_id": "kt7a",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Estâncias I-V)/Mestre D Armas(Estância-DF-128)",
+    "price": 2.7
+  },
+  "066.3": {
+    "route_id": "kt5e",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Estâncias-DF-128/Mestre D Armas/Estâncias V-I)",
+    "price": 2.7
+  },
+  "066.4": {
+    "route_id": "kt94",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/DF-230/DF-128/Mestre D'armas I",
+    "price": 2.7
+  },
+  "066.5": {
+    "route_id": "kt3r",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Terminal De Planaltina/Buritis(Setor Leste Qd.5)/Arapoanga",
+    "price": 2.7
+  },
+  "066.6": {
+    "route_id": "kt3p",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Terminal De Planaltina/Arapoaga/Buritis(Setor Leste-Qd.5)",
+    "price": 2.7
+  },
+  "066.7": {
+    "route_id": "v33u",
+    "agency_id": "1pq3",
+    "long_name": "Term. Planaltina/ Vila N.S Fátima/ Arapoanga",
+    "price": null
+  },
+  "066.8": {
+    "route_id": "10n9u",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Planaltina / Buritis I",
+    "price": null
+  },
+  "067.1": {
+    "route_id": "kt9h",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Vale Do Amanhecer(Aprodarmas)",
+    "price": 2.7
+  },
+  "067.3": {
+    "route_id": "kt70",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Vale Do Amanhecer(Vila Pacheco)",
+    "price": 2.7
+  },
+  "073.1": {
+    "route_id": "ktfk",
+    "agency_id": "1pq2",
+    "long_name": "T.A.S/Candangolândia/Lago Sul-Qi 15(Aeroporto-VI Comar)",
+    "price": 3.8
+  },
+  "073.2": {
+    "route_id": "kte0",
+    "agency_id": "1pq2",
+    "long_name": "Circular-Estação Park Way/Aeroporto/Qi 15",
+    "price": 3.8
+  },
+  "073.6": {
+    "route_id": "spt7",
+    "agency_id": "1pq2",
+    "long_name": "Park Way(Qds. 14 A 25)/Vargem Bonita",
+    "price": 2.7
+  },
+  "084.1": {
+    "route_id": "ktt4",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo I/Núcleo Bandeirante/Cruzeiro/SMU/Agua Mineral",
+    "price": 3.8
+  },
+  "086.1": {
+    "route_id": "kttp",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo I/Núcleo Bandeirante/Guará(Feira Dos Importados)",
+    "price": 3.8
+  },
+  "087.5": {
+    "route_id": "ktge",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II / Riacho Fundo I",
+    "price": 3.8
+  },
+  "090.1": {
+    "route_id": "ktrv",
+    "agency_id": "1pq7",
+    "long_name": "Qe 44/SIA Trecho 2/Cruzeiro/Feira Dos Importados",
+    "price": 3.8
+  },
+  "099.1": {
+    "route_id": "ktv2",
+    "agency_id": "1pq5",
+    "long_name": "Cruzeiro/Taguatinga Centro-Comercial Sul/Areal/Águas Claras",
+    "price": 3.8
+  },
+  "100.0": {
+    "route_id": "qjh8",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã Parque/Paranoá/Lago Sul(Ponte Das Garças)/W3 Sul(Rpp)",
+    "price": 5.5
+  },
+  "100.2": {
+    "route_id": "ktdj",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá(Paranoá Parque)/Rodoviária Do Plano Piloto(L2 Sul)",
+    "price": 5.5
+  },
+  "100.3": {
+    "route_id": "kt9m",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Lago Sul(Ponte Das Garças)/Rodoviária Do Plano Piloto(W3 Sul)",
+    "price": 5.5
+  },
+  "100.4": {
+    "route_id": "ktdg",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Paranoá/Cidade Do Automóvel(Zoológico-Park Shopping-SIA)",
+    "price": 5.5
+  },
+  "100.6": {
+    "route_id": "ktak",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Paranoá/SIA/SIG/Sudoeste(Ponte Jk-Vila Planalto)",
+    "price": 5.5
+  },
+  "100.7": {
+    "route_id": "t8kg",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá Parque / W3 Sul( Ponte JK)",
+    "price": null
+  },
+  "100.8": {
+    "route_id": "ktf8",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Itapoã/W3 Sul(Ponte Jk)",
+    "price": 5.5
+  },
+  "100.9": {
+    "route_id": "ktal",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(DF-001)/W3 Sul(Via Ponte Jk)",
+    "price": 5.5
+  },
+  "101.1": {
+    "route_id": "ktfl",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá(Paranoá Parque)/W3 Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "101.2": {
+    "route_id": "t8kh",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá / W3 Norte / Rodoviária do Plano Piloto",
+    "price": null
+  },
+  "101.8": {
+    "route_id": "ktf6",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Baixinho-La Font-DF 250)/Paranoá/Rodoviária Do Plano Piloto(Eixo Norte)",
+    "price": 5.5
+  },
+  "102.1": {
+    "route_id": "ktdv",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto/W3 Sul/Lago Sul(Ponte Das Garças)/Aeroporto(H",
+    "price": 3.8
+  },
+  "102.6": {
+    "route_id": "kt85",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Terminal Da Asa Sul-Aeroporto",
+    "price": 2.7
+  },
+  "103.2": {
+    "route_id": "kt95",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3 Sul-Avenida Das Nações(Academia De T",
+    "price": 3.8
+  },
+  "103.4": {
+    "route_id": "kta0",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Na Praia",
+    "price": 3.8
+  },
+  "104.1": {
+    "route_id": "kt6i",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Plano Piloto/Vila Planalto",
+    "price": 2.7
+  },
+  "104.2": {
+    "route_id": "kt5u",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/P. Do Jaburu/P. Da Alvorada/Av. Das Nações",
+    "price": 2.7
+  },
+  "105.2": {
+    "route_id": "kt6g",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul/Vila Telebrasília/L2 Sul-Norte/W3 Norte-Sul",
+    "price": 3.8
+  },
+  "106.2": {
+    "route_id": "kt67",
+    "agency_id": "1pq3",
+    "long_name": "Estação Asa Sul/W3 Sul-Norte/L2 Norte-Sul",
+    "price": 3.8
+  },
+  "107.1": {
+    "route_id": "kt5o",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3-L2 Sul",
+    "price": 3.8
+  },
+  "108.3": {
+    "route_id": "kt8t",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Stj-Tst(Pier 21)/Cjf",
+    "price": 2.7
+  },
+  "108.5": {
+    "route_id": "kt8v",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/Qgex/Smu/Shop. Popular/Rodoferroviária",
+    "price": 2.7
+  },
+  "108.6": {
+    "route_id": "kt97",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Shopping Popular(Rodoferroviária)",
+    "price": 2.7
+  },
+  "108.7": {
+    "route_id": "kt5p",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto(W3 Sul-Term. Asa Sul)/Tjdft/Col. Militar Tiradentes",
+    "price": 3.8
+  },
+  "109.2": {
+    "route_id": "kteh",
+    "agency_id": "1pq3",
+    "long_name": "Circular - Rodoviária do Plano Piloto / Parque da Cidade(Pavilhão de Feiras)",
+    "price": null
+  },
+  "109.3": {
+    "route_id": "ktf3",
+    "agency_id": "1pq3",
+    "long_name": "Rod. P. Piloto/Esplanada/Setor De Autarquias Sul/Pátio Brasil",
+    "price": 2.7
+  },
+  "109.4": {
+    "route_id": "ktbb",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Esplanada",
+    "price": 2.7
+  },
+  "110.2": {
+    "route_id": "kt6d",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Unb(Caesb)",
+    "price": 3.8
+  },
+  "111.1": {
+    "route_id": "ktfi",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto/Unidade De Internação De São Sebastião(Uiss)",
+    "price": 3.8
+  },
+  "114.1": {
+    "route_id": "kt3i",
+    "agency_id": "1pq3",
+    "long_name": "Rod. P. Piloto / L2 Sul(V. Telebrasília)/W3 Sul",
+    "price": 3.8
+  },
+  "115.1": {
+    "route_id": "kt93",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/L2-W3 Norte",
+    "price": 3.8
+  },
+  "115.2": {
+    "route_id": "kt8f",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Rodoviária Do Plano Piloto(Esplanada)/L2-W3 Norte",
+    "price": 3.8
+  },
+  "116.1": {
+    "route_id": "kt4a",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3-L2 Norte(Esplanada)",
+    "price": 3.8
+  },
+  "116.2": {
+    "route_id": "kt7g",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Eixo Monumental/Setor Noroeste",
+    "price": 3.8
+  },
+  "116.3": {
+    "route_id": "ktau",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Esplanada/W3 Norte/L2 Norte",
+    "price": 3.8
+  },
+  "116.4": {
+    "route_id": "ktef",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Eixo Monumental/Setor Noroeste",
+    "price": 3.8
+  },
+  "116.5": {
+    "route_id": "nlt3",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Do Plano Piloto/Tjdft/Complexo Cláudio Coutinho(Escola De Esporte-Defer/Sel)",
+    "price": 3.8
+  },
+  "119.0": {
+    "route_id": "ktt7",
+    "agency_id": "1pq5",
+    "long_name": "Núcleo Bandeirante/Vargem Bonita",
+    "price": 3.8
+  },
+  "124.6": {
+    "route_id": "kt9r",
+    "agency_id": "1pq2",
+    "long_name": "Park Way/Candangolândia(Feira Dos Importados-Hfa)",
+    "price": 2.7
+  },
+  "128.1": {
+    "route_id": "kt9b",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Plano Piloto/W3 Norte(Noroeste)/Granja Do Torto",
+    "price": 3.8
+  },
+  "128.2": {
+    "route_id": "ktf4",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/W3 Norte/Granja Do Torto/Boa Esperança 2",
+    "price": 3.8
+  },
+  "128.4": {
+    "route_id": "kt51",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul/W3 Sul/L2 Norte/Granja Do Torto",
+    "price": 3.8
+  },
+  "129.1": {
+    "route_id": "ktu7",
+    "agency_id": "1pq5",
+    "long_name": "Núcleo Bandeirante(Aeroporto)/Paranoá/Itapoã/DF 250",
+    "price": 5.5
+  },
+  "131.3": {
+    "route_id": "kt75",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Cruzeiro Novo-Velho/Sudoeste",
+    "price": 3.8
+  },
+  "132.3": {
+    "route_id": "ktu9",
+    "agency_id": "1pq4",
+    "long_name": "Park Way(Laranjeiras)/Lago Sul(Ponte Das Garças)/São Sebastião/Rodoviária Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "136.1": {
+    "route_id": "ktas",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3 Norte/Undf",
+    "price": 3.8
+  },
+  "136.2": {
+    "route_id": "kt58",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul/W3 Sul-Norte/Lago Norte(Hospital Sarah)",
+    "price": 3.8
+  },
+  "136.3": {
+    "route_id": "kt8u",
+    "agency_id": "1pq3",
+    "long_name": "Expresso Lago Norte",
+    "price": 3.8
+  },
+  "136.4": {
+    "route_id": "ktek",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Asa Sul/L2 Sul E Norte(Unb)/Terminal Do Varjão",
+    "price": 3.8
+  },
+  "136.5": {
+    "route_id": "kt6b",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Rodoviária Do Plano Piloto/L2 Norte/Clube Do Congresso(Hospital Sarah)/W",
+    "price": 3.8
+  },
+  "136.6": {
+    "route_id": "kt6q",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Do Varjão/Centro De Atividades Do Lago Norte/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 3.8
+  },
+  "136.7": {
+    "route_id": "kt8e",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Do Varjão/L2 Norte-Sul/Terminal Asa Sul",
+    "price": 3.8
+  },
+  "136.8": {
+    "route_id": "kt3d",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Terminal Do Varjão/Lago Norte",
+    "price": 3.8
+  },
+  "136.9": {
+    "route_id": "kt77",
+    "agency_id": "1pq3",
+    "long_name": "Terminal Do Varjão/Centro De Atividades Do Lago Norte/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 3.8
+  },
+  "140.1": {
+    "route_id": "kt74",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Vila Planalto/Setor De Embaixadas/L2-W3 Norte",
+    "price": 3.8
+  },
+  "141.1": {
+    "route_id": "ktup",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã (La Font - Del Lago) / Paranoá / Itapoã Parque / Condomínio RK",
+    "price": 3.8
+  },
+  "141.2": {
+    "route_id": "ktun",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã(La Font-Del Lago)/Itapoã Parque/Paranoá Parque/Paranoá",
+    "price": 2.7
+  },
+  "141.4": {
+    "route_id": "vm64",
+    "agency_id": "1pq8",
+    "long_name": "Condominio La Font/ Itapoã (Fórum - Condomínio Del Lago II - Rua do Baixinho)/ Paranoá",
+    "price": null
+  },
+  "141.5": {
+    "route_id": "ktvk",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã(La Font - Del Lago) / Itapoã Parque / Paranoá Parque / Paranoá / Varjão / Prainha",
+    "price": 3.8
+  },
+  "141.6": {
+    "route_id": "kttr",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã(La Font)/Paranoá",
+    "price": 2.7
+  },
+  "141.7": {
+    "route_id": "ktth",
+    "agency_id": "1pq8",
+    "long_name": "Condominio La Font/Itapoã/Paranoá/Varjão/Lago Norte(Iguatemi)",
+    "price": 3.8
+  },
+  "141.8": {
+    "route_id": "kttq",
+    "agency_id": "1pq8",
+    "long_name": "Condomínio La Font / Itapoã (Fórum - Condomínio Del Lago II - Rua do Baixinho) / Paranoá (Paranoá Parque)",
+    "price": 2.7
+  },
+  "141.9": {
+    "route_id": "ktt5",
+    "agency_id": "1pq8",
+    "long_name": "Condomínio La Font (DF 250) / Paranoá (Paranoá Parque)",
+    "price": 2.7
+  },
+  "143.1": {
+    "route_id": "kt5l",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/RCG(Colégio Militar)",
+    "price": 3.8
+  },
+  "143.2": {
+    "route_id": "kt5n",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto / Hosp. Da Criança / SMU",
+    "price": 3.8
+  },
+  "143.3": {
+    "route_id": "sdjc",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto/SAAN/RCG",
+    "price": 3.8
+  },
+  "147.0": {
+    "route_id": "ktip",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/W3 Sul(Ponte Jk)",
+    "price": 5.5
+  },
+  "147.1": {
+    "route_id": "ktj4",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/W3 Norte(Ponte Jk)",
+    "price": 5.5
+  },
+  "147.2": {
+    "route_id": "ktep",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res. Bosque)/W3 Sul(Ponte Jk)",
+    "price": 5.5
+  },
+  "147.3": {
+    "route_id": "ktes",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Rod. Plano Piloto(Ponte Costa Silva)",
+    "price": 5.5
+  },
+  "147.4": {
+    "route_id": "kte8",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/L2 Norte",
+    "price": 5.5
+  },
+  "147.5": {
+    "route_id": "ktcu",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res.bosque)/W3 Norte(Ponte Jk)",
+    "price": 5.5
+  },
+  "147.6": {
+    "route_id": "ktbr",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residêncial Do Bosque)/Lago Sul(Qi 15-Ponte Honestino Guimarães)/Rodoviária Do Plano Piloto(L2 Sul)",
+    "price": 5.5
+  },
+  "147.7": {
+    "route_id": "ktd7",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(João Candido-Itaipú-Vila Do Boa)/Rod. Do Plano Piloto(Ponte Honestino Guimarães)",
+    "price": 5.5
+  },
+  "147.9": {
+    "route_id": "ktcm",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/L2 Norte(Esplanada-Unb)",
+    "price": 5.5
+  },
+  "151.2": {
+    "route_id": "kt59",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro/Octogonal/Setor Policial/W3 Sul-Norte/Setor Noroeste",
+    "price": 3.8
+  },
+  "152.1": {
+    "route_id": "kt82",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto / Sud. / Oct. / Cruz. / SIG",
+    "price": 3.8
+  },
+  "152.2": {
+    "route_id": "kt44",
+    "agency_id": "1pq3",
+    "long_name": "Rod. P. Piloto / SIG / Sud./ Oct./ Cruz./ Esplanada",
+    "price": 3.8
+  },
+  "152.3": {
+    "route_id": "kt73",
+    "agency_id": "1pq3",
+    "long_name": "Cruzeiro/Memorial Jk/Esplanada/Rodoviária Plano Piloto",
+    "price": 3.8
+  },
+  "152.5": {
+    "route_id": "kt96",
+    "agency_id": "1pq3",
+    "long_name": "Rod. Plano Piloto / SIG / Sud. / Oct. / Cruzeiro",
+    "price": 3.8
+  },
+  "153.2": {
+    "route_id": "kt89",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Plano Piloto/Eixo Sul/Guará I-II",
+    "price": 3.8
+  },
+  "154.2": {
+    "route_id": "ktr3",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II/Rodoviária Do Plano Piloto(Qe 34-Zoo-Eixo Sul)",
+    "price": 3.8
+  },
+  "154.3": {
+    "route_id": "ktr9",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II(Qe 32-58)/Zoológico/Esplanada Dos Ministérios(Eixo)",
+    "price": 3.8
+  },
+  "154.7": {
+    "route_id": "ktq7",
+    "agency_id": "1pq6",
+    "long_name": "Estrutural/Areal/Águas Claras/Cidade Do Automóvel",
+    "price": 3.8
+  },
+  "156.1": {
+    "route_id": "ktjl",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II/Setor Policial/W3 Sul-Norte",
+    "price": 3.8
+  },
+  "156.5": {
+    "route_id": "kt61",
+    "agency_id": "1pq3",
+    "long_name": "W3 Norte/Guará I-II(Avenida Central-Avenida Contorno Guará II)",
+    "price": 3.8
+  },
+  "156.6": {
+    "route_id": "kt6j",
+    "agency_id": "1pq3",
+    "long_name": "W3 Norte-SIG/Guará I-II(Av. Contorno-Av. Central Guará II)",
+    "price": 3.8
+  },
+  "156.7": {
+    "route_id": "ktlo",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II(Av Central-Av Contorno)/W3 Norte(Via SIG)",
+    "price": 3.8
+  },
+  "156.8": {
+    "route_id": "ktri",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II(Av Contorno-Av Central)/W3 Norte",
+    "price": 3.8
+  },
+  "156.9": {
+    "route_id": "ktqj",
+    "agency_id": "1pq7",
+    "long_name": "Terminal Guara II (Av. Contorno) / Sudoeste (Sara Nossa Terra) / Rodoviária Plano Piloto",
+    "price": 3.8
+  },
+  "157.1": {
+    "route_id": "ktrl",
+    "agency_id": "1pq7",
+    "long_name": "Guará II/Lúcio Costa/SIA/Feira Dos Importados/Cruzeiro",
+    "price": 2.7
+  },
+  "157.5": {
+    "route_id": "ktq6",
+    "agency_id": "1pq5",
+    "long_name": "Guará II/Iapi/Guará Parque/Feira Do Guará/Cidade Estrutural",
+    "price": 2.7
+  },
+  "157.6": {
+    "route_id": "ktpn",
+    "agency_id": "1pq7",
+    "long_name": "Guará I-II(Av. Contorno - Park Shopping/Lúcio Costa/Candagolâdia",
+    "price": 2.7
+  },
+  "157.8": {
+    "route_id": "kttd",
+    "agency_id": "1pq5",
+    "long_name": "Guará II-I(Via Central)/Cidade Estrutural(Via Jóquei)",
+    "price": 2.7
+  },
+  "157.9": {
+    "route_id": "ktss",
+    "agency_id": "1pq5",
+    "long_name": "Guará II-I(Via Central)/Cidade Estrutural(Via Jóquei)",
+    "price": 2.7
+  },
+  "158.1": {
+    "route_id": "kt8d",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/W3 Sul/Cidade Estrutural",
+    "price": 3.8
+  },
+  "158.2": {
+    "route_id": "ktm9",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural/W3 Norte(Eixo Monumental)",
+    "price": 3.8
+  },
+  "158.4": {
+    "route_id": "ktoc",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural/L2 Sul(Esplanada)",
+    "price": 3.8
+  },
+  "158.5": {
+    "route_id": "ktqe",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural/Rodoviária Do Plano Piloto(Eixo Monumental)",
+    "price": 3.8
+  },
+  "158.6": {
+    "route_id": "ktq2",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural(SIA T2/Feira Dos Importados)Rod. Plano Piloto",
+    "price": 3.8
+  },
+  "158.8": {
+    "route_id": "ktov",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural/Park Shopping(EPIA)",
+    "price": 3.8
+  },
+  "160.1": {
+    "route_id": "ktjr",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante-Metropolitana/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 3.8
+  },
+  "160.2": {
+    "route_id": "ktgj",
+    "agency_id": "1pq1",
+    "long_name": "Núcleo Bandeirante(Zoológico)/L2 Sul-Norte/Esplanada/Unb/Terminal Asa",
+    "price": 3.8
+  },
+  "160.3": {
+    "route_id": "kta4",
+    "agency_id": "1pq2",
+    "long_name": "Candangolândia(Zoológico-Eixo)/Rodoviária Do Plano Piloto",
+    "price": 3.8
+  },
+  "162.1": {
+    "route_id": "kt65",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/Guará II(W3 Sul-Park Qe 44)",
+    "price": 3.8
+  },
+  "162.2": {
+    "route_id": "kti4",
+    "agency_id": "1pq7",
+    "long_name": "Guará I E II/Setor Policial Sul/W3 Sul/Esplanada",
+    "price": 3.8
+  },
+  "163.1": {
+    "route_id": "ktce",
+    "agency_id": "1pq2",
+    "long_name": "Candangolândia/W3 Sul E Norte",
+    "price": 3.8
+  },
+  "167.1": {
+    "route_id": "ktlb",
+    "agency_id": "1pq7",
+    "long_name": "Guará II-I(Via Central)/Setor Policial/Terminal Asa Norte(L2 Sul-Norte-Esplanada)",
+    "price": 3.8
+  },
+  "170.1": {
+    "route_id": "kt9o",
+    "agency_id": "1pq2",
+    "long_name": "Barreiros(DF-140)/Lago Sul(Ponte Das Garças)/T. Asa Norte(W3 Sul-Nort",
+    "price": 5.5
+  },
+  "170.2": {
+    "route_id": "ktll",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto(Ponte Jk)/Barreiros",
+    "price": 5.5
+  },
+  "170.3": {
+    "route_id": "10na0",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião / Barreiros",
+    "price": null
+  },
+  "170.4": {
+    "route_id": "ktd3",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião (IFB)/Barreiros",
+    "price": 2.7
+  },
+  "170.5": {
+    "route_id": "ktcd",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião / Jardins Mangueiral / Jardim Botânico (Big Box) / Setor Habitacional Tororó",
+    "price": 2.7
+  },
+  "170.6": {
+    "route_id": "ktlu",
+    "agency_id": "1pq2",
+    "long_name": "Circular-São Sebastião/Barreiros(Jardins Mangueiral)",
+    "price": 2.7
+  },
+  "172.7": {
+    "route_id": "ktgg",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo/W3 Sul/Rod. Plano Piloto(Kanegae)",
+    "price": 3.8
+  },
+  "173.1": {
+    "route_id": "kti6",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo I/Núcleo Bandeirante(Via Alto Kanegae)",
+    "price": 3.8
+  },
+  "178.2": {
+    "route_id": "ktid",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (CAUB II - ISM)",
+    "price": 2.7
+  },
+  "180.0": {
+    "route_id": "ktg1",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Rod. P. Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "180.1": {
+    "route_id": "ktfn",
+    "agency_id": "1pq2",
+    "long_name": "São Seb.(Res. Bosque/Vila Nova/São José Qd.100/200)/Rod. P. P.(Ponte Jk)",
+    "price": 3.8
+  },
+  "180.2": {
+    "route_id": "kt9p",
+    "agency_id": "1pq2",
+    "long_name": "Jardins Mangueiral/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "180.3": {
+    "route_id": "ktbq",
+    "agency_id": "1pq2",
+    "long_name": "Avenida Do Sol/Vila Do Boa/Rodoviária Do Plano Piloto",
+    "price": 3.8
+  },
+  "180.4": {
+    "route_id": "112co",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião / Recanto da Conquista 1",
+    "price": null
+  },
+  "180.5": {
+    "route_id": "kteo",
+    "agency_id": "1pq2",
+    "long_name": "Jardins Mangueiral/W3 Sul(Ponte Jk/Esplanada)",
+    "price": 5.5
+  },
+  "180.6": {
+    "route_id": "kteq",
+    "agency_id": "1pq2",
+    "long_name": "Jardins Mangueiral/W3 Norte(Ponte Jk/Esplanada)",
+    "price": 5.5
+  },
+  "180.7": {
+    "route_id": "ktdq",
+    "agency_id": "1pq2",
+    "long_name": "Altiplano Leste(DF-001)/Rodoviária Do Plano Piloto",
+    "price": 3.8
+  },
+  "181.0": {
+    "route_id": "kthg",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Morro Da Cruz-Avenida São Sebastião)/Paranoá/Itapoã",
+    "price": 3.8
+  },
+  "181.1": {
+    "route_id": "ktc6",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res.bosque)/Paranoá/Itapoã/Epct-DF 001",
+    "price": 3.8
+  },
+  "181.2": {
+    "route_id": "ktba",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res. Bosque)/Lago Sul(Qi-07-Gilberto Salomão)",
+    "price": 3.8
+  },
+  "181.4": {
+    "route_id": "ktel",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res. Bosque-S.francisco-Sj Q. 100/200)/Aeroporto(Epdb)",
+    "price": 3.8
+  },
+  "181.5": {
+    "route_id": "ktbp",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Lago Sul(Condomínios Da DF 001-Epdb)",
+    "price": 3.8
+  },
+  "181.6": {
+    "route_id": "ktab",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Res. Bosque)/Lago Sul(Epdb-Gilb. Salomão-Hosp. Brasília)",
+    "price": 3.8
+  },
+  "182.2": {
+    "route_id": "ktd5",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque)/SAAN(Ponte Jk)",
+    "price": 5.5
+  },
+  "183.0": {
+    "route_id": "ktf9",
+    "agency_id": "1pq2",
+    "long_name": "Terminal São Sebastião/Crixas",
+    "price": 2.7
+  },
+  "183.2": {
+    "route_id": "ktf0",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Vila Do Boa)/Condomínios(Esaf-Big Box)",
+    "price": 2.7
+  },
+  "183.6": {
+    "route_id": "ktcp",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Bosque)/Morro Da Cruz/São Francisco/Mangueiral(Esaf/Big Box)",
+    "price": 2.7
+  },
+  "183.7": {
+    "route_id": "ktdi",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Capão Comprido - Itaipu - Avenida do Sol)/ SMDB",
+    "price": 2.7
+  },
+  "183.8": {
+    "route_id": "ktdh",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Vila Nova/São Francisco/Morro Da Cruz/Parque Dos Ipês(Crixá)/Complexo Educacional Zumbi Dos Palmares/DF-473/Br 251)",
+    "price": 2.7
+  },
+  "190.1": {
+    "route_id": "td87",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião / Café sem Troco / N.R. Capão Seco / N.R. Lamarão",
+    "price": null
+  },
+  "190.2": {
+    "route_id": "ktdd",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Café Sem Troco/São Sebastião",
+    "price": 5.5
+  },
+  "190.3": {
+    "route_id": "kt6e",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Café Sem Troco",
+    "price": 5.5
+  },
+  "190.4": {
+    "route_id": "ktdm",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião/Assentamento 1º De Julho/Aguilhada",
+    "price": 5.5
+  },
+  "194.1": {
+    "route_id": "ktdk",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residêncial Do Bosque/Vila Nova/São José-Qd 100/200)/W",
+    "price": 5.5
+  },
+  "194.2": {
+    "route_id": "ktbl",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Oeste-Pró DF)/W3 Sul(Ponte Jk)",
+    "price": 5.5
+  },
+  "196.2": {
+    "route_id": "ktb1",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Bosque Quadra 100-200)/Lago Norte(Ponte Jk/Vila",
+    "price": 5.5
+  },
+  "197.1": {
+    "route_id": "ktfo",
+    "agency_id": "1pq2",
+    "long_name": "(Residencial Do Bosque-Vila São José-Qd 100/200)/Lago Sul(Ponte Costa E S",
+    "price": 5.5
+  },
+  "197.3": {
+    "route_id": "ktfh",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Bairro São Francisco Qd. 09-Qi 23)/Rodoviária Do Plano Piloto",
+    "price": 3.8
+  },
+  "197.5": {
+    "route_id": "ktbh",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Oeste-Pró DF)/Rodoviária Do Plano Piloto(Ponte Jk",
+    "price": 3.8
+  },
+  "197.6": {
+    "route_id": "ktdu",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Morro Da Cruz-Qi 23)/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "197.7": {
+    "route_id": "ktlk",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Parque Dos Ipês(Crixá)-Qi 23)/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "199.1": {
+    "route_id": "kt9n",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião(Residencial Do Bosque-Q. 100/200)/Cruzeiro(Sudoeste/Octogonal)",
+    "price": 5.5
+  },
+  "205.1": {
+    "route_id": "ktec",
+    "agency_id": "1pq2",
+    "long_name": "Gama Oeste/Setor M Norte(Samdu/Comercial)",
+    "price": 5.5
+  },
+  "206.0": {
+    "route_id": "ungn",
+    "agency_id": "1pq2",
+    "long_name": "Núcleo Rural Casa Grande / Gama",
+    "price": null
+  },
+  "206.1": {
+    "route_id": "ktvd",
+    "agency_id": "1pq5",
+    "long_name": "Gama/Taguatinga(DF 60)",
+    "price": 5.5
+  },
+  "206.2": {
+    "route_id": "ktud",
+    "agency_id": "1pq5",
+    "long_name": "Gama / Tamanduá / Estação Samambaia",
+    "price": 3.8
+  },
+  "206.3": {
+    "route_id": "ktuu",
+    "agency_id": "1pq4",
+    "long_name": "Serra Dourada/Gama(Setor Sul)",
+    "price": 3.8
+  },
+  "206.5": {
+    "route_id": "ktua",
+    "agency_id": "1pq4",
+    "long_name": "Serra Dourada(Jardim Maracanã)/Gama(Setor Sul)",
+    "price": 3.8
+  },
+  "206.8": {
+    "route_id": "ktk1",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente/Taguatinga Centro(Br-060-Pistão Sul)",
+    "price": 3.8
+  },
+  "206.9": {
+    "route_id": "kttt",
+    "agency_id": "1pq4",
+    "long_name": "Núcleo Rural Casa Grande/Gama",
+    "price": 3.8
+  },
+  "207.2": {
+    "route_id": "ktck",
+    "agency_id": "1pq2",
+    "long_name": "Gama/Engenho Das Lages",
+    "price": 5.5
+  },
+  "207.3": {
+    "route_id": "ktrt",
+    "agency_id": "1pq7",
+    "long_name": "Engenho Das Lages/Taguatinga Norte",
+    "price": 5.5
+  },
+  "2101": {
+    "route_id": "ta43",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá / Rodoviária do Plano Piloto (Expressa)",
+    "price": 3.8
+  },
+  "2201": {
+    "route_id": "ktdc",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Do Gama/Rodoviária Do Plano Piloto(Expressa)",
+    "price": 5.5
+  },
+  "2202": {
+    "route_id": "ktav",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Do Gama/Rod. Do Plano Piloto(Paradora, Eixo Leste/Oeste)",
+    "price": 5.5
+  },
+  "2203": {
+    "route_id": "ktc9",
+    "agency_id": "1pq2",
+    "long_name": "L2 Sul E Norte(Unb)",
+    "price": 5.5
+  },
+  "2205": {
+    "route_id": "ktcj",
+    "agency_id": "1pq2",
+    "long_name": "Term De Integração Do Gama/W3 Sul",
+    "price": 5.5
+  },
+  "2206": {
+    "route_id": "kteb",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Do Gama/W3 Norte(Semi-Expressa)",
+    "price": 5.5
+  },
+  "2207": {
+    "route_id": "ktf7",
+    "agency_id": "1pq2",
+    "long_name": "Circular Park Way/W3 Sul",
+    "price": 5.5
+  },
+  "2208": {
+    "route_id": "ktb7",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Do Gama/Setor De Indústrias Gráficas(SIG)",
+    "price": 5.5
+  },
+  "2209": {
+    "route_id": "ktaq",
+    "agency_id": "1pq2",
+    "long_name": "Estação Park Way/Setor De Indústrias Gráficas(SIG)",
+    "price": 5.5
+  },
+  "2210": {
+    "route_id": "kta1",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Do Gama/SIA-Smu-SAAN",
+    "price": 5.5
+  },
+  "2211": {
+    "route_id": "kta2",
+    "agency_id": "1pq2",
+    "long_name": "Estação Park Way/SIA-Cruzeiro-Sudoeste",
+    "price": 5.5
+  },
+  "2212": {
+    "route_id": "kta3",
+    "agency_id": "1pq2",
+    "long_name": "(Estação Park Way/W3 Sul)",
+    "price": 5.5
+  },
+  "2213": {
+    "route_id": "t53p",
+    "agency_id": "1pq2",
+    "long_name": "Park Way/Sgcv(Park Shopping)",
+    "price": 5.5
+  },
+  "2301": {
+    "route_id": "ktb2",
+    "agency_id": "1pq2",
+    "long_name": "Santa Maria/Rodoviária Do Plano Piloto(Expressa)",
+    "price": 5.5
+  },
+  "2302": {
+    "route_id": "ktb4",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/Rodoviária Do Plano Piloto(Eixinho)",
+    "price": 5.5
+  },
+  "2303": {
+    "route_id": "ktcn",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/W3 Sul",
+    "price": 5.5
+  },
+  "2304": {
+    "route_id": "ktij",
+    "agency_id": "1pq2",
+    "long_name": "Estação Brt De Santa Maria/Núcleo Bandeirante/Guará II-I",
+    "price": 5.5
+  },
+  "2306": {
+    "route_id": "ktb8",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/W3 Norte(Semi-Expressa-Via Eixão Sul)",
+    "price": 5.5
+  },
+  "2307": {
+    "route_id": "ktb5",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/Setor De Indústrias Gráficas(SIG)",
+    "price": 5.5
+  },
+  "2308": {
+    "route_id": "ktb3",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/W3 Norte",
+    "price": 5.5
+  },
+  "2309": {
+    "route_id": "kt9k",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/SIA-Cruzeiro",
+    "price": 5.5
+  },
+  "2310": {
+    "route_id": "ktad",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/SIA-SAAN",
+    "price": 5.5
+  },
+  "2311": {
+    "route_id": "t53o",
+    "agency_id": "1pq2",
+    "long_name": "Park Way/Sgcv(Park Shopping)/Terminal De Integração De Santa Maria(Brt)",
+    "price": 5.5
+  },
+  "2401": {
+    "route_id": "tilj",
+    "agency_id": "1pq2",
+    "long_name": "São Sebastião / Rodoviária do Plano Piloto (Expressa)",
+    "price": null
+  },
+  "250.3": {
+    "route_id": "ktd1",
+    "agency_id": "1pq2",
+    "long_name": "Santa Maria(Qd 100/200)/Rod. Plano Piloto(Corujão)",
+    "price": 5.5
+  },
+  "251.6": {
+    "route_id": "ktc0",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Brt/Av. Alagados(Santos Dumont)/Rodoviária Central Do Gama",
+    "price": 2.7
+  },
+  "251.7": {
+    "route_id": "ktdn",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Brt/Av. Alagados/Gama(Setores Sul E Oeste)/Rodoviária Central Do Gama",
+    "price": 2.7
+  },
+  "251.8": {
+    "route_id": "ktf1",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Brt/Av. Alagados/Gama(Setor Leste)/Rodoviária Central Do Gama",
+    "price": 2.7
+  },
+  "251.9": {
+    "route_id": "vvbp",
+    "agency_id": "1pq2",
+    "long_name": "Terminal BRT Santa Maria / AV.Alagados / Gama (Setor Leste - Central)",
+    "price": null
+  },
+  "255.2": {
+    "route_id": "ktcf",
+    "agency_id": "1pq2",
+    "long_name": "Santa Maria(Av.alagados)/Águas Claras(Via Areal)",
+    "price": 5.5
+  },
+  "260.3": {
+    "route_id": "ktlp",
+    "agency_id": "1pq7",
+    "long_name": "Santa Maria/Taguacenter/Terminal Qnr",
+    "price": 5.5
+  },
+  "260.4": {
+    "route_id": "t9hk",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/QNR",
+    "price": null
+  },
+  "260.5": {
+    "route_id": "t9hl",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul / Santa Maria",
+    "price": null
+  },
+  "271.3": {
+    "route_id": "ktfe",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria(Expansão-Porto Rico)/Rodoviária Do Ga",
+    "price": 2.7
+  },
+  "300.1": {
+    "route_id": "ktrd",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Rodoviária Plano Piloto (Nova QNL - EPTG - EIXO - ESPLANADA)",
+    "price": 5.5
+  },
+  "304.1": {
+    "route_id": "ktie",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Av. Comercial e SAMDU Norte / EPTG / SIA (Trecho 2/3 - Feira dos Importados) / Cruzeiro / SAAN",
+    "price": 5.5
+  },
+  "305.1": {
+    "route_id": "uomf",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul (Centro)/ Rodoviária Plano Piloto(EPTG-W3 Sul)",
+    "price": null
+  },
+  "305.4": {
+    "route_id": "ktih",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Qs 11/Verada Da Cruz/Águas Claras/EPTG/Term. Asa Norte(W3 Sul-Norte)",
+    "price": 5.5
+  },
+  "305.6": {
+    "route_id": "ktho",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Areal/Arniqueira/Terminal Asa Norte(EPTG-W3 Sul-Norte)",
+    "price": 5.5
+  },
+  "306.1": {
+    "route_id": "ktja",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Qs 11/Vereda Da Cruz/Águas Claras/Rodoviária Plano Piloto(EPTG-SIG)",
+    "price": 5.5
+  },
+  "306.2": {
+    "route_id": "ktkd",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul-Areal-Arniqueira/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 5.5
+  },
+  "306.5": {
+    "route_id": "ktjd",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul-Areal-Arniqueira/Esplanada-Rodoviária Do Plano Piloto-EPNB(Eixo)",
+    "price": 5.5
+  },
+  "306.7": {
+    "route_id": "uomi",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/ Arniqueira/ Guará II e I(Av. Contorno)",
+    "price": null
+  },
+  "306.8": {
+    "route_id": "uoqo",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul (Pistão)/ EPTG/Guará I e II (Av, Central)",
+    "price": 3.8
+  },
+  "313.1": {
+    "route_id": "ktrb",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II)/W3 Sul/Rod. Plano Piloto",
+    "price": 5.5
+  },
+  "313.2": {
+    "route_id": "ktmc",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/W3 Sul 716(SIG)-Semi Expressa",
+    "price": 5.5
+  },
+  "3201": {
+    "route_id": "ktbf",
+    "agency_id": "1pq2",
+    "long_name": "Setor Sul(Qd. 15 E 17)/Setor Central(Av. Pioneiros)/Brt",
+    "price": 2.7
+  },
+  "3202": {
+    "route_id": "ktbg",
+    "agency_id": "1pq2",
+    "long_name": "Setor Sul-Leste(Qd 50)/Brt Gama",
+    "price": 2.7
+  },
+  "3203": {
+    "route_id": "ktbu",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Gama Sul/Setor Leste(Pfdf)",
+    "price": 2.7
+  },
+  "3204": {
+    "route_id": "kt9v",
+    "agency_id": "1pq2",
+    "long_name": "Setor Leste Central/Brt",
+    "price": 2.7
+  },
+  "3206": {
+    "route_id": "kt9q",
+    "agency_id": "1pq2",
+    "long_name": "Setor Sul(Lado Oeste)/Brt",
+    "price": 2.7
+  },
+  "3207": {
+    "route_id": "kt9s",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Rodoviário Do Gama/Setor Oeste/Brt",
+    "price": 2.7
+  },
+  "3210": {
+    "route_id": "kt9u",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Sul Do Gama/Av. Pioneiros/St. Central/Via Scln/Terminal De Integração Do Gama/Ponte Alta Norte",
+    "price": 2.7
+  },
+  "3211": {
+    "route_id": "ktc7",
+    "agency_id": "1pq2",
+    "long_name": "Gama Oeste-Leste/U. I. F. Gama",
+    "price": 2.7
+  },
+  "3212": {
+    "route_id": "ktag",
+    "agency_id": "1pq2",
+    "long_name": "Terminal de Integração BRT Gama / DF-475/Ponte Alta Norte ( AV. Buritis )",
+    "price": 2.7
+  },
+  "3213": {
+    "route_id": "ktg2",
+    "agency_id": "1pq2",
+    "long_name": "Brt Gama/DF-483/Santa Maria Sul(Q.d 100/200)/Dvo",
+    "price": 2.7
+  },
+  "322.1": {
+    "route_id": "ktok",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte(QNL-Via Estádio)/SOF Sul(EPTG)/Rodoviária Do Plano Piloto(Parkshopping-Zoológico)",
+    "price": 5.5
+  },
+  "322.2": {
+    "route_id": "ktmv",
+    "agency_id": "1pq6",
+    "long_name": "Setor M(QNL-Qnj)/Rodoviária Do Plano Piloto(Eixo)",
+    "price": 5.5
+  },
+  "323.1": {
+    "route_id": "ktn4",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte (Nova QNL) / W3 Sul (SIG - 716 Sul)",
+    "price": 5.5
+  },
+  "323.2": {
+    "route_id": "ktn8",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/M Norte/W3 Sul(SIG-Q 716)Semiexpressa",
+    "price": 5.5
+  },
+  "324.1": {
+    "route_id": "ktof",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"m\"/Esplanada(Estrutural)",
+    "price": 5.5
+  },
+  "3300": {
+    "route_id": "ktj1",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria(Brt)/Br 040/Polo Jk",
+    "price": 2.7
+  },
+  "3301": {
+    "route_id": "ktc3",
+    "agency_id": "1pq2",
+    "long_name": "Av. Santa Maria(300/400)/Terminal De Integração De Santa Maria",
+    "price": 2.7
+  },
+  "3302": {
+    "route_id": "ktc4",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Santa Maria/Avenida Alagados/Terminal De Integração Brt Santa Maria",
+    "price": 2.7
+  },
+  "3303": {
+    "route_id": "ktc5",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Integração Brt Santa Maria/Vila Dvo/Terminal Integração Brt",
+    "price": 2.7
+  },
+  "3304": {
+    "route_id": "ktbe",
+    "agency_id": "1pq2",
+    "long_name": "A 253-Santos Dumont/Terminal De Integração De Santa Maria",
+    "price": 2.7
+  },
+  "3305": {
+    "route_id": "ktcr",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/DF-290/Polo Jk",
+    "price": 2.7
+  },
+  "3306": {
+    "route_id": "ktd2",
+    "agency_id": "1pq2",
+    "long_name": "Total Ville/Terminal De Integração Santa Maria",
+    "price": 2.7
+  },
+  "3307": {
+    "route_id": "ktdp",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/Expansão/Total Ville",
+    "price": 2.7
+  },
+  "3308": {
+    "route_id": "ktcq",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/Avenida Alagados/DF-290/Porto Seco",
+    "price": 2.7
+  },
+  "3309": {
+    "route_id": "ktea",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração De Santa Maria/Santos Dumont/Área Alfa/Córrego Da O",
+    "price": 2.7
+  },
+  "3310": {
+    "route_id": "ktff",
+    "agency_id": "1pq2",
+    "long_name": "Avenida Alagados(Cl 108)/Condomínio Porto Rico(300/400)/Terminal De Integr",
+    "price": 2.7
+  },
+  "3311": {
+    "route_id": "ktfp",
+    "agency_id": "1pq2",
+    "long_name": "Terminal 279/Avenida Alagados/Terminal De Integração Brt Santa Maria",
+    "price": 2.7
+  },
+  "3312": {
+    "route_id": "ktdl",
+    "agency_id": "1pq2",
+    "long_name": "Av. Alagados/Terminal De Integração De Santa Maria",
+    "price": 2.7
+  },
+  "3313": {
+    "route_id": "ktb0",
+    "agency_id": "1pq2",
+    "long_name": "Av. Alagados(Cl 108)/Vila Dvo/Expansão/Terminal De Integração",
+    "price": 2.7
+  },
+  "3314": {
+    "route_id": "ktcg",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Santa Maria/Avenida Alagados/Condomínio Porto Rico/Avenida Santa Maria",
+    "price": 2.7
+  },
+  "3315": {
+    "route_id": "ktc8",
+    "agency_id": "1pq2",
+    "long_name": "Terminal De Integração Santa Maria/Total Ville/Avenida Santa Maria/Condomínio Porto Rico/Avenida Alagados(Qr 100)",
+    "price": 2.7
+  },
+  "3316": {
+    "route_id": "ktc1",
+    "agency_id": "1pq2",
+    "long_name": "Circular Avenida Alagados(100-200)/Brt Sul",
+    "price": 2.7
+  },
+  "3317": {
+    "route_id": "ktdr",
+    "agency_id": "1pq2",
+    "long_name": "Terminal 279/Av. Alagados/Porto Seco(DF-290)/Terminal De Integração De",
+    "price": 2.7
+  },
+  "3318": {
+    "route_id": "ktgu",
+    "agency_id": "1pq2",
+    "long_name": "Estação Brt De Santa Maria/Expansão/Centro Olímpico",
+    "price": 2.7
+  },
+  "332.1": {
+    "route_id": "ktt2",
+    "agency_id": "1pq5",
+    "long_name": "Qnr 05(Expansão)/Águas Claras",
+    "price": 3.8
+  },
+  "3320": {
+    "route_id": "tapr",
+    "agency_id": "1pq2",
+    "long_name": "Avenida Alagados (QDS 208 a 218) / Terminal BRT Santa Maria",
+    "price": null
+  },
+  "3321": {
+    "route_id": "nqpv",
+    "agency_id": "1pq2",
+    "long_name": "Garagem Santa Maria/DF-290/Polo Jk/Terminal De Integração De Santa Maria",
+    "price": 2.7
+  },
+  "3322": {
+    "route_id": "nnt5",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Brt Santa Maria/Total Ville/Porto Seco/DF 290/Rodoviária Do Gama(Setor Central)",
+    "price": 2.7
+  },
+  "333.1": {
+    "route_id": "ktn3",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"p\" Norte(Expansão)/Taguatinga Centro",
+    "price": 3.8
+  },
+  "333.2": {
+    "route_id": "ktqq",
+    "agency_id": "1pq6",
+    "long_name": "Qnr(P2 Norte)/Taguatinga Centro(Avenida Hélio Prates)",
+    "price": 3.8
+  },
+  "333.3": {
+    "route_id": "ktuh",
+    "agency_id": "1pq4",
+    "long_name": "Mercado Trem Bão/Taguatinga Centro/Mercado Trem Bão",
+    "price": 3.8
+  },
+  "333.4": {
+    "route_id": "ktu8",
+    "agency_id": "1pq4",
+    "long_name": "Ec Córrego Das Corujas/Taguacenter/Ec Córrego Das Corujas",
+    "price": 3.8
+  },
+  "333.6": {
+    "route_id": "ktte",
+    "agency_id": "1pq5",
+    "long_name": "Qnr 5(P2 Norte)Águas Claras/Estádio/Tag. Centro/Taguatinga Shopping",
+    "price": 3.8
+  },
+  "333.7": {
+    "route_id": "ktt0",
+    "agency_id": "1pq5",
+    "long_name": "Setor O(Expansão-P Norte)/Taguatinga Centro/Águas Claras",
+    "price": 3.8
+  },
+  "333.8": {
+    "route_id": "ktmn",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5/Sol Nascente(Trecho 3)/(P1 Norte-Via-M3)/Tag.centro/(Estádio-Tag. Shopping-Católica)",
+    "price": 3.8
+  },
+  "333.9": {
+    "route_id": "ktq5",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II-Cond. Gilliard-Vitória Maranata)/Taguatinga Centro(Católica)",
+    "price": 3.8
+  },
+  "334.4": {
+    "route_id": "ktrj",
+    "agency_id": "1pq6",
+    "long_name": "Qnr/Sol Nascente Trecho 3/P 2 Norte/Rod. P.p.(EPTG-Eixo)",
+    "price": 5.5
+  },
+  "335.1": {
+    "route_id": "kts5",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"o\" Norte/W3 Sul(SIG-Qd. 716 Sul)",
+    "price": 5.5
+  },
+  "336.1": {
+    "route_id": "ktjj",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Rodoviária Plano Piloto (EPTG - Park Sul - Park Shopping - Zoológico - Eixo)",
+    "price": 5.5
+  },
+  "336.2": {
+    "route_id": "ktju",
+    "agency_id": "1pq7",
+    "long_name": "SETOR P SUL (AV. ELMO SEREJO) / RODOVIÁRIA PLANO PILOTO (EPTG - EIXO - ESPLANADA)",
+    "price": 5.5
+  },
+  "337.1": {
+    "route_id": "ktik",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (AV. ELMO SEREJO) / Rodoviária Plano Piloto (EPTG - Setor Policial - W3 Sul)",
+    "price": 5.5
+  },
+  "338.1": {
+    "route_id": "ktpf",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão-P2 Norte)/Estrutural/L2 Norte/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "340.1": {
+    "route_id": "ktm3",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente(Cond. São Francisco/Cond. Buritis/Cond. Salomão Elias Souza)",
+    "price": 2.7
+  },
+  "340.2": {
+    "route_id": "sdjd",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente(Adm. Regional)/Balão DF-190",
+    "price": 2.7
+  },
+  "340.3": {
+    "route_id": "ktkf",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente/Samambaia Sul(Br-060/Estação Samambaia Metrô)",
+    "price": 2.7
+  },
+  "343.2": {
+    "route_id": "ktne",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P2 Norte)/Rodoviária Do Plano Piloto(Avenida Hélio Prates-Estrutural)",
+    "price": 5.5
+  },
+  "346.1": {
+    "route_id": "ktoe",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(Via Leste-Hélio Prates-EPTG)/Guará I-II/Cadangolândia",
+    "price": 3.8
+  },
+  "348.1": {
+    "route_id": "ktnn",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão-Via Leste)/EPTG/L2 Sul-Norte/Unb/Terminal Asa Norte(Semiexpressa)",
+    "price": 5.5
+  },
+  "350.1": {
+    "route_id": "ktse",
+    "agency_id": "1pq5",
+    "long_name": "Qnr 5(Expansão)/Águas Claras(Estádio-Tag.centro-Tag. Shopping)",
+    "price": 3.8
+  },
+  "351.3": {
+    "route_id": "ktjc",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul-Norte(Qs 11/Areal/Comercial/Qnj-QNL-Metrô Centro Metropolitano/Samdu)",
+    "price": 2.7
+  },
+  "351.6": {
+    "route_id": "ktl4",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Norte-Sul/Areal(Pistão Sul)/Águas Claras",
+    "price": 5.5
+  },
+  "355.1": {
+    "route_id": "ktic",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul (Pistão Sul)/ Tag. (Centro-SAMDU- Comercial)/ HRT/QNL(via LJ2)/ Nova QNL",
+    "price": 2.7
+  },
+  "355.2": {
+    "route_id": "ktj8",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Vicente Pires(Samdu/QNG/Areal-Qs 11/Comercial)",
+    "price": 2.7
+  },
+  "355.3": {
+    "route_id": "ktl8",
+    "agency_id": "1pq7",
+    "long_name": "Circular Taguatinga Sul/Areal/Taguatinga(Av. Samdu-Comercial-Centro-QNG)/Vicente Pires",
+    "price": 2.7
+  },
+  "357.1": {
+    "route_id": "ktk8",
+    "agency_id": "1pq7",
+    "long_name": "Circular Taguatinga Sul-Norte/Nova QNL/Comercial/Católica",
+    "price": 2.7
+  },
+  "359.1": {
+    "route_id": "ktqr",
+    "agency_id": "1pq6",
+    "long_name": "Terminal Qnr(Setor O-Expansão)/Taguatinga Centro(Via Mn2-Ucb)",
+    "price": 3.8
+  },
+  "359.2": {
+    "route_id": "ktsr",
+    "agency_id": "1pq5",
+    "long_name": "Qnr(Expansão)/Água Claras(Pista Do Estádio-Taguatinga Shopping)",
+    "price": 3.8
+  },
+  "361.1": {
+    "route_id": "ktlc",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Taguatinga (Av. Elmo Serejo - Centro - Tag. Shopping) / Águas Claras",
+    "price": 3.8
+  },
+  "361.2": {
+    "route_id": "ktrr",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Sol Nascente (Vila Madureira) / Taguatinga (Centro - Tag. Shopping - UCB)",
+    "price": 3.8
+  },
+  "363.1": {
+    "route_id": "kthf",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Taguatinga (Av. Hélio Prates - Comercial e SAMDU Norte - Centro) / Taguatinga Shopping",
+    "price": 3.8
+  },
+  "363.2": {
+    "route_id": "ktld",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (P3) / Por do Sol / Taguatinga (Comercial e SAMDU Norte - Centro) / Taguatinga Shopping",
+    "price": 3.8
+  },
+  "364.1": {
+    "route_id": "kts7",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II)/Cond. Vitória-Maranata/Ceilândia Centro/Jk Shopping",
+    "price": 2.7
+  },
+  "364.2": {
+    "route_id": "kto9",
+    "agency_id": "1pq6",
+    "long_name": "Setor M Norte/Ceilândia Centro/Condomínio Casa Branca/Condomínio Novo Hori",
+    "price": 2.7
+  },
+  "364.3": {
+    "route_id": "ktou",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II)/Metrô Ceilândia Centro",
+    "price": 2.7
+  },
+  "364.4": {
+    "route_id": "ktpu",
+    "agency_id": "1pq6",
+    "long_name": "M Norte(Via M 5)/Ifb/Condomínios/Posto De Saúde M Norte/Estação Metrô Ceilândia Centro/Sol Nascente/Condomínio Vitória Maranata",
+    "price": 2.7
+  },
+  "364.5": {
+    "route_id": "ktqi",
+    "agency_id": "1pq6",
+    "long_name": "Sol Nascente(Trecho II)/Gilliard/Ceilândia Centro/Taguacenter",
+    "price": 2.7
+  },
+  "364.7": {
+    "route_id": "ktqh",
+    "agency_id": "1pq6",
+    "long_name": "M Norte-Nova QNL-Metrô",
+    "price": 2.7
+  },
+  "366.1": {
+    "route_id": "ktlf",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/Samambaia Norte(1 Avenida)/Estação Furnas E Samam",
+    "price": 2.7
+  },
+  "366.2": {
+    "route_id": "ktka",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Samambaia Norte/Condomínio Vista Bela/Condomínio Monte Verde/Nr Monjolinho(Via DF-180)",
+    "price": 2.7
+  },
+  "366.3": {
+    "route_id": "ktgc",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Samambaia Norte/Casa Azul (QN 315)",
+    "price": 2.7
+  },
+  "366.5": {
+    "route_id": "ktga",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Av.-Restaurante Comunitário)/Samambaia Norte(1 Av.)/Estações Furnas E Samambaia",
+    "price": 2.7
+  },
+  "366.7": {
+    "route_id": "kths",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(1ª E 2ª Avenida)/Estação Furnas E Samambaia/Samambaia Sul(1ª Avenida)",
+    "price": 2.7
+  },
+  "367.2": {
+    "route_id": "ktv3",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(1 Avenida)/Taguatinga Sul(Católica)",
+    "price": 3.8
+  },
+  "367.8": {
+    "route_id": "ktv4",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(1 Avenida)/Águas Claras",
+    "price": 3.8
+  },
+  "368.1": {
+    "route_id": "ktti",
+    "agency_id": "1pq5",
+    "long_name": "Setor M Norte(Qnj-QNL)/Taguatinga Centro(Via Estádio)/Católica/Riacho Fundo",
+    "price": 3.8
+  },
+  "372.2": {
+    "route_id": "ktsq",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(1ª Avenida)/Taguacenter",
+    "price": 3.8
+  },
+  "372.3": {
+    "route_id": "ktsu",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte (2 Avenida) / Taguacenter",
+    "price": 3.8
+  },
+  "372.4": {
+    "route_id": "ktv5",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte (2ª Avenida) / Taguacenter",
+    "price": 3.8
+  },
+  "372.5": {
+    "route_id": "ktv1",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(1ª Avenida)/Taguacenter",
+    "price": 3.8
+  },
+  "372.9": {
+    "route_id": "ktuj",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(2 Avenida)/Vicente Pires",
+    "price": 3.8
+  },
+  "373.2": {
+    "route_id": "kth4",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(1 Avenida)/Rodoviária Do Plano Piloto(EPNB-Eixo)",
+    "price": 5.5
+  },
+  "373.3": {
+    "route_id": "kthj",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2 Avenida)/Rodoviaria Do Plano Piloto(Via Estrutural)",
+    "price": 5.5
+  },
+  "374.1": {
+    "route_id": "ktml",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Condomínio Privê-Via Leste)/EPTG/SIG/W3 Norte/Terminal Asa Norte(Semiexpressa)",
+    "price": 5.5
+  },
+  "374.2": {
+    "route_id": "ktms",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"o\" Via Leste/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "376.1": {
+    "route_id": "kth7",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul(Areal)/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "376.2": {
+    "route_id": "ktil",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul(EPTG)/W3 Norte(Eixo Monumental)",
+    "price": 5.5
+  },
+  "376.3": {
+    "route_id": "ktj7",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul / SIA (STRC – TR 2/3) / SAAN (QD 1/2/3) / Terminal Asa Norte (ESTRUTURAL EPIA)",
+    "price": 5.5
+  },
+  "379.1": {
+    "route_id": "ktod",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Hélio Prates)/EPTG/EPIA/Eixo Monumental/W3 Norte/Term. Asa Norte",
+    "price": 5.5
+  },
+  "379.2": {
+    "route_id": "ktm8",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P2 N-Hélio Prates)/W3 Norte(Estrutural)",
+    "price": 5.5
+  },
+  "380.2": {
+    "route_id": "ktgh",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(1 Avenida)/Rodoviária Do Plano Piloto(EPTG-SIG)",
+    "price": 5.5
+  },
+  "380.3": {
+    "route_id": "ktg7",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2ª Avenida)/W3 Sul(Primavera-EPTG)",
+    "price": 5.5
+  },
+  "382.1": {
+    "route_id": "ktrn",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"o\"/Rodoviária Do Plano Piloto(EPTG-EPIA)",
+    "price": 5.5
+  },
+  "383.1": {
+    "route_id": "ktrg",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Rodoviária Plano Piloto (Av. Elmo Serejo - EPTG - SIG)",
+    "price": 5.5
+  },
+  "383.3": {
+    "route_id": "ktqv",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Sol Nascente (Av. das Palmeiras) / Rodoviária Plano Piloto (Av. Hélio Prates - Estrutural)",
+    "price": 5.5
+  },
+  "383.4": {
+    "route_id": "tu6s",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul/ Sol Nascente (Av. das Palmeiras) Rodoviária Plano Piloto(EPTG-Semi Expressa W3 Sul)",
+    "price": 5.5
+  },
+  "384.1": {
+    "route_id": "ktpg",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P2 Norte-Hélio Prates)-EPNB/Lago Sul(Aeroporto-Qi 25)",
+    "price": 5.5
+  },
+  "386.1": {
+    "route_id": "ktjm",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Lago Sul (Aeroporto - QI 25)",
+    "price": 5.5
+  },
+  "389.1": {
+    "route_id": "ktoa",
+    "agency_id": "1pq6",
+    "long_name": "Setor \"m\" Norte/Lago Sul(Aeroporto)",
+    "price": 5.5
+  },
+  "391.3": {
+    "route_id": "ktko",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(1 Avenida-EPNB-Parkshopping-Setor Policial Sul)/W3 Sul-Norte",
+    "price": 5.5
+  },
+  "391.4": {
+    "route_id": "ktl6",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Núcleo Bandeirante/Parkshopping/EPNB/Samambaia Norte(1ª Avenida)",
+    "price": 3.8
+  },
+  "392.2": {
+    "route_id": "kthk",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2ª Avenida)/EPNB/L2 Sul-Norte/Esplanada/Unb/Terminal Asa Norte",
+    "price": 5.5
+  },
+  "393.4": {
+    "route_id": "ktsi",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(2ª Avenida)/Taguacenter(Boca Da Mata)",
+    "price": 3.8
+  },
+  "393.6": {
+    "route_id": "ktt6",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(2ª Avenida)/Taguatinga Centro(Pistão Sul-Católica)",
+    "price": 3.8
+  },
+  "393.7": {
+    "route_id": "ktmh",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(1ª Avenida)/Taguatinga Centro(Pistão Sul-Católica)",
+    "price": 3.8
+  },
+  "394.1": {
+    "route_id": "ktki",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/Rodoviária Do Plano Piloto(Pistão Sul-EPTG-SIG)",
+    "price": 5.5
+  },
+  "396.2": {
+    "route_id": "ktgk",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(1 Avenida)/W3 Sul-Norte(EPNB-Parkshopping-Setor Policial Sul)",
+    "price": 5.5
+  },
+  "396.3": {
+    "route_id": "ktgn",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/W3 Sul-Norte(EPNB-Parkshopping-Setor Policial",
+    "price": 5.5
+  },
+  "396.4": {
+    "route_id": "ktg3",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Núcleo Bandeirante/Parkshopping/EPNB/Samambaia Sul(1ª Avenida)",
+    "price": 3.8
+  },
+  "397.2": {
+    "route_id": "kttg",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(1ª Avenida)/Setor O",
+    "price": 3.8
+  },
+  "398.1": {
+    "route_id": "ktvj",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul(2ª Avenida)/Setor \"o\"",
+    "price": 3.8
+  },
+  "398.3": {
+    "route_id": "ktvi",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Sul (1ª Avenida)/P Norte/Expansão Setor \"O\"",
+    "price": 3.8
+  },
+  "400.2": {
+    "route_id": "ktm6",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-240-Incra 8-Estrutural-Eixo)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "401.1": {
+    "route_id": "ktnh",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-430)/Taguatinga Sul(Comercial-Samdu)",
+    "price": 5.5
+  },
+  "402.5": {
+    "route_id": "ktnp",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-180)/Ceilândia(Avenida Hélio Prates)/Taguatinga(Católica)",
+    "price": 5.5
+  },
+  "402.7": {
+    "route_id": "ktqa",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(Veredas)/Incra 7/Ceilândia(Via Leste)/Taguatinga Sul/Católica",
+    "price": 5.5
+  },
+  "406.1": {
+    "route_id": "ktrp",
+    "agency_id": "1pq6",
+    "long_name": "Circular Brazlândia(Expansão-Hrbz)",
+    "price": 2.7
+  },
+  "409.1": {
+    "route_id": "ktnc",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Taguacenter(Capãozinho/Chapadinha/DF 435)",
+    "price": 5.5
+  },
+  "411.1": {
+    "route_id": "ktpp",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(Br-251)/W3 Norte(EPTG-SIA)",
+    "price": 5.5
+  },
+  "411.2": {
+    "route_id": "ktph",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(Alexandre Gusmão-Incra 8-DF 240-Estrutural)/W3 Norte",
+    "price": 5.5
+  },
+  "413.2": {
+    "route_id": "ktot",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(Incra 8-DF-240)/W3 Sul(EPTG-SIG)",
+    "price": 5.5
+  },
+  "413.4": {
+    "route_id": "ktsa",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(DF-240)/W3 Sul-Norte(Estrutural-EPIA-Sps)",
+    "price": 5.5
+  },
+  "414.1": {
+    "route_id": "ktmp",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Radiobrás(Br 080/DF 220/Bucanhão)",
+    "price": 3.8
+  },
+  "416.1": {
+    "route_id": "ktps",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia/Incra 8 E 9",
+    "price": 2.7
+  },
+  "416.2": {
+    "route_id": "ktnu",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia-Incra 6, 7 E 8(Circular)",
+    "price": 2.7
+  },
+  "416.3": {
+    "route_id": "ktqu",
+    "agency_id": "1pq6",
+    "long_name": "Brazlandia-Df430/Df445-Incra 8",
+    "price": 2.7
+  },
+  "423.1": {
+    "route_id": "ktno",
+    "agency_id": "1pq6",
+    "long_name": "Brazlândia(Br-251)/W3 Sul-SIG(Estrutural)",
+    "price": 5.5
+  },
+  "501.1": {
+    "route_id": "kt5b",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd 18)/Esplanada(Eixo Norte)",
+    "price": 5.5
+  },
+  "501.2": {
+    "route_id": "kt5v",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho(Cond. Rk/Anp)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "501.3": {
+    "route_id": "kt7u",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II(Setor Oeste)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "501.4": {
+    "route_id": "kt84",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I E II(Setor Oeste)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "501.5": {
+    "route_id": "kt98",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/Buritizinho/Condomínio Versalles/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "501.7": {
+    "route_id": "kt90",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Quadra 18)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "501.8": {
+    "route_id": "ktee",
+    "agency_id": "1pq3",
+    "long_name": "Nova Colina/ Sobradinho I(QD 18)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "501.9": {
+    "route_id": "ktaa",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/Cruzeiro/SIG",
+    "price": 5.5
+  },
+  "503.2": {
+    "route_id": "t0bh",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I(Qd 18)/Sobradinho II/SAAN/SIA/Sgcv/Term. Asa Sul",
+    "price": 5.5
+  },
+  "503.3": {
+    "route_id": "kt4b",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I-II/SAAN/SIA/SGCV/Term. Asa Sul",
+    "price": 5.5
+  },
+  "504.1": {
+    "route_id": "kt4q",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Planaltina(Jardim Roriz/Buritis)/Sobradinho I",
+    "price": 3.8
+  },
+  "504.4": {
+    "route_id": "kt5t",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Planaltina/(DF-128/Estância I A V)/Sobradinho-I E II)",
+    "price": 3.8
+  },
+  "504.5": {
+    "route_id": "kt8h",
+    "agency_id": "1pq3",
+    "long_name": "Vale Do Amanhecer/Arapoangas/Estância I A V/Sobradinho",
+    "price": 3.8
+  },
+  "505.3": {
+    "route_id": "kt6h",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I-II/(Rua 1)/Contagem",
+    "price": 2.7
+  },
+  "505.5": {
+    "route_id": "kt7d",
+    "agency_id": "1pq3",
+    "long_name": "Cond. Uberaba/Nova Dignéia/Sobradinho I-II(Rua 4-6)/Morro",
+    "price": 2.7
+  },
+  "505.8": {
+    "route_id": "kt3k",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I E II(Ruas 4 E 6)/Grande Colorado",
+    "price": 2.7
+  },
+  "505.9": {
+    "route_id": "ktbj",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Sobradinho I E II/Vila Rabelo/Grande Colorado",
+    "price": 2.7
+  },
+  "506.0": {
+    "route_id": "ktv8",
+    "agency_id": "1pq4",
+    "long_name": "Escola Classe Rua Do Mato/Ced-Centro Educacional Fercal",
+    "price": null
+  },
+  "506.2": {
+    "route_id": "ktuc",
+    "agency_id": "1pq4",
+    "long_name": "Sobradinho I-II/Catingueiro",
+    "price": 5.5
+  },
+  "506.3": {
+    "route_id": "kte7",
+    "agency_id": "1pq3",
+    "long_name": "Fercal(1ª Ent. Catingueiro)/Alto Bela Vista/Eixo N-S/ Term. Asa Sul",
+    "price": 5.5
+  },
+  "506.4": {
+    "route_id": "kt3q",
+    "agency_id": "1pq3",
+    "long_name": "Ciplan(Fercal-Rua Do Mato)/Eixo N-S/ Term. Asa Sul",
+    "price": 5.5
+  },
+  "506.5": {
+    "route_id": "kte5",
+    "agency_id": "1pq3",
+    "long_name": "Fercal(Bananal)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "509.1": {
+    "route_id": "kt8q",
+    "agency_id": "1pq3",
+    "long_name": "Cond. Uberaba/N. Colina/Sobradinho I(QD, 18)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "510.1": {
+    "route_id": "ktch",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá/Sobradinho Dos Melos",
+    "price": 3.8
+  },
+  "511.3": {
+    "route_id": "11cde",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I-II/N. Colina/Rota Cavalo (VC 257)/Itapoã (Parque)/Paranoá",
+    "price": null
+  },
+  "511.4": {
+    "route_id": "kt6c",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II-I/Nova Colina/DF-440/Itapoã Parque/Paranoá(Rua Alta Tensã",
+    "price": 5.5
+  },
+  "512.1": {
+    "route_id": "kt79",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho/W3 Norte-Sul 1",
+    "price": 5.5
+  },
+  "515.3": {
+    "route_id": "kt4v",
+    "agency_id": "1pq3",
+    "long_name": "Basevi/Eixo Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "515.4": {
+    "route_id": "kttk",
+    "agency_id": "1pq5",
+    "long_name": "Lago Oeste(Rua 24)/Posto Colorado",
+    "price": 5.5
+  },
+  "515.6": {
+    "route_id": "kt4e",
+    "agency_id": "1pq3",
+    "long_name": "Lago Oeste/Basevi/Eixo Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "517.2": {
+    "route_id": "kt54",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II(Buritis-DF-150)/W3 Norte-Sul/Term. Asa Sul",
+    "price": 5.5
+  },
+  "518.1": {
+    "route_id": "kte6",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/Eixo Norte/Rodoviária Plano Piloto",
+    "price": 5.5
+  },
+  "518.2": {
+    "route_id": "kte3",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/Rodoviária Do Plano Piloto(Esplanada)/L2 Norte(Unb)",
+    "price": 5.5
+  },
+  "518.3": {
+    "route_id": "10n9v",
+    "agency_id": "1pq3",
+    "long_name": "Expressa Sobradinho II-I / Rodoviária Plano Piloto",
+    "price": null
+  },
+  "519.1": {
+    "route_id": "kt7m",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II(Mansões)/Vila Rabelo/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "519.2": {
+    "route_id": "kt4m",
+    "agency_id": "1pq3",
+    "long_name": "Vila Rabelo I-II/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "519.3": {
+    "route_id": "kt7s",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho II/Mansões/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "519.4": {
+    "route_id": "u4cd",
+    "agency_id": "1pq3",
+    "long_name": "Vila Rabelo / Vila das Acácias / W3 Norte e Sul/ Term. Asa Sul",
+    "price": null
+  },
+  "521.1": {
+    "route_id": "kteg",
+    "agency_id": "1pq3",
+    "long_name": "Nova Colina/Sobradinho I(Qd18)/L2 Norte(Unb)Esplanada",
+    "price": 5.5
+  },
+  "522.1": {
+    "route_id": "kt9j",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I/QD 18)/Sobradinho II/L2 N-S(Unb)/Term. Asa Sul",
+    "price": 5.5
+  },
+  "527.1": {
+    "route_id": "tve0",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I Q. 18 Cruzeiro SIG",
+    "price": null
+  },
+  "531.1": {
+    "route_id": "kt4c",
+    "agency_id": "1pq3",
+    "long_name": "Fercal/Sobradinho I-II",
+    "price": 3.8
+  },
+  "531.2": {
+    "route_id": "kt6v",
+    "agency_id": "1pq3",
+    "long_name": "Sobradinho I E II/Alto Da Bela Vista(Fercal)",
+    "price": 3.8
+  },
+  "531.3": {
+    "route_id": "kt9i",
+    "agency_id": "1pq3",
+    "long_name": "Ciplan(Fercal-Rua Do Mato)/W3 Norte-Sul.",
+    "price": 5.5
+  },
+  "540.1": {
+    "route_id": "ktuo",
+    "agency_id": "1pq4",
+    "long_name": "Alta Da Bela Vista/Escola Classe Fercal(Bananal)",
+    "price": null
+  },
+  "550.1": {
+    "route_id": "kttl",
+    "agency_id": "1pq4",
+    "long_name": "Queima Lençol/Lobeiral/Bananal/Sobradinho I-Ii.",
+    "price": 5.5
+  },
+  "557.1": {
+    "route_id": "kto1",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5(P2 Norte-Via Leste)/EPTG/SIG/W3 Sul(Qd 716 Sul)-Semiexpressa",
+    "price": 5.5
+  },
+  "600.0": {
+    "route_id": "t6e8",
+    "agency_id": "1pq3",
+    "long_name": "Madeireira Goyaz(Estância I A V-Total Ville)Eixo Norte/Rod. Plano Piloto",
+    "price": 5.5
+  },
+  "600.1": {
+    "route_id": "ktet",
+    "agency_id": "1pq3",
+    "long_name": "Bica Do Der/Estância(Cond. Total Ville)/Eixo Norte/Rod. Plano Piloto",
+    "price": 5.5
+  },
+  "600.2": {
+    "route_id": "kt3g",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(DF-130)/Eixo N-S/Term. Asa Sul",
+    "price": 5.5
+  },
+  "600.3": {
+    "route_id": "kt6r",
+    "agency_id": "1pq3",
+    "long_name": "Arapoangas(Estâncias I-V)/Eixo Norte-Sul(Terminal Asa Sul)",
+    "price": 5.5
+  },
+  "600.4": {
+    "route_id": "kt42",
+    "agency_id": "1pq3",
+    "long_name": "Estância(Bica Do Der)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "600.5": {
+    "route_id": "kt6p",
+    "agency_id": "1pq3",
+    "long_name": "Estância(Cond. Total Ville)Eixo Norte E Sul",
+    "price": 5.5
+  },
+  "600.6": {
+    "route_id": "kt3h",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Palácio Do Buriti-SIG",
+    "price": 5.5
+  },
+  "600.7": {
+    "route_id": "kt4j",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Avenida Independência)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "600.8": {
+    "route_id": "kt88",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Av. Independência)/L2 Norte(Unb)/L2 Sul",
+    "price": 5.5
+  },
+  "600.9": {
+    "route_id": "t6a4",
+    "agency_id": "1pq3",
+    "long_name": "Madereira Goyaz(Estância I A V-Total Ville)Eixo Norte E Sul",
+    "price": 5.5
+  },
+  "601.1": {
+    "route_id": "kt9a",
+    "agency_id": "1pq3",
+    "long_name": "Circular-Terminal Planaltina/Buritis II-III-IV/Jardim Roriz",
+    "price": 2.7
+  },
+  "601.2": {
+    "route_id": "kt9c",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Planaltina/Jardim Roriz/Buritis II-III-IV",
+    "price": 2.7
+  },
+  "601.3": {
+    "route_id": "kt4g",
+    "agency_id": "1pq3",
+    "long_name": "Term. Planaltina/ST. Trad- St Sul/ Arapoanga",
+    "price": 2.7
+  },
+  "602.1": {
+    "route_id": "kt3v",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Buritis III/Jardim Roriz/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "602.2": {
+    "route_id": "ktdt",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Buritis IV E III/Jardim Roriz)Eixo Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "603.1": {
+    "route_id": "kt3s",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Jardim Roriz)/Sobradinho I/Clube Do Congresso",
+    "price": 5.5
+  },
+  "604.1": {
+    "route_id": "kt4o",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(DF-128)/SAAN/SIA/Sgcv/Tas",
+    "price": 5.5
+  },
+  "604.2": {
+    "route_id": "kt87",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga/Estâncias/SAAN/SIA/Sgcv/Tas",
+    "price": 5.5
+  },
+  "604.3": {
+    "route_id": "kt50",
+    "agency_id": "1pq3",
+    "long_name": "Vale Do Amanhecer/Planaltina(Avenida Independência)/SAAN/SIA/Sgcv/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "604.4": {
+    "route_id": "tve1",
+    "agency_id": "1pq3",
+    "long_name": "Estância (Bica do DER) / SAAN / SIA / SGCV / Term. Asa Sul",
+    "price": null
+  },
+  "605.1": {
+    "route_id": "kt7k",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Buritis III/Jardim Roriz/L2 Norte-Sul(Esplanada)/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "605.2": {
+    "route_id": "kte2",
+    "agency_id": "1pq3",
+    "long_name": "Rodoviária Do Plano Piloto/L2 Norte(Unb)/Planaltina",
+    "price": 5.5
+  },
+  "610.3": {
+    "route_id": "kt6s",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Tabatinga/Barra Alta/Núcleo Rural Rio Preto",
+    "price": 5.5
+  },
+  "611.1": {
+    "route_id": "kt46",
+    "agency_id": "1pq3",
+    "long_name": "Núcleo Rural Taquara/DF-230/Planaltina",
+    "price": 5.5
+  },
+  "611.2": {
+    "route_id": "ktbn",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Ec Córrego Do Atoleiro/Ec Estância Do Pipiripau/Planaltina",
+    "price": 2.7
+  },
+  "615.1": {
+    "route_id": "ktsh",
+    "agency_id": "1pq4",
+    "long_name": "Vale Do Amanhecer/Rodoviária Planaltina/Ifb",
+    "price": 5.5
+  },
+  "616.0": {
+    "route_id": "nnt6",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga(DF-230)/Eixo Norte/Rod. Plano Pioloto",
+    "price": 5.5
+  },
+  "616.1": {
+    "route_id": "kt4u",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga/Paranoá(Ponte Jk)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "616.2": {
+    "route_id": "kt91",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga-Estância/Eixo Norte-Sul",
+    "price": 5.5
+  },
+  "616.3": {
+    "route_id": "kt8l",
+    "agency_id": "1pq3",
+    "long_name": "Arapoangas / Condomínios Estâncias / Eixo Norte - Sul / Terminal Asa Sul",
+    "price": 5.5
+  },
+  "616.4": {
+    "route_id": "kt8m",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga/Buritis IV/Jardim Roriz/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "616.5": {
+    "route_id": "kt8n",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga(Cond. Marisol(DF-128-Estancias I A V)/Eixo Norte-Sul)",
+    "price": 5.5
+  },
+  "616.6": {
+    "route_id": "kt8i",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga-Estâncias(I-V)/L2 Norte-Sul(Esplanada)",
+    "price": 5.5
+  },
+  "616.7": {
+    "route_id": "kt9e",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga/Vale Do Amanhecer/Rajadinha II E III/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "616.8": {
+    "route_id": "kt8g",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Arapoanga/Estância/Eixo Norte E Sul",
+    "price": 5.5
+  },
+  "616.9": {
+    "route_id": "ktct",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Arapoanga(DF-230)/Eixo Norte -Sul/ Term. Asa Sul",
+    "price": 5.5
+  },
+  "617.2": {
+    "route_id": "kt3f",
+    "agency_id": "1pq3",
+    "long_name": "Vale Do Amanhecer/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "617.3": {
+    "route_id": "u2mu",
+    "agency_id": "1pq3",
+    "long_name": "Aprodarmas - DF 130 /DF - 230/ Eixo Norte Sul / Term. Asa Sul",
+    "price": null
+  },
+  "620.1": {
+    "route_id": "kt86",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Avenida Independência)/Eixo Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "620.2": {
+    "route_id": "10n9t",
+    "agency_id": "1pq3",
+    "long_name": "Expressa Planaltina / Rodoviária Plano Piloto",
+    "price": null
+  },
+  "624.1": {
+    "route_id": "kt5g",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Buritis IV/Eixo Norte/Esplanada/Catedral",
+    "price": 5.5
+  },
+  "625.1": {
+    "route_id": "kt8b",
+    "agency_id": "1pq3",
+    "long_name": "Sarandi(Sítio Novo)/Upis/Planaltina",
+    "price": 5.5
+  },
+  "628.2": {
+    "route_id": "kt9f",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Cariru/Buriti Vermelho/Itapeti/Sussuarana(Via Café Sem Troco)",
+    "price": 5.5
+  },
+  "630.1": {
+    "route_id": "kt5a",
+    "agency_id": "1pq3",
+    "long_name": "Expresso Planaltina(Jard. Roriz)/Rod. P. Piloto",
+    "price": 5.5
+  },
+  "630.2": {
+    "route_id": "kt5f",
+    "agency_id": "1pq3",
+    "long_name": "Expresso Planaltina(St. Trad.)/Rod P. Piloto",
+    "price": 5.5
+  },
+  "637.2": {
+    "route_id": "ktus",
+    "agency_id": "1pq4",
+    "long_name": "Planaltina/Qi 03 VI Comar",
+    "price": 5.5
+  },
+  "638.0": {
+    "route_id": "t7ve",
+    "agency_id": "1pq4",
+    "long_name": "Jardim II (PAD- DF/Café sem Troco) /Planaltina (DF-130)",
+    "price": null
+  },
+  "638.1": {
+    "route_id": "kt4r",
+    "agency_id": "1pq4",
+    "long_name": "Planaltina/Pad-DF(Quebrada Dos Neris/Rod. Júlio Garcia(Rua 75)",
+    "price": 5.5
+  },
+  "640.1": {
+    "route_id": "kt8o",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Br-020)/Eixo Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "640.2": {
+    "route_id": "kt4i",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Avenida Independência)/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "642.1": {
+    "route_id": "kt7j",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Estância I A IV/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "642.2": {
+    "route_id": "kt3m",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina(Br-020)/W3 Norte-Sul(Terminal Asa Sul)",
+    "price": 5.5
+  },
+  "642.3": {
+    "route_id": "kt99",
+    "agency_id": "1pq3",
+    "long_name": "Estância(Condomínio Total Ville)/W3 Norte E Sul",
+    "price": 5.5
+  },
+  "642.4": {
+    "route_id": "kteu",
+    "agency_id": "1pq3",
+    "long_name": "Estância(Cond. Total Ville)/W3 Norte/Rod. Plano Piloto",
+    "price": 5.5
+  },
+  "642.5": {
+    "route_id": "t6a3",
+    "agency_id": "1pq3",
+    "long_name": "Madereira Goyaz(Estancia I A V-Total Ville)W3 Norte E Sul",
+    "price": 5.5
+  },
+  "643.1": {
+    "route_id": "kt7v",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga(DF-128)/Eixo Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "643.2": {
+    "route_id": "ktcs",
+    "agency_id": "1pq3",
+    "long_name": "Planaltina/Arapoanga(DF-230)/W3 Norte-Sul/Terminal Asa Sul",
+    "price": 5.5
+  },
+  "648.1": {
+    "route_id": "kt8j",
+    "agency_id": "1pq3",
+    "long_name": "Arapoanga(Estância)/Sudoeste",
+    "price": 5.5
+  },
+  "670.3": {
+    "route_id": "ktv0",
+    "agency_id": "1pq4",
+    "long_name": "Rajadinha II(Bicicletinha)/Paranoá(Via Rajadinha III)",
+    "price": 3.8
+  },
+  "759.1": {
+    "route_id": "ktaf",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá-Itapoã(DF-005)/W3 Norte/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "760.1": {
+    "route_id": "ktbi",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Paranoá/L2 Norte(Unb)/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "760.3": {
+    "route_id": "ktl2",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Paranoá/Eppr/L2 Norte(Unb)",
+    "price": 5.5
+  },
+  "761.0": {
+    "route_id": "ktm2",
+    "agency_id": "1pq2",
+    "long_name": "Rodoviária Do Plano Piloto/Paranoá/Itapoã Parque",
+    "price": 3.8
+  },
+  "761.1": {
+    "route_id": "ktb9",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Baixinho-La Font)/Paranoá/Rodoviária Do Plano Piloto(Ponte Jk)",
+    "price": 3.8
+  },
+  "761.2": {
+    "route_id": "ktah",
+    "agency_id": "1pq2",
+    "long_name": "Terminal Do Paranoá/Paranoá Parque Rodoviária Do Plano Piloto(Via Ponte Jk)",
+    "price": 3.8
+  },
+  "764.1": {
+    "route_id": "ktgs",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã Parque/Rodoviária Do Plano Piloto",
+    "price": 3.8
+  },
+  "765.1": {
+    "route_id": "ktjn",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Rua Do Baixinho-La Font-DF 250)/Lago Sul(Ponte Das Garças)/W3 Sul/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "765.2": {
+    "route_id": "ktd9",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Paranoá/Lago Sul(Ponte Das Garças)/W3 Sul/Rodoviária Do Plano Piloto",
+    "price": 5.5
+  },
+  "765.3": {
+    "route_id": "ktks",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã Parque/W3 Norte-Sul",
+    "price": 5.5
+  },
+  "769.1": {
+    "route_id": "ktjo",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Rua Do Baixinho-La Font-DF 250)/L2 Norte(Unb)/Rodoviária Do Plano Piloto.",
+    "price": 5.5
+  },
+  "773.1": {
+    "route_id": "ktkn",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã(Baixinho-La Font-DF 250)/Paranoá/Eixo Sul(Via Ponte Jk)",
+    "price": 5.5
+  },
+  "780.1": {
+    "route_id": "ktb6",
+    "agency_id": "1pq2",
+    "long_name": "Condomínio La Font(Itapoã)/Rodoviária Do Plano Piloto(Via Ponte Jk)",
+    "price": 3.8
+  },
+  "782.1": {
+    "route_id": "ktuk",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã (La Font - Del Lago) / Itapoa Parque / Paranoá / Lago Sul / Aeroporto",
+    "price": 3.8
+  },
+  "782.2": {
+    "route_id": "vm65",
+    "agency_id": "1pq8",
+    "long_name": "Condomínio La Font(DF 250)/ Paranoá(Paranoá Parque)/ Lago Sul / Aeroporto",
+    "price": null
+  },
+  "783.1": {
+    "route_id": "ktu5",
+    "agency_id": "1pq8",
+    "long_name": "Condomínio La Font / Itapoã / Paranoá Parque / Lago Norte (Clube do Congresso)",
+    "price": 3.8
+  },
+  "783.2": {
+    "route_id": "ktsg",
+    "agency_id": "1pq8",
+    "long_name": "Condomínio La Font / Itapoã / Paranoá / Varjão / Lago Norte",
+    "price": 3.8
+  },
+  "783.3": {
+    "route_id": "ktul",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã (La Font) / Itapoã Parque / Paranoá Parque / Lago Norte (Clube do Congresso)",
+    "price": 3.8
+  },
+  "783.4": {
+    "route_id": "tln4",
+    "agency_id": "1pq8",
+    "long_name": "Itapoã (Condominio La Font - Baixinho - Del Lago) / Lago Norte (Clube do Congresso)",
+    "price": null
+  },
+  "783.5": {
+    "route_id": "tln5",
+    "agency_id": "1pq8",
+    "long_name": "Paranoa / Lago Norte (Clube Do Congresso)",
+    "price": null
+  },
+  "784.1": {
+    "route_id": "ktdf",
+    "agency_id": "1pq2",
+    "long_name": "Paranoá Parque/DF 250/Condomínio La Font",
+    "price": 2.7
+  },
+  "784.2": {
+    "route_id": "ktev",
+    "agency_id": "1pq2",
+    "long_name": "Capoeira Do Bálsamo/Avenida Paranoá",
+    "price": 2.7
+  },
+  "784.3": {
+    "route_id": "ktbk",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã/Itapoã Parque/Paranoá",
+    "price": 2.7
+  },
+  "784.5": {
+    "route_id": "ktlv",
+    "agency_id": "1pq2",
+    "long_name": "Itapoã Parque/Terminal Do Paranoá",
+    "price": 2.7
+  },
+  "805.1": {
+    "route_id": "ktv7",
+    "agency_id": "1pq5",
+    "long_name": "Recanto das Emas/ Taguatinga Centro via Pistão Sul",
+    "price": 3.8
+  },
+  "805.2": {
+    "route_id": "ktre",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Taguatinga Centro(Católica-Sandu Sul/Comercial Sul)",
+    "price": 3.8
+  },
+  "805.3": {
+    "route_id": "ktpb",
+    "agency_id": "1pq6",
+    "long_name": "Recanto Das Emas/Taguacenter(Comercial/Samdu Sul-Norte)",
+    "price": 3.8
+  },
+  "805.6": {
+    "route_id": "ktvb",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Águas Claras",
+    "price": 3.8
+  },
+  "805.7": {
+    "route_id": "ktv9",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas(Riacho Fundo II)/Águas Claras",
+    "price": 3.8
+  },
+  "805.8": {
+    "route_id": "ktr8",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Taguatinga Centro(Via Boca Da Mata)",
+    "price": 3.8
+  },
+  "805.9": {
+    "route_id": "ktum",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Taguacenter(Via Boca Da Mata)",
+    "price": 3.8
+  },
+  "806.1": {
+    "route_id": "ktg5",
+    "agency_id": "1pq1",
+    "long_name": "Metrô Furnas/Riacho Fundo II/Etapa I",
+    "price": 2.7
+  },
+  "806.2": {
+    "route_id": "ktkq",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Riacho Fundo II/Parque Do Riacho(Condomínio 42)/Caub I(Estação Brt Sul)",
+    "price": 2.7
+  },
+  "806.3": {
+    "route_id": "kth1",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Riacho Fundo II/Parque Do Riacho(Condomínio 42)",
+    "price": 2.7
+  },
+  "806.8": {
+    "route_id": "ktgt",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II / Etapas I e IV / CAUB I e II / Av. Contorno",
+    "price": 2.7
+  },
+  "807.1": {
+    "route_id": "kthq",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Estação Furnas",
+    "price": 2.7
+  },
+  "807.2": {
+    "route_id": "ktfu",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(300/500)/Avenida Monjolo(Fórum/Ifb)/Avenida Buritis",
+    "price": 2.7
+  },
+  "807.3": {
+    "route_id": "p6r7",
+    "agency_id": "1pq1",
+    "long_name": "Terminal Do Recanto Das Emas-Estação Furnas",
+    "price": 2.7
+  },
+  "807.4": {
+    "route_id": "kth9",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente/Recanto Das Emas(Via Br-060-Fazendinha-Av. Potiguar)",
+    "price": 2.7
+  },
+  "807.5": {
+    "route_id": "ktlh",
+    "agency_id": "1pq1",
+    "long_name": "Metrô Furnas/Sest-Senat",
+    "price": 2.7
+  },
+  "807.6": {
+    "route_id": "ktht",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Q 800)",
+    "price": 2.7
+  },
+  "807.7": {
+    "route_id": "un42",
+    "agency_id": "1pq1",
+    "long_name": "Recanto das Emas (Q 800)/ Av. Buritis",
+    "price": null
+  },
+  "807.8": {
+    "route_id": "ktib",
+    "agency_id": "1pq1",
+    "long_name": "Recanto das Emas / Riacho Fundo II (QS18)",
+    "price": 2.7
+  },
+  "807.9": {
+    "route_id": "ktgp",
+    "agency_id": "1pq1",
+    "long_name": "Circular Recanto Das Emas/Estação Furnas Do Metrô(Qd. 600/800)",
+    "price": 2.7
+  },
+  "808.1": {
+    "route_id": "ktu2",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Setor \"o\"(Ceilândia Sul-Norte)",
+    "price": 3.8
+  },
+  "808.5": {
+    "route_id": "ktsf",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Da Emas(Quadra 300-500)/Setor O",
+    "price": 3.8
+  },
+  "809.5": {
+    "route_id": "npa1",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(300/500)/Rodoviária Do Plano Piloto(EPNB-Eixo)",
+    "price": 5.5
+  },
+  "811.1": {
+    "route_id": "ktjs",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II(Avenida Contorno)/W3 Sul-Norte(EPNB-EPIA-Setor Policial Sul)",
+    "price": 5.5
+  },
+  "812.1": {
+    "route_id": "ktt1",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Ceilândia(Via Leste-Qnr 5)/Sol Nascente(Trecho III)",
+    "price": 3.8
+  },
+  "812.2": {
+    "route_id": "ktve",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Riacho Fundo II(Qns)/P Norte(Via Leste-Qnr 05)",
+    "price": 3.8
+  },
+  "813.1": {
+    "route_id": "ktit",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Rodoviária Do Plano Piloto(EPTG-SIA-SIG)",
+    "price": 5.5
+  },
+  "813.2": {
+    "route_id": "kthu",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(EPNB-EPIA)/W3 Sul-Norte",
+    "price": 5.5
+  },
+  "813.5": {
+    "route_id": "npa3",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(300/500)/W3 Sul-Norte(EPNB-Epgu)",
+    "price": 5.5
+  },
+  "814.1": {
+    "route_id": "ktk9",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas/Samambaia Sul-Norte(Expansão)",
+    "price": 3.8
+  },
+  "815.1": {
+    "route_id": "kthp",
+    "agency_id": "1pq1",
+    "long_name": "Recanto das Emas (Qd 200/400/600) / Gama",
+    "price": 3.8
+  },
+  "818.1": {
+    "route_id": "ktu3",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/SAAN(Estrutural)",
+    "price": 5.5
+  },
+  "823.1": {
+    "route_id": "ktta",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas(Qd 800)-Riacho Fundo II/Guará(Parkshopping)",
+    "price": 5.5
+  },
+  "823.2": {
+    "route_id": "ktp5",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas/Guará(EPNB-Sgcv)",
+    "price": 5.5
+  },
+  "825.1": {
+    "route_id": "ktm1",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente/Rodoviária Do Plano Piloto(Br-060 E EPNB)",
+    "price": 5.5
+  },
+  "825.2": {
+    "route_id": "ktlt",
+    "agency_id": "1pq1",
+    "long_name": "Água Quente/W3 Sul-Norte(Pistão Sul-EPTG-Setor Policial Sul)",
+    "price": 5.5
+  },
+  "844.1": {
+    "route_id": "ktis",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte (2 Avenida) / Setor Terminal Norte (Estrutural / SIA / SOFN)",
+    "price": 5.5
+  },
+  "844.2": {
+    "route_id": "ktg9",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Norte(2 Avenida-Estrutural-SIA-Sofn)/Setor Terminal Norte",
+    "price": 5.5
+  },
+  "844.3": {
+    "route_id": "ktsk",
+    "agency_id": "1pq5",
+    "long_name": "Samambaia Norte(2 Avenida)/SIA/SAAN(EPNB-Guará)",
+    "price": 5.5
+  },
+  "845.2": {
+    "route_id": "kthh",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/Guará/SIA/SAAN-EPNB",
+    "price": 5.5
+  },
+  "850.1": {
+    "route_id": "ktla",
+    "agency_id": "1pq7",
+    "long_name": "Samambaia Norte(2 Avenida-Qd 400/600)/Guará I E II(Via Pistão Sul)",
+    "price": 5.5
+  },
+  "865.1": {
+    "route_id": "ktj0",
+    "agency_id": "1pq1",
+    "long_name": "Samambaia Sul(2 Avenida)/Casa Grande/Gama(DF-480)",
+    "price": 5.5
+  },
+  "865.2": {
+    "route_id": "ktfv",
+    "agency_id": "1pq1",
+    "long_name": "Circular-Terminal Do Riacho Fundo II/Casa Grande/Gama(DF-480)",
+    "price": 2.7
+  },
+  "870.1": {
+    "route_id": "ktgf",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (QS 18 - CAUB II) / Rodoviária do Plano Piloto (Eixo)",
+    "price": 5.5
+  },
+  "870.3": {
+    "route_id": "ktgv",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II ( QS 18- Parque do Riacho 42-CAUB II/ Rodoviária do Plano Piloto (EPNB-EIXO)",
+    "price": 5.5
+  },
+  "870.7": {
+    "route_id": "ktls",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Qd. 800)/Rodoviária Do Plano Piloto-Via Eixo",
+    "price": 5.5
+  },
+  "870.9": {
+    "route_id": "kthc",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II(Avenida Contorno)/Rodoviária Do Plano Piloto(EPNB-Eixo)",
+    "price": 5.5
+  },
+  "871.3": {
+    "route_id": "ktkj",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Quadra 800-EPNB-EPIA)/W3 Sul-Norte",
+    "price": 5.5
+  },
+  "872.1": {
+    "route_id": "ktt8",
+    "agency_id": "1pq5",
+    "long_name": "Riacho Fundo II (QS 18) / CAUB II / Taguacenter (Feira dos Goianos)",
+    "price": 3.8
+  },
+  "872.2": {
+    "route_id": "ktj5",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Q 800)/Riacho Fundo II(Av. Contorno)/Taguacenter",
+    "price": 3.8
+  },
+  "872.3": {
+    "route_id": "ktmu",
+    "agency_id": "1pq6",
+    "long_name": "Recanto Das Emas(Q 800)/Riacho Fundo II/Taguacenter",
+    "price": 3.8
+  },
+  "872.4": {
+    "route_id": "ktir",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II (QS 18) - CAUB II / Taguatinga (Pistão Sul)",
+    "price": 3.8
+  },
+  "872.5": {
+    "route_id": "kti8",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Q 300-500)/Taguacenter(Feira Dos Goianos)",
+    "price": 3.8
+  },
+  "872.8": {
+    "route_id": "ktl3",
+    "agency_id": "1pq7",
+    "long_name": "Recanto Das Emas(Q 800)/Riacho Fundo II/Taguatinga Centro(Via Boca Da Mata).",
+    "price": 3.8
+  },
+  "872.9": {
+    "route_id": "ktuq",
+    "agency_id": "1pq5",
+    "long_name": "Recanto Das Emas(Q 800)/Riacho Fundo II/Taguacenter(Via Boca Da Mata)",
+    "price": 3.8
+  },
+  "874.4": {
+    "route_id": "ktji",
+    "agency_id": "1pq1",
+    "long_name": "Recanto Das Emas(Q.800)/Rodoviária Do Plano(EPNB-SIG)",
+    "price": 5.5
+  },
+  "881.3": {
+    "route_id": "ktgr",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II(Qs 18-Parque Do Riacho 42-Caub II)/Rodoviária Do Plano Pi",
+    "price": 5.5
+  },
+  "882.3": {
+    "route_id": "kthb",
+    "agency_id": "1pq1",
+    "long_name": "Riacho Fundo II(Qs 18-Parque Do Riacho 42-Caub)/Rodoviária Do Plano Piloto(EPNB-SIG)",
+    "price": 5.5
+  },
+  "898.1": {
+    "route_id": "t8kf",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (Pistão Sul - Estádio) / Riacho Fundo II",
+    "price": null
+  },
+  "902.2": {
+    "route_id": "kti0",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Esplanada (QNL - Estrutural)",
+    "price": 5.5
+  },
+  "910.1": {
+    "route_id": "ktl7",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Terminal Asa Norte (QNJ-QNL - Estrutural - SIA Trecho 17 - SAAN)",
+    "price": 5.5
+  },
+  "920.4": {
+    "route_id": "ktnl",
+    "agency_id": "1pq6",
+    "long_name": "Setor O Condomínio Prive(Via Leste)/Rodoviária Do Plano Piloto Esplanada/(Via Eixo)",
+    "price": 5.5
+  },
+  "926.1": {
+    "route_id": "ktpo",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/Condomínio Privê(Feira Dos Goianos-Comercial Norte)/Tag. Centro/Taguatinga Shopping",
+    "price": 3.8
+  },
+  "928.1": {
+    "route_id": "kts6",
+    "agency_id": "1pq6",
+    "long_name": "Qnr/Sol Nascente(Trecho III)/Ceilândia Centro(Hrc)",
+    "price": 2.7
+  },
+  "928.2": {
+    "route_id": "kts8",
+    "agency_id": "1pq6",
+    "long_name": "Qnr 5/Condomínio Sol Nascente-Trecho III-Metrô-Estação Ceilândia",
+    "price": 2.7
+  },
+  "928.3": {
+    "route_id": "ktoq",
+    "agency_id": "1pq6",
+    "long_name": "Qnr(P2 Norte)/Arniqueiras(Av. Hélio Prates-Comercial Norte)",
+    "price": 3.8
+  },
+  "929.1": {
+    "route_id": "ktq8",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão)/Condomínio Privê/P2 Norte/Jk Shopping",
+    "price": 2.7
+  },
+  "929.2": {
+    "route_id": "ktq4",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Expansão)/Metrô(Estação Via Oeste)",
+    "price": 2.7
+  },
+  "929.3": {
+    "route_id": "ktp2",
+    "agency_id": "1pq6",
+    "long_name": "Ter. Pinheiros / Cond. Vitória / P2 Norte / Sol Nascente (Trecho III) / Ter. QNR",
+    "price": 2.7
+  },
+  "929.4": {
+    "route_id": "ktqs",
+    "agency_id": "1pq6",
+    "long_name": "Setor O/Expansão/P3 Norte/Metrô/Ceilândia Centro",
+    "price": 2.7
+  },
+  "929.5": {
+    "route_id": "ktmg",
+    "agency_id": "1pq6",
+    "long_name": "Terminal Setor O / Centro de Evangelização",
+    "price": null
+  },
+  "932.2": {
+    "route_id": "ktna",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Sol Nascente (Trecho I) / Rodoviária Plano Piloto (Av. Hélio Prates - EPTG - W3 Sul)",
+    "price": 5.5
+  },
+  "932.3": {
+    "route_id": "ktme",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Por do Sol / Rodoviária Plano Piloto (Av. Elmo Serejo - EPTG - Eixo)",
+    "price": 5.5
+  },
+  "932.4": {
+    "route_id": "ktpm",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Por do Sol / Terminal Asa Norte (Av. Elmo Serejo - EPTG - W3 Sul e Norte)",
+    "price": 5.5
+  },
+  "933.1": {
+    "route_id": "kth5",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Taguacenter (Av. Hélio Prates)",
+    "price": 2.7
+  },
+  "933.2": {
+    "route_id": "ktnk",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Por do Sol / Hospital Regional de Ceilandia / Shopping JK",
+    "price": 2.7
+  },
+  "933.3": {
+    "route_id": "ktn5",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Vila Madureira / P Sul (P4, P3, P2) / Ceilândia Leste / Av. Hélio Prates",
+    "price": 2.7
+  },
+  "933.4": {
+    "route_id": "ktr0",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Sol Nascente (Av. das Palmeiras) / Taguacenter",
+    "price": 2.7
+  },
+  "933.5": {
+    "route_id": "ktrs",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Sol Nascente (Trecho I) / Taguatinga (Av. Hélio Prates - Comercial e SAMDU Norte - Centro - UCB)",
+    "price": 3.8
+  },
+  "933.6": {
+    "route_id": "ktnj",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul (P2-P3) / Sol Nascente (Trecho I - Casa Branca) / Taguatinga (Av. Hélio Prates - Comercial e SAMDU Norte - Centro)",
+    "price": 2.7
+  },
+  "933.7": {
+    "route_id": "ktrm",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Rancho Preguiça (Instituto AMPB)",
+    "price": 2.7
+  },
+  "942.1": {
+    "route_id": "ktkg",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Terminal Asa Norte (QNL-QNJ - EPTG / SIG / W3 Norte)",
+    "price": 5.5
+  },
+  "942.2": {
+    "route_id": "kts0",
+    "agency_id": "1pq7",
+    "long_name": "Setor P Sul / Sol Nascente (Trecho I) / Terminal Asa Norte (Estrutural - W3 Norte)",
+    "price": 5.5
+  },
+  "949.1": {
+    "route_id": "ktp9",
+    "agency_id": "1pq6",
+    "long_name": "Setor O(Via O2)/M Norte/Taguatinga Centro/Águas Claras/Arniqueiras(Ade)",
+    "price": 2.7
+  },
+  "959.1": {
+    "route_id": "ktkv",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/ Arniqueira (CJ 04-05-06)/Tag.(Centro-SAMDU-Comercial)/QNL",
+    "price": 2.7
+  },
+  "959.2": {
+    "route_id": "kts2",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Arniqueira(Epvp-Cj 04-05-06)/Tag. Centro(Pistão Sul)",
+    "price": 2.7
+  },
+  "959.3": {
+    "route_id": "ktru",
+    "agency_id": "1pq7",
+    "long_name": "Taguatinga Sul/Arniqueira(Cj 01-Veredão)/Tag. Centro(Pistão Sul)",
+    "price": 2.7
+  },
+  "963.1": {
+    "route_id": "ktom",
+    "agency_id": "1pq6",
+    "long_name": "M Norte/Ifb/Hélio Prates/Setor O(Estação Ceilândia-SIA Ceilândia)/Gleb",
+    "price": 2.7
+  },
+  "963.2": {
+    "route_id": "11cdk",
+    "agency_id": "1pq6",
+    "long_name": "M Norte/ Metro Centro / Metro Estação Final / COND. Vista Bela/ TER. do Setor O",
+    "price": null
+  },
+  "965.1": {
+    "route_id": "kts1",
+    "agency_id": "1pq6",
+    "long_name": "Cidade Estrutural/26 De Setembro/Taguatinga Centro",
+    "price": 3.8
+  },
+  "965.2": {
+    "route_id": "npa7",
+    "agency_id": "1pq6",
+    "long_name": "26 De Setembro/Cidade Estrutural",
+    "price": 2.7
+  }
+}
