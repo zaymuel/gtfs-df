@@ -4,7 +4,7 @@
 > **Academic Context:** Transport Modeling Course, Graduate Program in Transport (PPGT / UnB)  
 > **Goal:** Synthesize a validated, static GTFS feed (`gtfs_df.zip`) for multimodal accessibility and spatial equity analysis with `r5py`.  
 > **Series Hierarchy:**  
-> `01-initial-project-context.md` ➔ `02-dftrans-api-knowledge.md` ➔ `03-bus2-reverse-engineering.md` ➔ `05-dfnoponto-main-page-audit.md` ➔ `05-methodology-data-filtering.md`
+> `01-initial-project-context.md` ➔ `02-dftrans-api-knowledge.md` ➔ `03-bus2-reverse-engineering.md` ➔ `04-dfnoponto-main-page-audit.md` ➔ `05-methodology-data-filtering.md`
 
 ---
 

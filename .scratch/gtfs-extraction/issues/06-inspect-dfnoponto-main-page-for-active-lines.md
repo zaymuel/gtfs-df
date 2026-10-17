@@ -14,7 +14,7 @@
 
 ## Comments
 
-> *Completed in `audit_dfnoponto.py` and documented in `docs/05-dfnoponto-main-page-audit.md`.*
+> *Completed in `audit_dfnoponto.py` and documented in `docs/04-dfnoponto-main-page-audit.md`.*
 
 ## Agent Brief
 
@@ -35,7 +35,7 @@ Fetch and inspect the HTML, scripts, and API calls made by the main page of `dfn
 - [x] `dfnoponto.com.br` and `dfnoponto.semob.df.gov.br` main landing pages are fetched and audited for line catalogs
 - [x] Client-side autocompletion datasets, search input bindings, or REST endpoints used on the main page are checked
 - [x] Any discovered line numbers are compared with `data/catalog/lines.json`
-- [x] Findings and status are recorded in `docs/05-dfnoponto-main-page-audit.md`
+- [x] Findings and status are recorded in `docs/04-dfnoponto-main-page-audit.md`
 
 **Out of scope:**
 - Primary GTFS synthesis (Ticket 04)

@@ -8,15 +8,17 @@
 
 ## 1. Executive Summary: Preliminary Audit vs. Principal Operational Question
 
-This audit distinguishes between two distinct questions:
+This audit distinguishes between two distinct technical questions:
 
-1. **Preliminary Question (DOM / Landing Page Inspection):**  
-   *Does the public WordPress landing page of `dfnoponto.com.br` (or `dfnoponto.semob.df.gov.br`) contain an independent, direct HTML catalog or search autocomplete list of all active bus lines?*  
-   **Answer:** **No.** Both homepages are static WordPress marketing portals (using the *Salient* theme) without HTML tables, `<select>` elements, `<datalist>` tags, or client-side JavaScript line arrays. All interactive transit lookups on Semob-DF are embedded via `<iframe>` linking to the operational Bus2 system (`bus2.info`).
+1. **Preliminary Question (Landing Page HTML/DOM Inspection):**  
+   *Does the government portal's homepage (`dfnoponto.semob.df.gov.br` / `dfnoponto.com.br`) natively host a complete list of active bus lines in its own HTML/DOM or search autocomplete script, without delegating to third-party iframes?*  
+   *(Em português: A página inicial do portal governamental disponibiliza nativamente em seu próprio código HTML/DOM ou campo de busca uma listagem completa das linhas ativas, de forma independente e sem delegar para iframes de terceiros?)*  
+   **Answer / Resposta:** **No / Não.** Both landing pages are purely static WordPress marketing portals (using the *Salient* theme) without HTML tables, `<select>` elements, `<datalist>` tags, or client-side JavaScript line arrays. All interactive transit queries on Semob-DF are delegated via `<iframe>` to the operational Bus2 system (`bus2.info`).
 
-2. **Principal Question (Scrapability of Official Line Updates):**  
-   *Can we reliably, systematically, and automatically scrape the official Semob-DF / DF no Ponto platforms for all bus lines whenever they are updated?*  
-   **Answer:** **Yes.** Because the official portal (`dfnoponto.semob.df.gov.br/pesquisa-por-linhas/`) delegates lookups to the Bus2 platform, we can directly harvest the official live route enumeration endpoint (`GET https://mobilibus.com/api/routes?project_hash=3c189`). Whenever Semob creates, alters, or discontinues lines, this endpoint immediately reflects those operational changes. Comparing this live feed against our baseline `data/catalog/lines.json` allows our automated extraction pipeline (`scripts/extract.py`) to scrape updated geometries (`/percurso/`) and timetables (`/horario/`) directly from the authoritative DFTrans backend without relying on manual page inspections.
+2. **Principal Operational Question (Automated Scraping of Network Updates):**  
+   *Can the official Semob-DF / DF no Ponto platforms be systematically scraped to capture all bus lines whenever operational updates occur?*  
+   *(Em português: É possível raspar de forma sistemática e automatizada os portais oficiais da Semob-DF / DF no Ponto para capturar todas as linhas de ônibus sempre que houver atualizações na rede?)*  
+   **Answer / Resposta:** **Yes / Sim.** Because the official Semob-DF portal (`dfnoponto.semob.df.gov.br/pesquisa-por-linhas/`) embeds the operational Bus2 platform, we can directly query the live route enumeration API endpoint (`GET https://mobilibus.com/api/routes?project_hash=3c189`). Whenever Semob creates, alters, or discontinues lines, this endpoint immediately reflects those operational changes. Comparing this live feed against our baseline `data/catalog/lines.json` allows our automated extraction pipeline (`scripts/extract.py`) to scrape updated geometries (`/percurso/`) and timetables (`/horario/`) directly from the authoritative DFTrans backend without relying on manual page inspections.
 
 * **Key Audit Findings:**
   * **Finding 1 (Portal Snapshot):** `Todas as linhas _ Brasília Mobilidade.html` (unofficial) contains **961 line cards**, of which **33 are ANTT interstate lines** (connecting Goiás/Entorno to DF, e.g. `12033870`, `12500170`) and **928 are DF urban bus lines**.
