@@ -44,7 +44,8 @@ except ImportError:
     PROJECT_HASH = "3c189"
     REPORT_API = "https://mobilibus.com/api"
     PAINEL_PUBLIC_API = "https://painel.mobilibus.com/v2/api/public"
-    PASSPHRASE = os.getenv("BUS2_ENCRYPTION_KEY", "GC]hBB[j_QQ&fZ9=GEJ2>e9!Tv2n")
+    PASSPHRASE = os.getenv("BUS2_ENCRYPTION_KEY",
+                           "GC]hBB[j_QQ&fZ9=GEJ2>e9!Tv2n")
 
 HEADERS = {
     "User-Agent": (
@@ -149,4 +150,3 @@ def fetch_timetable(route_id_b36: str, session: Optional[requests.Session] = Non
 def fetch_trip_details(trip_id_b36: str, session: Optional[requests.Session] = None) -> Optional[Dict[str, Any]]:
     """Detalhes espaciais e temporais do percurso (paradas com offset em segundos 'int'): GET /api/trip-details?v=2&trip_hash={tripId}."""
     return _get_json(f"{REPORT_API}/trip-details", {"v": "2", "trip_hash": trip_id_b36}, session)
-

@@ -8,6 +8,8 @@ Ticket 01:
 4. Gera um catálogo compactado e desduplicado em data/catalog/lines.json.
 """
 
+import bus2_client
+import config
 import json
 import logging
 import sys
@@ -17,11 +19,13 @@ from typing import Any, Dict, List, Set
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
-import config
-import bus2_client
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -56,21 +60,25 @@ def run_discovery() -> List[Dict[str, Any]]:
     config.CATALOG_DIR.mkdir(parents=True, exist_ok=True)
     config.BUS2_DIR.mkdir(parents=True, exist_ok=True)
 
-    logger.info("Etapa 1: Buscando catálogo mestre de rotas do Bus2 / DF no Ponto...")
+    logger.info(
+        "Etapa 1: Buscando catálogo mestre de rotas do Bus2 / DF no Ponto...")
     bus2_routes = []
     try:
         bus2_routes = bus2_client.fetch_routes()
-        logger.info("Rotas obtidas diretamente da API do Bus2: %d", len(bus2_routes))
+        logger.info("Rotas obtidas diretamente da API do Bus2: %d",
+                    len(bus2_routes))
         # Salva cópia atualizada
-        with open(config.BUS2_DIR / "routes.json", "w", encoding="utf-8") as f:
+        with open(config.BUS2_ROUTES_PATH, "w", encoding="utf-8") as f:
             json.dump(bus2_routes, f, ensure_ascii=False, indent=2)
     except Exception as e:
-        logger.warning("Falha ao consultar API online do Bus2 (%s). Tentando cache local...", e)
-        cached_routes = config.BUS2_DIR / "routes.json"
+        logger.warning(
+            "Falha ao consultar API online do Bus2 (%s). Tentando cache local...", e)
+        cached_routes = config.BUS2_ROUTES_PATH
         if cached_routes.exists():
             with open(cached_routes, "r", encoding="utf-8") as f:
                 bus2_routes = json.load(f)
-            logger.info("Carregadas %d rotas do cache local do Bus2.", len(bus2_routes))
+            logger.info(
+                "Carregadas %d rotas do cache local do Bus2.", len(bus2_routes))
 
     # Mapeamento do Bus2 por shortName
     bus2_by_num: Dict[str, Dict[str, Any]] = {}
@@ -88,16 +96,19 @@ def run_discovery() -> List[Dict[str, Any]]:
             with open(config.LEGACY_CATALOG_PATH, "r", encoding="utf-8") as f:
                 legacy_data = json.load(f)
             for item in legacy_data:
-                num = item.get("numero") if isinstance(item, dict) else str(item)
+                num = item.get("numero") if isinstance(
+                    item, dict) else str(item)
                 if num and is_valid_df_urban_line(num):
                     legacy_lines.add(num)
-            logger.info("Linhas urbanas válidas no catálogo legado: %d", len(legacy_lines))
+            logger.info(
+                "Linhas urbanas válidas no catálogo legado: %d", len(legacy_lines))
         except Exception as e:
             logger.warning("Erro ao ler catálogo legado: %s", e)
 
     # União das linhas candidatas
     all_candidate_numbers = sorted(set(bus2_by_num.keys()) | legacy_lines)
-    logger.info("Total de linhas candidatas para o catálogo: %d", len(all_candidate_numbers))
+    logger.info("Total de linhas candidatas para o catálogo: %d",
+                len(all_candidate_numbers))
 
     # Constrói o catálogo consolidado e compacto
     catalog_entries: List[Dict[str, Any]] = []
@@ -130,12 +141,14 @@ def run_discovery() -> List[Dict[str, Any]]:
     # Grava catálogo principal compactado
     with open(config.CATALOG_PATH, "w", encoding="utf-8") as f:
         json.dump(catalog_entries, f, ensure_ascii=False, indent=2)
-    logger.info("Catálogo compactado gravado com sucesso em: %s (%d linhas)", config.CATALOG_PATH, len(catalog_entries))
+    logger.info("Catálogo compactado gravado com sucesso em: %s (%d linhas)",
+                config.CATALOG_PATH, len(catalog_entries))
 
     # Grava mapa de rotas Bus2
     with open(config.BUS2_ROUTE_MAP_PATH, "w", encoding="utf-8") as f:
         json.dump(route_map, f, ensure_ascii=False, indent=2)
-    logger.info("Mapeamento de rotas do Bus2 gravado em: %s (%d entradas)", config.BUS2_ROUTE_MAP_PATH, len(route_map))
+    logger.info("Mapeamento de rotas do Bus2 gravado em: %s (%d entradas)",
+                config.BUS2_ROUTE_MAP_PATH, len(route_map))
 
     # Também atualiza data/lines.json para compatibilidade total mantendo schema limpo
     with open(config.LEGACY_CATALOG_PATH, "w", encoding="utf-8") as f:
@@ -148,4 +161,3 @@ def run_discovery() -> List[Dict[str, Any]]:
 if __name__ == "__main__":
     entries = run_discovery()
     print(f"Sucesso: {len(entries)} linhas ativas catalogadas.")
-

@@ -38,6 +38,6 @@
 - `docs/01-dftrans-api-knowledge.md` / `docs/adr/0001-gtfs-pipeline-architecture.md`
 
 **Acceptance criteria:**
-- [ ] All 56 lines without dots are preserved and correctly classified in catalog and compilation
-- [ ] Kinematic modeling uses 40 km/h for BRT trunk lines and 20 km/h for BRT feeder lines
-- [ ] `TODO.md` updated with ticket link
+- [x] All 56 lines without dots are preserved and correctly classified in catalog and compilation
+- [x] Kinematic modeling uses 40 km/h for BRT trunk lines and 20 km/h for BRT feeder lines
+- [x] `TODO.md` updated with ticket link

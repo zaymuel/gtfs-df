@@ -43,6 +43,6 @@ Ensure `build_gtfs.py` uses the line's catalog `"cor"` to populate `route_color`
 
 **Acceptance criteria:**
 
-- [ ] Clear documentation of color codes by operational basin and concessionaire
-- [ ] `build_gtfs.py` populates `route_color` from catalog `"cor"` with appropriate contrast `route_text_color`
-- [ ] `TODO.md` updated with ticket link
+- [x] Clear documentation of color codes by operational basin and concessionaire
+- [x] `build_gtfs.py` populates `route_color` from catalog `"cor"` with appropriate contrast `route_text_color`
+- [x] `TODO.md` updated with ticket link

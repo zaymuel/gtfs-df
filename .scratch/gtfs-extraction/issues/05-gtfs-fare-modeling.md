@@ -32,9 +32,9 @@ When `build_gtfs.py` compiles `gtfs_df.zip`, it should also parse `faixaTarifari
 - Output tables: `data/gtfs/fare_attributes.txt` and `data/gtfs/fare_rules.txt` inside `data/gtfs/gtfs_df.zip`
 
 **Acceptance criteria:**
-- [ ] Every distinct `faixaTarifaria` present in active routes is emitted once in `fare_attributes.txt` with `currency_type` set to `BRL` and `price` formatted to 2 decimal places
-- [ ] Every `route_id` in `routes.txt` that has a valid `faixaTarifaria` has a corresponding mapping row in `fare_rules.txt`
-- [ ] `gtfs_df.zip` contains both `fare_attributes.txt` and `fare_rules.txt` and passes GTFS schema validation
+- [x] Every distinct `faixaTarifaria` present in active routes is emitted once in `fare_attributes.txt` with `currency_type` set to `BRL` and `price` formatted to 2 decimal places
+- [x] Every `route_id` in `routes.txt` that has a valid `faixaTarifaria` has a corresponding mapping row in `fare_rules.txt`
+- [x] `gtfs_df.zip` contains both `fare_attributes.txt` and `fare_rules.txt` and passes GTFS schema validation
 
 **Out of scope:**
 - Complex temporal transfer discount rules not expressible in standard GTFS v1 `fare_attributes.txt`

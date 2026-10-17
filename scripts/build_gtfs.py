@@ -13,6 +13,10 @@ Tickets 04, 05, 14, 15:
 - Gera agency.txt, routes.txt, stops.txt, trips.txt, stop_times.txt, calendar.txt, shapes.txt, fare_attributes.txt, fare_rules.txt e compacta em gtfs_df.zip.
 """
 
+import config
+from shapely.strtree import STRtree
+from shapely.geometry import LineString, Point
+import pyproj
 import csv
 import json
 import logging
@@ -29,17 +33,14 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-import pyproj
-from shapely.geometry import LineString, Point
-from shapely.strtree import STRtree
 
-import config
-
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
 # Reprojeção EPSG:3857 -> EPSG:4326 (lon, lat)
-TRANSFORMER_3857_TO_4326 = pyproj.Transformer.from_crs("EPSG:3857", "EPSG:4326", always_xy=True)
+TRANSFORMER_3857_TO_4326 = pyproj.Transformer.from_crs(
+    "EPSG:3857", "EPSG:4326", always_xy=True)
 
 
 def to_wgs84(x: float, y: float) -> Tuple[float, float]:
@@ -80,7 +81,8 @@ def load_master_stops() -> Dict[str, Dict[str, Any]]:
     stops = {}
     master_path = config.STOPS_MASTER_PATH
     if not master_path.exists():
-        logger.warning("Inventário mestre de paradas não encontrado em %s", master_path)
+        logger.warning(
+            "Inventário mestre de paradas não encontrado em %s", master_path)
         return stops
 
     out_of_bounds_stops: List[Dict[str, Any]] = []
@@ -95,7 +97,8 @@ def load_master_stops() -> Dict[str, Dict[str, Any]]:
                 continue
             x, y = geom["coordinates"][:2]
             lon, lat = to_wgs84(x, y)
-            stop_id = str(props.get("sequencial") or props.get("codDftrans") or f"P_{x}_{y}")
+            stop_id = str(props.get("sequencial") or props.get(
+                "codDftrans") or f"P_{x}_{y}")
 
             if not is_in_bbox(lat, lon):
                 # Trata e audita paradas fora da bounding box do DF (ex: conexões no Entorno ou erros cadastrais)
@@ -144,7 +147,9 @@ class GtfsCompiler:
 
         self.catalog_map: Dict[str, Dict[str, Any]] = self.load_catalog_map()
         self.master_stops = load_master_stops()
-        self.stop_points = [s["point_geom"] for s in self.master_stops.values()]
+        self.stop_points = [
+            s["point_geom"] for s in self.master_stops.values()
+        ]
         self.stop_keys = list(self.master_stops.keys())
         self.str_tree = STRtree(self.stop_points) if self.stop_points else None
 
@@ -171,7 +176,8 @@ class GtfsCompiler:
                         if isinstance(item, dict) and "numero" in item:
                             cat_map[str(item["numero"]).strip()] = item
             except Exception as e:
-                logger.warning("Falha ao carregar catálogo mestre %s: %s", cat_path, e)
+                logger.warning(
+                    "Falha ao carregar catálogo mestre %s: %s", cat_path, e)
         return cat_map
 
     def get_line_speed(self, numero: str, tipos_onibus: Optional[List[Dict[str, Any]]]) -> Tuple[float, bool]:
@@ -203,10 +209,12 @@ class GtfsCompiler:
         return "175898", "FFFFFF"
 
     def compile_all(self):
-        logger.info("Iniciando compilação GTFS a partir de %s...", config.RAW_DIR)
+        logger.info("Iniciando compilação GTFS a partir de %s...",
+                    config.RAW_DIR)
         raw_files = list(config.RAW_DIR.glob("*.json"))
         if not raw_files:
-            logger.warning("Nenhum arquivo bruto encontrado em %s para compilação.", config.RAW_DIR)
+            logger.warning(
+                "Nenhum arquivo bruto encontrado em %s para compilação.", config.RAW_DIR)
             return
 
         for raw_file in raw_files:
@@ -222,11 +230,18 @@ class GtfsCompiler:
             with open(raw_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
         except Exception as e:
-            self.skipped_lines.append({"numero": numero, "reason": f"Erro de leitura JSON: {e}"})
+            self.skipped_lines.append(
+                {"numero": numero, "reason": f"Erro de leitura JSON: {e}"})
             return
 
         # Suporte a formatos novos (extract.py) e amostras legadas (harvest_dftrans.py)
-        linha_meta = data.get("linha") or (data.get("metadata")[0] if isinstance(data.get("metadata"), list) and len(data.get("metadata")) > 0 else {}) or {}
+        linha_meta = data.get("linha") or (
+            data.get("metadata")[0]
+            if
+            isinstance(data.get("metadata"), list)
+            and len(data.get("metadata")) > 0
+            else {}
+        ) or {}
         percursos = data.get("percursos") or {}
         if not percursos and "percurso" in data:
             percursos = {"default": data["percurso"]}
@@ -234,17 +249,21 @@ class GtfsCompiler:
         bus2_data = data.get("bus2") or {}
 
         if not percursos:
-            self.skipped_lines.append({"numero": numero, "reason": "Sem dados de percurso geométrico"})
+            self.skipped_lines.append(
+                {"numero": numero, "reason": "Sem dados de percurso geométrico"})
             return
 
         cat_info = self.catalog_map.get(numero, {})
-        speed_kmh, is_brt_line = self.get_line_speed(numero, linha_meta.get("tiposOnibus"))
+        speed_kmh, is_brt_line = self.get_line_speed(
+            numero, linha_meta.get("tiposOnibus"))
         speed_mps = (speed_kmh * 1000.0) / 3600.0
-        route_color, route_text_color = self.get_route_colors(numero, is_brt_line)
+        route_color, route_text_color = self.get_route_colors(
+            numero, is_brt_line)
 
         # Cadastra rota em routes.txt
         route_id = f"R_{numero}"
-        desc = linha_meta.get("descricao") or cat_info.get("descricao") or f"Linha {numero}"
+        desc = linha_meta.get("descricao") or cat_info.get(
+            "descricao") or f"Linha {numero}"
         self.routes.append({
             "route_id": route_id,
             "agency_id": config.AGENCY["agency_id"],
@@ -315,7 +334,8 @@ class GtfsCompiler:
             for seq, pt in enumerate(coords_3857, 1):
                 dx = pt[0] - prev_pt[0]
                 dy = pt[1] - prev_pt[1]
-                cum_dist += math.sqrt(dx * dx + dy * dy) * config.MERCATOR_SCALE_FACTOR
+                cum_dist += math.sqrt(dx * dx + dy * dy) * \
+                    config.MERCATOR_SCALE_FACTOR
                 prev_pt = pt
 
                 lon, lat = to_wgs84(pt[0], pt[1])
@@ -329,7 +349,8 @@ class GtfsCompiler:
                     })
 
             # Identifica e projeta paradas ao longo da linha
-            stops_for_line = self.snap_stops_along_line(line_3857, bus2_data, sentido_upper)
+            stops_for_line = self.snap_stops_along_line(
+                line_3857, bus2_data, sentido_upper)
             if len(stops_for_line) < config.MIN_STOPS_PER_TRIP:
                 self.skipped_lines.append({
                     "numero": numero,
@@ -339,7 +360,8 @@ class GtfsCompiler:
                 continue
 
             # Obtém partidas
-            departures = self.extract_departures(horarios, bus2_data, sentido_upper)
+            departures = self.extract_departures(
+                horarios, bus2_data, sentido_upper)
             if not departures:
                 self.skipped_lines.append({
                     "numero": numero,
@@ -375,7 +397,8 @@ class GtfsCompiler:
                         curr_sec += int(transit_time)
 
                         arr_str = format_gtfs_time(curr_sec)
-                        curr_sec += config.DWELL_TIME_SEC if stop_seq < len(stops_for_line) else 0
+                        curr_sec += config.DWELL_TIME_SEC \
+                            if stop_seq < len(stops_for_line) else 0
                         dep_str = format_gtfs_time(curr_sec)
                         prev_dist = dist_m
 
@@ -398,7 +421,8 @@ class GtfsCompiler:
             curr_dist = 0.0
             for s in bus2_stops:
                 pt = Point(s["x_3857"], s["y_3857"])
-                proj_dist = line_3857.project(pt) * config.MERCATOR_SCALE_FACTOR
+                proj_dist = line_3857.project(pt) \
+                    * config.MERCATOR_SCALE_FACTOR
                 # Garante estrita monotonicidade
                 curr_dist = max(curr_dist + 5.0, proj_dist)
                 projected_stops.append((s, curr_dist))
@@ -416,7 +440,8 @@ class GtfsCompiler:
             if buffer_geom.contains(pt):
                 stop_key = self.stop_keys[idx]
                 stop_info = self.master_stops[stop_key]
-                proj_dist = line_3857.project(pt) * config.MERCATOR_SCALE_FACTOR
+                proj_dist = line_3857.project(pt) \
+                    * config.MERCATOR_SCALE_FACTOR
                 projected_stops.append((stop_info, proj_dist))
 
         # Ordena monotonicamente pela distância linear ao longo do traçado
@@ -441,7 +466,9 @@ class GtfsCompiler:
             lng = s.get("lng")
             if lat and lng and is_in_bbox(lat, lng):
                 # Reprojeta WGS84 -> 3857 para projeção linear
-                x, y = pyproj.Transformer.from_crs("EPSG:4326", "EPSG:3857", always_xy=True).transform(lng, lat)
+                x, y = pyproj.Transformer.from_crs(
+                    "EPSG:4326", "EPSG:3857", always_xy=True
+                ).transform(lng, lat)
                 stop_id = str(s.get("stopId") or f"B2_{lat}_{lng}")
                 stops.append({
                     "stop_id": stop_id,
@@ -468,7 +495,9 @@ class GtfsCompiler:
                 elif "DOM" in desc or "FERIADO" in desc:
                     svc_id = "DOM_FER"
 
-                deps = [d.get("dep") for d in service.get("departures", []) if d.get("dep")]
+                deps = [d.get("dep") for d in service.get(
+                    "departures", []
+                ) if d.get("dep")]
                 if deps:
                     departures.setdefault(svc_id, []).extend(deps)
 
@@ -479,7 +508,9 @@ class GtfsCompiler:
         for key, schedule in horarios.items():
             if isinstance(schedule, list):
                 for item in schedule:
-                    dias = str(item.get("dias") or item.get("tipoDia") or "").upper()
+                    dias = str(
+                        item.get("dias") or item.get("tipoDia") or ""
+                    ).upper()
                     hora = item.get("horario") or item.get("hora")
                     if not hora:
                         continue
@@ -498,22 +529,30 @@ class GtfsCompiler:
 
         # 1. agency.txt
         with open(gtfs_dir / "agency.txt", "w", encoding="utf-8", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=["agency_id", "agency_name", "agency_url", "agency_timezone", "agency_lang"])
+            w = csv.DictWriter(f, fieldnames=[
+                               "agency_id", "agency_name", "agency_url",
+                               "agency_timezone", "agency_lang"
+                               ])
             w.writeheader()
             w.writerow(config.AGENCY)
 
         # 2. calendar.txt
         with open(gtfs_dir / "calendar.txt", "w", encoding="utf-8", newline="") as f:
-            fields = ["service_id", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "start_date", "end_date"]
+            fields = ["service_id", "monday", "tuesday", "wednesday", "thursday",
+                      "friday", "saturday", "sunday", "start_date", "end_date"]
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
-            w.writerow({"service_id": "SEG_SEX", "monday": 1, "tuesday": 1, "wednesday": 1, "thursday": 1, "friday": 1, "saturday": 0, "sunday": 0, "start_date": config.CALENDAR_START, "end_date": config.CALENDAR_END})
-            w.writerow({"service_id": "SABADO", "monday": 0, "tuesday": 0, "wednesday": 0, "thursday": 0, "friday": 0, "saturday": 1, "sunday": 0, "start_date": config.CALENDAR_START, "end_date": config.CALENDAR_END})
-            w.writerow({"service_id": "DOM_FER", "monday": 0, "tuesday": 0, "wednesday": 0, "thursday": 0, "friday": 0, "saturday": 0, "sunday": 1, "start_date": config.CALENDAR_START, "end_date": config.CALENDAR_END})
+            w.writerow({"service_id": "SEG_SEX", "monday": 1, "tuesday": 1, "wednesday": 1, "thursday": 1, "friday": 1,
+                       "saturday": 0, "sunday": 0, "start_date": config.CALENDAR_START, "end_date": config.CALENDAR_END})
+            w.writerow({"service_id": "SABADO", "monday": 0, "tuesday": 0, "wednesday": 0, "thursday": 0, "friday": 0,
+                       "saturday": 1, "sunday": 0, "start_date": config.CALENDAR_START, "end_date": config.CALENDAR_END})
+            w.writerow({"service_id": "DOM_FER", "monday": 0, "tuesday": 0, "wednesday": 0, "thursday": 0, "friday": 0,
+                       "saturday": 0, "sunday": 1, "start_date": config.CALENDAR_START, "end_date": config.CALENDAR_END})
 
         # 3. routes.txt
         with open(gtfs_dir / "routes.txt", "w", encoding="utf-8", newline="") as f:
-            fields = ["route_id", "agency_id", "route_short_name", "route_long_name", "route_type", "route_color", "route_text_color"]
+            fields = ["route_id", "agency_id", "route_short_name",
+                      "route_long_name", "route_type", "route_color", "route_text_color"]
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(self.routes)
@@ -533,28 +572,32 @@ class GtfsCompiler:
 
         # 5. shapes.txt
         with open(gtfs_dir / "shapes.txt", "w", encoding="utf-8", newline="") as f:
-            fields = ["shape_id", "shape_pt_lat", "shape_pt_lon", "shape_pt_sequence", "shape_dist_traveled"]
+            fields = ["shape_id", "shape_pt_lat", "shape_pt_lon",
+                      "shape_pt_sequence", "shape_dist_traveled"]
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(self.shapes)
 
         # 6. trips.txt
         with open(gtfs_dir / "trips.txt", "w", encoding="utf-8", newline="") as f:
-            fields = ["route_id", "service_id", "trip_id", "trip_headsign", "direction_id", "shape_id"]
+            fields = ["route_id", "service_id", "trip_id",
+                      "trip_headsign", "direction_id", "shape_id"]
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(self.trips)
 
         # 7. stop_times.txt
         with open(gtfs_dir / "stop_times.txt", "w", encoding="utf-8", newline="") as f:
-            fields = ["trip_id", "arrival_time", "departure_time", "stop_id", "stop_sequence", "shape_dist_traveled"]
+            fields = ["trip_id", "arrival_time", "departure_time",
+                      "stop_id", "stop_sequence", "shape_dist_traveled"]
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(self.stop_times)
 
         # 8. fare_attributes.txt (Ticket 05)
         with open(gtfs_dir / "fare_attributes.txt", "w", encoding="utf-8", newline="") as f:
-            fields = ["fare_id", "price", "currency_type", "payment_method", "transfers", "agency_id"]
+            fields = ["fare_id", "price", "currency_type",
+                      "payment_method", "transfers", "agency_id"]
             w = csv.DictWriter(f, fieldnames=fields)
             w.writeheader()
             w.writerows(self.fare_attributes.values())
@@ -573,7 +616,8 @@ class GtfsCompiler:
         out_path = config.SKIPPED_LINES_PATH
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(self.skipped_lines, f, indent=2, ensure_ascii=False)
-        logger.info("Log de linhas ignoradas salvo em %s (%d registros)", out_path, len(self.skipped_lines))
+        logger.info("Log de linhas ignoradas salvo em %s (%d registros)",
+                    out_path, len(self.skipped_lines))
 
     def create_zip(self):
         zip_path = config.GTFS_DIR / "gtfs_df.zip"
@@ -587,7 +631,8 @@ class GtfsCompiler:
                 fpath = config.GTFS_DIR / fname
                 if fpath.exists():
                     zf.write(fpath, arcname=fname)
-        logger.info("Dataset GTFS empacotado com sucesso em: %s (%.2f KB)", zip_path, zip_path.stat().st_size / 1024.0)
+        logger.info("Dataset GTFS empacotado com sucesso em: %s (%.2f KB)",
+                    zip_path, zip_path.stat().st_size / 1024.0)
 
 
 def main():
