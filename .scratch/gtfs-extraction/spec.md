@@ -43,10 +43,16 @@
 ```text
 data/
 ├── catalog/
-│   ├── lines.json               # Full discovered line catalog from /linha/find/%
-│   └── skipped_lines.json       # Audit log of lines omitted due to missing data
+│   ├── lines.json               # Full discovered line catalog from /linha/find/{0..9}
+│   ├── bus2_routes.json         # Master Bus2/Mobilibus routes catalog (1,048 routes)
+│   ├── bus2_route_map.json      # Mapping DFTrans line number -> Bus2 Base36 route IDs
+│   ├── bus2_agencies.json       # Bus2 concessionaires / agencies
+│   ├── skipped_lines.json       # Audit log of lines omitted due to missing data
+│   └── out_of_bounds_stops.json # Audit log of stops outside DF bounding box
 ├── raw/
 │   └── {line_number}.json       # Raw response cache per line for offline reruns
+├── bus2 drafts/
+│   └── {bundle}.js, {probe}.json # Raw reverse-engineering captures from Bus2
 └── gtfs/
     ├── agency.txt
     ├── routes.txt
@@ -55,20 +61,41 @@ data/
     ├── stop_times.txt
     ├── calendar.txt
     ├── shapes.txt
+    ├── fare_attributes.txt      # Fare tiers (R$ 2.70, R$ 3.80, R$ 5.50)
+    ├── fare_rules.txt           # Route-to-fare tier associations
     └── gtfs_df.zip              # Final zipped feed ready for r5py
+
+scripts/
+├── config.py                    # Constants, speeds, dwell times, and paths
+├── build_gtfs.py                # GTFS static compiler and linear referencing engine
+├── extract.py                   # Multi-threaded resilient harvester with Bus2 fallback
+├── discover_catalog.py          # Official line catalog discovery
+├── audit_dfnoponto.py           # Landing page crawler and completeness audit
+├── bus2_client.py               # Mobilibus API client with public key deciphering
+└── http_client.py               # Resilient HTTP session pool with backoff
+
+tests/
+├── run_tests.py                 # Offline test runner and coverage orchestrator
+├── test_compiler.py             # Unit tests for GTFS compiler & linear referencing
+├── test_clients.py              # Unit tests for HTTP and Bus2 API clients
+├── test_catalog.py              # Unit tests for catalog discovery and BRT validation
+└── test_audit_and_extract.py    # Unit tests for audit logic and extractor pipelines
+
+Python drafts/                   # Exploratory probe scripts, reverse-engineering notes
 ```
 
 ### Module Architecture
-* `config.py`: Speeds (20 km/h baseline, 40 km/h BRT), 30s dwell, calendar dates (`20260101`–`20261231`), directory paths.
-* `extract.py`: Scrapes line catalog via `[0..9]` digit loop, then downloads per-line payloads to `data/raw/{line}.json` with rate limiting.
-* `build_gtfs.py`: Offline processor reading `data/raw/`, converting CRS, snapping stops, calculating stop times, generating GTFS CSVs, and creating `gtfs_df.zip`.
+* `scripts/config.py`: Speeds (20 km/h baseline, 40 km/h BRT, configurable via env vars), 30s dwell, calendar dates (`20260101`–`20261231`), directory paths.
+* `scripts/extract.py`: Scrapes line catalog via `[0..9]` digit loop, then downloads per-line payloads to `data/raw/{line}.json` with rate limiting, thread safety, and Bus2 fallback.
+* `scripts/build_gtfs.py`: Offline processor reading `data/raw/`, converting CRS (EPSG:3857 -> EPSG:4326), snapping stops, calculating stop times, generating GTFS CSVs, modeling fares, and packaging `data/gtfs/gtfs_df.zip`.
+* `tests/run_tests.py`: Offline pytest suite maintaining $>88\%$ coverage over `scripts/`.
 
 ---
 
-## 3. Backlog / TODO: Economic Disparity & Fares
+## 3. Economic Disparity & Fares
 
-* [ ] **Fare Modeling (`fare_attributes.txt` & `fare_rules.txt`)**:
-  * Incorporate DFTrans `faixaTarifaria` (e.g. Circular R$ 2.70, Metropolitana 1 R$ 3.80, Metropolitana 2 R$ 5.50) into the data model to calculate generalized travel cost matrices and evaluate economic disparity in transport accessibility across administrative regions of DF.
+* [x] **Fare Modeling (`fare_attributes.txt` & `fare_rules.txt`)**:
+  * Incorporates DFTrans `faixaTarifaria` (e.g. Circular R$ 2.70, Metropolitana 1 R$ 3.80, Metropolitana 2 R$ 5.50) into the data model to calculate generalized travel cost matrices and evaluate economic disparity in transport accessibility across administrative regions of DF. Emitted directly in `build_gtfs.py` and packaged into `gtfs_df.zip`.
 
 ---
 

@@ -139,7 +139,11 @@ As established in [`01-initial-project-context.md`](01-initial-project-context.m
 
 ## 4. Coordinate Reference System (CRS) Transformation
 
-The route geometries returned by `/percurso/` are in **EPSG:3857 (Web Mercator in meters)**. They must be reprojected to **EPSG:4326 (WGS84 decimal degrees: `[latitude, longitude]`)** for GTFS `shapes.txt` and `stops.txt`.
+The route geometries returned by `/percurso/` and stop coordinates in `/parada/geo/paradas` are in **EPSG:3857 (Web Mercator in meters)**. They must be reprojected to **EPSG:4326 (WGS84 decimal degrees: `[latitude, longitude]`)** for GTFS `shapes.txt` and `stops.txt`.
+
+> [!NOTE]
+> **Convenção de Nomenclatura no Código (`x_3857`, `y_3857`):**  
+> No compilador GTFS (`scripts/build_gtfs.py`), as propriedades `x_3857` e `y_3857` representam as coordenadas métricas planas originais no sistema **EPSG:3857** (Web Mercator / Pseudo-Mercator). Elas são preservadas internamente para viabilizar cálculos euclidianos e *linear referencing* com a biblioteca Shapely (`LineString.project()`) ao longo do traçado das vias. Para o arquivo final GTFS (`stops.txt`), essas coordenadas são convertidas analiticamente para graus decimais em **EPSG:4326** (`stop_lat`, `stop_lon`).
 
 ### 4.1 Mathematical Conversion Formula
 

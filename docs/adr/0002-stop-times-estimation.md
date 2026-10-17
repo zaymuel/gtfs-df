@@ -1,47 +1,90 @@
-# ADR / Spec: Stop Times Extraction & Spatial-Temporal Interpolation (`stop_times.txt`)
+# 0002. Stop Times Extraction & Spatial-Temporal Kinematic Interpolation (`stop_times.txt`)
 
-## 1. Context & Problem Statement (Updated)
+Date: 2026-10-14 (Updated: 2026-10-17)
 
-While `sistemas.dftrans.df.gov.br` only exposes origin terminal departure times (`/horario/linha/{sequencial}`), `dfnoponto.com.br` exposes two distinct front-end modules:
+Status: Accepted (Implemented in `scripts/build_gtfs.py`)
 
-1. **`/pesquisa-geral/`:** Displays estimated pass-through times per intermediate stop (e.g., Line `0.110`: `16h 34` at Terminal Rodoviário -> `16h 35` at Biblioteca Nacional -> `16h 45` at UnB CDT -> `16h 49` at UNB Área 1).
-2. **`/pesquisa-por-linhas/`:** Embeds a third-party schedule and route viewer powered by **Bus2** (`bus2.info/reports/2you/3c189`), which provides departure tables (`View as departures` / `View as table`), effective dates (`Effective from: 23/08/2025`), and a `Stops and route` view.
+## 1. Context & Problem Statement
 
-## 2. Investigation & Extraction Strategy (Updated)
+In the Federal District (DF, Brasília), neither the official transit authority (Semob-DF / DFTrans) nor its frontend portals (`dfnoponto.semob.df.gov.br`, `bus2.info`) publish a static, complete General Transit Feed Specification (GTFS) feed with scheduled pass-through times for each intermediate stop along bus routes.
 
-### Path A: Direct Extraction from Bus2 (`bus2.info`) & `pesquisa-geral` APIs
+Specifically, the data sources present the following realities:
 
-1. Inspect XHR traffic on `https://bus2.info/reports/2you/3c189` when toggling **Schedules -> View as table** and **Stops and route**.
-2. Inspect XHR traffic on `https://dfnoponto.com.br/pesquisa-geral/` when selecting a line and direction to capture the JSON payload that populates the `PREVISÃO` / `PONTO DE PARADA` sidebar.
-3. If the backend returns pre-calculated stop offsets (or segment travel times), map them directly to GTFS `stop_times.txt`.
+1. **DFTrans REST API (`sistemas.dftrans.df.gov.br`):**
+   * Endpoint `/horario/linha/numero/{numero}` only exposes scheduled departure times from the origin terminal (e.g., `06:00`, `06:15`, `06:30`).
+   * No intermediate stop times or segment travel durations are exposed.
+2. **Bus2 / Mobilibus API (`mobilibus.com` / `painel.mobilibus.com`):**
+   * Exposes departure tables (`/api/timetable`) and static cumulative offsets in seconds for certain routes (`/api/trip-details`).
+   * However, these offsets are not uniformly available across all 930+ urban lines, require brittle reverse-engineering of transient Base36 identifiers, and do not reflect calibrated network-wide commercial speeds or operational conditions. Neither system provides dynamic real-time congestion travel matrices for static planning.
 
-### Path B: Algorithmic Generation via Linear Referencing (Fallback)
+### Why Intermediate Stop Times are Strictly Required for GTFS and `r5py`
+
+A static GTFS dataset is intended to drive multimodal routing engines (such as `r5py`, Conveyal R5, and OpenTripPlanner) that utilize time-expanded or time-dependent routing algorithms (notably **RAPTOR** — *Round-Based Public Transit Routing* and **CSA** — *Connection Scan Algorithm*).
+
+Without interpolated arrival and departure times in `stop_times.txt`:
+
+1. **Intermediate Boarding / Alighting:** The routing engine cannot calculate when a vehicle reaches any stop other than the initial terminal. Consequently, virtual passengers cannot board or alight at intermediate stops along the route.
+2. **Transfer Synchronization:** Multimodal journeys rely on transfers between intersecting lines. Without arrival times at transfer hubs (e.g., Rodoviária do Plano Piloto, W3, L2, Taguatinga Centro), the engine cannot evaluate whether an incoming passenger arrives in time to catch a connecting bus.
+3. **Cumulative Spatial Accessibility:** Measuring how many opportunities (jobs, healthcare, education) are reachable within time horizons (e.g., 30, 45, 60 minutes) requires strictly increasing, realistic elapsed travel times across the entire transit network.
+
+---
+
+## 2. Decision: Algorithmic Synthesis via Kinematic Linear Referencing
+
+We adopted a deterministic, mathematically grounded kinematic model using **Linear Referencing** via `shapely` to synthesize all intermediate timestamps in `stop_times.txt`.
+
+### 2.1 Theoretical & Mathematical Formulation
 
 Given:
 
-- Route polyline $L$ with total length $D_{\text{total}}$ (in meters).
-- Ordered sequence of stops $S = \{s_0, s_1, \dots, s_n\}$.
-- Departure time at origin terminal $t_0$ (from `/horario/linha/{sequencial}`).
-- Estimated total trip duration $T_{\text{trip}}$ (or average operational speed $v_{\text{avg}}$, typically $18\text{–}25\text{ km/h}$ in urban Brasília, or derived from GPS feed `/gps/linha/{numero}/geo/recent`).
+* Route polyline $L$ represented as a `LineString` with total length $D_{\text{total}}$ in meters (projected in `EPSG:3857`).
+* Ordered sequence of physical bus stops $S = \{s_0, s_1, \dots, s_n\}$ snapped orthogonally onto $L$.
+* Scheduled departure time from terminal $t_0$ (derived from `/horario/linha/numero/{numero}`).
+* Cartographic scale factor for Brasília's latitude ($-15.8^\circ$):
+  $$\kappa = \cos(-15.8^\circ) \approx 0.9622$$
+* Differentiated commercial operating speed $v_{\text{commercial}}$ (converted to m/s):
+  * **Conventional Urban Lines:** $v = 20\text{ km/h} \approx 5.56\text{ m/s}$ (mixed traffic, frequent intersections).
+  * **BRT Corridors (Expresso DF Sul / BRT Oeste):** $v = 40\text{ km/h} \approx 11.11\text{ m/s}$ (segregated busways, off-board fare collection).
+* Constant dwell time per stop: $\Delta t_{\text{dwell}} = 30\text{ seconds}$ (boarding and alighting).
 
-For each stop $s_i$:
+For each stop $s_i$ at sequence index $i$ ($i \ge 0$):
 
-1. Project $s_i$ onto polyline $L$ to obtain cumulative distance along the route:
-   $$d_i = \text{project}(L, s_i)$$
-2. Compute arrival time $t_i$:
-   - **Method A (Constant Operational Speed $v$ in m/s):**
-     $$t_i = t_0 + \frac{d_i}{v}$$
-   - **Method B (Proportional Trip Duration $T_{\text{trip}}$):**
-     $$t_i = t_0 + T_{\text{trip}} \cdot \left(\frac{d_i}{D_{\text{total}}}\right)$$
+1. **Cumulative Distance along Polyline:**
+   $$d_i = \text{project}(L, s_i) \cdot \kappa$$
+2. **Cumulative In-Vehicle Running Time:**
+   $$T_{\text{run}}(i) = \frac{d_i}{v_{\text{commercial}}}$$
+3. **Cumulative Dwell Time:**
+   $$T_{\text{dwell}}(i) = i \cdot \Delta t_{\text{dwell}}$$
+4. **Intermediate Arrival & Departure Times:**
+   $$t_{\text{arrival}}(i) = t_0 + T_{\text{run}}(i) + T_{\text{dwell}}(i)$$
+   $$t_{\text{departure}}(i) = t_{\text{arrival}}(i) + \Delta t_{\text{dwell}}$$
 
-## 3. Reference Python Implementation (`shapely`)
+This guarantees:
+
+* **Monotonicity:** $t_{\text{arrival}}(i+1) > t_{\text{departure}}(i)$, completely eliminating backward-in-time paradoxes in RAPTOR.
+* **Realistic Transit Dynamics:** Differentiated speeds capture the clear physical distinction between segregated BRT corridors and regular mixed-traffic street buses.
+* **Configurability:** All parameters ($v_{\text{conv}}$, $v_{\text{brt}}$, $\Delta t_{\text{dwell}}$) are centralized in `scripts/config.py` and overridable via environment variables.
+
+---
+
+## 3. Investigation of Alternative Paths
+
+### Path A: Direct Extraction from Bus2 (`bus2.info`)
+
+* Explored in [Ticket 02](.scratch/gtfs-extraction/issues/02-bus2-schedule-and-timepoint-inspector.md) and documented in `docs/03-bus2-reverse-engineering.md`.
+* While Bus2 provides Base36 trip tables and cumulative offsets for selected trips, scraping 930+ lines through undocumented web endpoints introduces severe fragility, API rate-limiting risks, and gaps for routes without detailed timepoints.
+* **Verdict:** Bus2 is used as an authoritative secondary reference for terminal departure verification and line cross-mapping, while Path B (Kinematic Synthesis) serves as the primary engine for `stop_times.txt`.
+
+---
+
+## 4. Reference Python Implementation (`shapely`)
 
 ```python
 import requests
 from datetime import datetime, timedelta
 from shapely.geometry import LineString, Point
 
-BASE_URL = "[https://www.sistemas.dftrans.df.gov.br](https://www.sistemas.dftrans.df.gov.br)"
+BASE_URL = "https://www.sistemas.dftrans.df.gov.br"
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
     "Accept": "application/json"
@@ -110,3 +153,14 @@ def generate_stop_times(numero_linha: str, sequencial: int, departure_hhmm: str,
 
     return stop_times_output
 ```
+
+---
+
+## 5. Consequences & Routing Compliance
+
+* **Positive Consequences:**
+  1. **Strict Monotonicity:** Intermediate arrival times always advance sequentially along the route, satisfying RAPTOR / CSA prerequisites in `r5py` and OpenTripPlanner without negative time deltas or loops.
+  2. **Inter-line Transfer Modeling:** Passengers can transfer between lines at intermediate stops, unlocking accurate accessibility calculations for university campuses, administrative centers, and hospital zones.
+  3. **Reproducibility & Auditability:** Transparent, deterministic formulation based on physical distances and configurable speeds, directly documentable in peer-reviewed transport academic literature.
+* **Limitations Acknowledged:**
+  * Assumes uniform average commercial speed per line category, abstracting localized peak-hour congestion bottlenecks (except as calibrated via global speed parameters in `scripts/config.py`).

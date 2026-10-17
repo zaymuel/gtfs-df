@@ -1,0 +1,12 @@
+# Dependências principais de extração, modelagem e reprojeção espacial
+requests>=2.28.0
+shapely>=2.0.0
+pyproj>=3.5.0
+cryptography>=41.0.0
+beautifulsoup4>=4.12.0
+
+# Ferramentas de teste e cobertura para CI
+pytest>=7.0.0
+pytest-cov>=4.0.0
+coverage>=7.0.0
+
