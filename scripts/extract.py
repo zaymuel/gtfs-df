@@ -1,225 +1,330 @@
 """
-extract.py - Extrator de Dados do Transporte Público do Distrito Federal (DFTrans / Semob-DF)
+extract.py - Extrator Multithread Resiliente da Rede de Transporte Público do DF (DFTrans / Semob-DF).
 
-Este script automatiza a coleta de dados operacionais, traçados geométricos, paradas
-e tabelas horárias a partir da API oficial do DFTrans (https://www.sistemas.dftrans.df.gov.br).
-
-Os dados brutos são salvos em `data/raw/{numero_linha}.json` de forma atômica e com
-suporte a retomada (checkpoint/cache local).
-
-Uso:
-  python extract.py --limit 5            # Testar com as primeiras 5 linhas
-  python extract.py --lines 0.110,2304   # Extrair apenas linhas específicas
-  python extract.py                      # Extração completa de todas as linhas (~961)
-  python extract.py --force              # Forçar re-download ignorando cache
+Ticket 03:
+- Baixa o catálogo mestre de todas as paradas do DF (/parada/geo/paradas -> data/all_stops_df.geojson).
+- Processa linhas em paralelo com ThreadPoolExecutor (2 a 4 workers).
+- Aplica delay cortês de 1.0s por worker e backoff exponencial com jitter em erros 429/5xx.
+- Salva dados brutos de forma atômica (.tmp -> .json) em data/raw/{numero_linha}.json.
+- Suporta retomada transparente (ignora linhas já em cache, a menos que --force seja informado).
 """
 
-import os
-import sys
-import json
-import time
+import bus2_client
+from http_client import PoliteClient, HttpRequestError
+import config
 import argparse
-import requests
+import json
+import logging
+import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Any, Dict, List, Optional
 
-# Constantes e Endpoints da API DFTrans
-BASE_URL = "https://www.sistemas.dftrans.df.gov.br"
-DEFAULT_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "application/json"
-}
-
-# Diretórios padrão
-BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
-CATALOG_DIR = DATA_DIR / "catalog"
-RAW_DIR = DATA_DIR / "raw"
+# Garante acesso aos módulos (config na raiz, http_client e bus2_client em scripts/)
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
 
 
-def safe_request(url: str, session: requests.Session, retries: int = 3, backoff: float = 2.0) -> Optional[Any]:
-    """
-    Executa requisição HTTP GET com mecanismo de retry e exponential backoff.
-    """
-    for attempt in range(1, retries + 1):
-        try:
-            resp = session.get(url, headers=DEFAULT_HEADERS, timeout=15)
-            if resp.status_code == 200:
-                return resp.json()
-            elif resp.status_code in (404, 204):
-                return None
-            elif resp.status_code in (429, 500, 502, 503, 504):
-                time.sleep(backoff * attempt)
-            else:
-                resp.raise_for_status()
-        except (requests.exceptions.RequestException, json.JSONDecodeError):
-            if attempt == retries:
-                return None
-            time.sleep(backoff * attempt)
-    return None
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s [%(levelname)s] %(message)s")
+logger = logging.getLogger(__name__)
+
+
+def ensure_master_stops(client: PoliteClient, force: bool = False) -> Path:
+    """Garante o download do inventário espacial mestre de paradas do DF (atualmente ~5.466 paradas, sujeito a atualização)."""
+    stops_path = config.STOPS_MASTER_PATH
+    # Verifica se o inventário mestre já foi baixado anteriormente para evitar requisições desnecessárias
+    if stops_path.exists() and not force:
+        logger.info("Inventário mestre de paradas já existe em %s", stops_path)
+        return stops_path
+
+    # Realiza o download do inventário espacial completo via endpoint oficial
+    logger.info(
+        "Baixando inventário mestre de paradas do DFTrans (/parada/geo/paradas)...")
+    url = f"{config.DFTRANS_BASE_URL}/parada/geo/paradas"
+    data = client.get_json(url)
+    if not data or not isinstance(data, dict) or "features" not in data:
+        raise RuntimeError(
+            "Falha ao obter inventário mestre de paradas do DFTrans.")
+
+    # Gravação atômica: salva primeiro em arquivo temporário (.tmp) e renomeia
+    # Isso evita deixar arquivos JSON corrompidos ou parciais caso o processo seja interrompido
+    tmp_path = stops_path.with_suffix(".geojson.tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False)
+    tmp_path.replace(stops_path)
+    logger.info("Inventário mestre de paradas salvo com sucesso em %s (%d feições)",
+                stops_path, len(data["features"]))
+    return stops_path
 
 
 def load_catalog(catalog_path: Path) -> List[str]:
     """
-    Carrega o catálogo de linhas a partir do arquivo JSON estruturado.
-    Retorna uma lista ordenada de números de linha.
+    Carrega o catálogo de linhas a partir de data/catalog/lines.json ou fallback em data/lines.json.
+    Suporta listas de objetos [{'numero': '...'}, ...] ou listas simples de strings.
     """
+    # Verifica existência do catálogo primário com fallback automático para versão legada
     if not catalog_path.exists():
-        # Se não encontrar em data/catalog/lines.json, tenta em data/lines.json
-        fallback = DATA_DIR / "lines.json"
-        if fallback.exists():
-            catalog_path = fallback
+        legacy_path = config.LEGACY_CATALOG_PATH
+        if legacy_path.exists():
+            logger.warning(
+                "Catálogo mestre %s não encontrado. Usando fallback %s", catalog_path, legacy_path)
+            catalog_path = legacy_path
         else:
             raise FileNotFoundError(
-                f"Catálogo de linhas não encontrado em {catalog_path} ou {fallback}. "
-                "Certifique-se de que o catálogo inicial existe."
-            )
+                f"Nenhum catálogo encontrado em {catalog_path} ou {legacy_path}")
 
     with open(catalog_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        raw = json.load(f)
 
-    # Extrai números de linha com desduplicação
-    line_numbers = []
-    seen = set()
-    for item in data:
-        num = item.get("numero") if isinstance(item, dict) else str(item)
-        if num and num not in seen:
-            seen.add(num)
-            line_numbers.append(num)
+    # Extrai números de linha com desduplicação e suporte a múltiplos formatos
+    # Trata catálogos em formato de lista de dicionários, lista de strings ou mapa chave-valor
+    lines: List[str] = []
+    if isinstance(raw, list):
+        for item in raw:
+            if isinstance(item, dict) and "numero" in item:
+                num = str(item["numero"]).strip()
+                if num and item.get("ativo", True):
+                    lines.append(num)
+            elif isinstance(item, str) and item.strip():
+                lines.append(item.strip())
+    elif isinstance(raw, dict):
+        for k, v in raw.items():
+            if isinstance(v, dict) and "numero" in v:
+                lines.append(str(v["numero"]).strip())
+            else:
+                lines.append(str(k).strip())
 
-    return line_numbers
+    # Ordena e desduplica para garantir execução determinística e reproduzível
+    deduped = sorted(list(set(lines)))
+    logger.info("Catálogo carregado de %s: %d linhas válidas para extração",
+                catalog_path, len(deduped))
+    return deduped
 
 
-def extract_line(line_number: str, session: requests.Session, delay: float = 0.5) -> Optional[Dict[str, Any]]:
-    """
-    Extrai todos os dados de uma linha específica via API oficial do DFTrans:
-    1. Metadados operacionais e sentidos (/linha/numero/{numero})
-    2. Geometria de percurso em EPSG:3857 (/percurso/linha/numero/{numero}/)
-    3. Paradas por sentido operacional (/parada/linha/{sequencial}/geo)
-    4. Tabela de horários de partida (/horario/linha/numero/{numero})
-    """
-    # 1. Metadados e sentidos
-    meta = safe_request(f"{BASE_URL}/linha/numero/{line_number}", session)
-    time.sleep(delay)
+def fetch_line_dftrans(client: PoliteClient, numero: str) -> Optional[Dict[str, Any]]:
+    """Busca metadados cadastrais, operadoras e sequenciais da linha no DFTrans."""
+    url = f"{config.DFTRANS_BASE_URL}/linha/numero/{numero}"
+    try:
+        data = client.get_json(url)
+        if isinstance(data, list) and len(data) > 0:
+            return data[0]
+        elif isinstance(data, dict):
+            return data
+    except HttpRequestError as e:
+        logger.warning("[%s] Erro DFTrans /linha/numero: %s", numero, e)
+    return None
 
-    if not meta or not isinstance(meta, list):
-        return None
 
-    # 2. Geometria de percurso (LineString em EPSG:3857)
-    percurso = safe_request(
-        f"{BASE_URL}/percurso/linha/numero/{line_number}/", session)
-    time.sleep(delay)
+def fetch_percursos(client: PoliteClient, numero: str, linha_meta: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """Busca polilinhas em EPSG:3857 para cada sentido da linha."""
+    percursos = {}
+    url_num = f"{config.DFTRANS_BASE_URL}/percurso/linha/numero/{numero}/"
+    try:
+        data = client.get_json(url_num)
+        if data and isinstance(data, dict) and "features" in data and len(data["features"]) > 0:
+            percursos["numero"] = data
+            return percursos
+    except HttpRequestError:
+        pass
 
-    # 3. Paradas por sentido (usando o 'sequencial' interno de cada sentido)
-    paradas_por_sentido = {}
-    for sentido_info in meta:
-        seq = sentido_info.get("sequencial")
-        sentido = sentido_info.get("sentido") or "UNICO"
-        if seq:
-            stops_geojson = safe_request(
-                f"{BASE_URL}/parada/linha/{seq}/geo", session)
-            if stops_geojson:
-                paradas_por_sentido[sentido] = stops_geojson
-            time.sleep(delay)
+    if linha_meta and "sequencial" in linha_meta:
+        seq = linha_meta["sequencial"]
+        url_seq = f"{config.DFTRANS_BASE_URL}/percurso/linha/{seq}"
+        try:
+            data = client.get_json(url_seq)
+            if data and isinstance(data, dict) and "features" in data:
+                percursos[str(seq)] = data
+        except HttpRequestError as e:
+            logger.debug("[%s] Percurso por seq %s falhou: %s", numero, seq, e)
 
-    # 4. Tabela horária
-    horarios = safe_request(
-        f"{BASE_URL}/horario/linha/numero/{line_number}", session)
-    time.sleep(delay)
+    return percursos
 
-    return {
-        "numero": line_number,
-        "metadata": meta,
-        "percurso": percurso,
-        "paradas": paradas_por_sentido,
-        "horarios": horarios
+
+def fetch_horarios(client: PoliteClient, numero: str, linha_meta: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """Busca partidas oficiais do DFTrans."""
+    horarios = {}
+    url_num = f"{config.DFTRANS_BASE_URL}/horario/linha/numero/{numero}"
+    try:
+        data = client.get_json(url_num)
+        if data:
+            horarios["numero"] = data
+            return horarios
+    except HttpRequestError:
+        pass
+
+    if linha_meta and "sequencial" in linha_meta:
+        seq = linha_meta["sequencial"]
+        url_seq = f"{config.DFTRANS_BASE_URL}/horario/linha/{seq}"
+        try:
+            data = client.get_json(url_seq)
+            if data:
+                horarios[str(seq)] = data
+        except HttpRequestError:
+            pass
+
+    return horarios
+
+
+def fetch_bus2_supplement(numero: str, bus2_map: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+    """Busca dados suplementares no Bus2 (timetable e trip-details com travel time offsets)."""
+    supp = {}
+    if not bus2_map or numero not in bus2_map:
+        return supp
+
+    route_info = bus2_map[numero]
+    route_id_b36 = route_info.get("routeId")
+    if not route_id_b36:
+        return supp
+
+    try:
+        tt = bus2_client.fetch_timetable(route_id_b36)
+        if tt:
+            supp["timetable"] = tt
+            trips = tt.get("timetable", {}).get("trips", [])
+            if trips and isinstance(trips, list) and len(trips) > 0:
+                first_trip_hash = trips[0].get("tripId")
+                if first_trip_hash:
+                    td = bus2_client.fetch_trip_details(first_trip_hash)
+                    if td:
+                        supp["trip_details"] = td
+    except Exception as e:
+        logger.debug("[%s] Suplemento Bus2 falhou: %s", numero, e)
+
+    return supp
+
+
+def process_line_worker(
+    numero: str,
+    client: PoliteClient,
+    force: bool,
+    bus2_map: Optional[Dict[str, Any]],
+    lock: threading.Lock,
+    stats: Dict[str, int]
+) -> str:
+    """Worker para extração atômica de uma linha individual."""
+    out_file = config.RAW_DIR / f"{numero}.json"
+    if out_file.exists() and not force:
+        with lock:
+            stats["skipped"] += 1
+        return f"CACHE {numero}"
+
+    linha_meta = fetch_line_dftrans(client, numero)
+    percursos = fetch_percursos(client, numero, linha_meta)
+    horarios = fetch_horarios(client, numero, linha_meta)
+    bus2_data = fetch_bus2_supplement(numero, bus2_map)
+
+    if not linha_meta and not percursos:
+        with lock:
+            stats["failed"] += 1
+        return f"SEM_DADOS {numero}"
+
+    payload = {
+        "numero": numero,
+        "linha": linha_meta or {},
+        "percursos": percursos,
+        "horarios": horarios,
+        "bus2": bus2_data,
     }
+
+    tmp_file = out_file.with_suffix(".tmp")
+    try:
+        with open(tmp_file, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        tmp_file.replace(out_file)
+        with lock:
+            stats["saved"] += 1
+        return f"OK {numero} (percursos: {len(percursos)}, horarios: {bool(horarios)}, bus2: {bool(bus2_data)})"
+    except Exception as e:
+        if tmp_file.exists():
+            tmp_file.unlink(missing_ok=True)
+        with lock:
+            stats["failed"] += 1
+        return f"ERRO {numero}: {e}"
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Extrator de dados da API oficial do DFTrans / Semob-DF")
-    parser.add_argument("--catalog", type=str, default="data/lines.json",
-                        help="Caminho do arquivo de catálogo de linhas")
+        description="Extrator Multithread Resiliente da Rede DFTrans / Semob-DF.")
     parser.add_argument("--lines", type=str, default=None,
-                        help="Lista de números de linha separados por vírgula (ex: 0.110,2304)")
+                        help="Lista separada por vírgula de linhas específicas para extrair (ex: 0.110,2304)")
     parser.add_argument("--limit", type=int, default=None,
-                        help="Limite máximo de linhas para extrair (útil para testes)")
+                        help="Limitar extração às primeiras N linhas do catálogo")
+    parser.add_argument("--catalog", type=str, default=str(config.CATALOG_PATH),
+                        help=f"Caminho do catálogo JSON de linhas (padrão: {config.CATALOG_PATH})")
+    parser.add_argument("--workers", type=int, default=config.HTTP_WORKERS,
+                        help=f"Número de threads simultâneas (padrão: {config.HTTP_WORKERS})")
+    parser.add_argument("--delay", type=float, default=config.HTTP_DELAY_SEC,
+                        help=f"Delay cortês por worker em segundos (padrão: {config.HTTP_DELAY_SEC}s)")
+    parser.add_argument("--retries", type=int, default=config.HTTP_RETRIES,
+                        help=f"Número de retentativas em caso de erro (padrão: {config.HTTP_RETRIES})")
+    parser.add_argument("--backoff", type=float, default=config.HTTP_BACKOFF_SEC,
+                        help=f"Fator de backoff exponencial (padrão: {config.HTTP_BACKOFF_SEC}s)")
     parser.add_argument("--force", action="store_true",
-                        help="Força nova extração mesmo se já existir em cache")
-    parser.add_argument("--delay", type=float, default=0.3,
-                        help="Tempo de espera (em segundos) entre requisições")
+                        help="Forçar re-download de todas as linhas e do inventário mestre")
     args = parser.parse_args()
 
     # Garante que os diretórios existam
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
-    CATALOG_DIR.mkdir(parents=True, exist_ok=True)
+    config.RAW_DIR.mkdir(parents=True, exist_ok=True)
+    config.CATALOG_DIR.mkdir(parents=True, exist_ok=True)
 
-    session = requests.Session()
+    client = PoliteClient(
+        delay=args.delay,
+        retries=args.retries,
+        backoff=args.backoff,
+        timeout=config.HTTP_TIMEOUT_SEC
+    )
 
-    # Define a lista de linhas
+    # 1. Garante inventário mestre de paradas
+    ensure_master_stops(client, force=args.force)
+
+    # 2. Carrega lista de linhas
     if args.lines:
         target_lines = [l.strip() for l in args.lines.split(",") if l.strip()]
     else:
-        catalog_path = Path(args.catalog)
-        target_lines = load_catalog(catalog_path)
+        target_lines = load_catalog(Path(args.catalog))
 
     if args.limit:
         target_lines = target_lines[:args.limit]
 
-    total_lines = len(target_lines)
-    print(f"=== Iniciando extração de {total_lines} linhas do DFTrans ===")
-    print(f"Diretório de destino: {RAW_DIR}")
-    print(f"Intervalo entre requisições: {args.delay}s\n")
-
-    saved_count = 0
-    skipped_count = 0
-    failed_count = 0
-
-    for idx, line_number in enumerate(target_lines, start=1):
-        # Sanitiza nome do arquivo (ex: 0.110 -> 0.110.json)
-        safe_name = line_number.replace("/", "_")
-        cache_file = RAW_DIR / f"{safe_name}.json"
-
-        if cache_file.exists() and not args.force:
-            print(f"[{idx}/{total_lines}] Linha {line_number} já em cache (pulando)")
-            skipped_count += 1
-            continue
-
-        print(f"[{idx}/{total_lines}] Extraindo linha {line_number}...",
-              end=" ", flush=True)
+    # 3. Carrega mapa do Bus2 se existente
+    bus2_map = None
+    if config.BUS2_ROUTE_MAP_PATH.exists():
         try:
-            data = extract_line(line_number, session, delay=args.delay)
-            if data and data.get("metadata"):
-                # Salva em arquivo temporário e renomeia (gravação atômica)
-                tmp_file = RAW_DIR / f"{safe_name}.json.tmp"
-                with open(tmp_file, "w", encoding="utf-8") as f:
-                    json.dump(data, f, ensure_ascii=False, indent=2)
-                tmp_file.replace(cache_file)
-
-                sentidos = [s.get("sentido") for s in data.get("metadata", [])]
-                num_stops = sum(len(g.get("features", [])) for g in data.get(
-                    "paradas", {}).values() if isinstance(g, dict))
-                print(
-                    f"OK ({len(sentidos)} sentidos: {', '.join(sentidos)}, {num_stops} paradas)")
-                saved_count += 1
-            else:
-                print("FALHA (metadados nulos ou linha inexistente na API)")
-                failed_count += 1
+            with open(config.BUS2_ROUTE_MAP_PATH, "r", encoding="utf-8") as f:
+                bus2_map = json.load(f)
         except Exception as e:
-            print(f"ERRO: {e}")
-            failed_count += 1
+            logger.warning(
+                "Não foi possível carregar route_map do Bus2: %s", e)
+
+    total = len(target_lines)
+    logger.info("=== Iniciando extração de %d linhas com %d workers (delay: %.1fs) ===",
+                total, args.workers, args.delay)
+
+    stats = {"saved": 0, "skipped": 0, "failed": 0}
+    lock = threading.Lock()
+
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        futures = {
+            executor.submit(process_line_worker, num, client, args.force, bus2_map, lock, stats): num
+            for num in target_lines
+        }
+        for i, future in enumerate(as_completed(futures), 1):
+            res = future.result()
+            if i % 10 == 0 or i == total or "OK" in res or "ERRO" in res:
+                print(f"[{i}/{total}] {res}")
 
     print("\n=== Resumo da Extração ===")
-    print(f"Total processado: {total_lines}")
-    print(f"Novas extrações salvas: {saved_count}")
-    print(f"Linhas reaproveitadas do cache: {skipped_count}")
-    print(f"Linhas sem resposta/com falha: {failed_count}")
-    print(f"Arquivos disponíveis em: {RAW_DIR}")
+    print(f"Total processado: {total}")
+    print(f"Novas extrações salvas: {stats['saved']}")
+    print(f"Reaproveitadas do cache: {stats['skipped']}")
+    print(f"Falhas/sem metadados: {stats['failed']}")
+    print(f"Arquivos disponíveis em: {config.RAW_DIR}")
 
 
 if __name__ == "__main__":

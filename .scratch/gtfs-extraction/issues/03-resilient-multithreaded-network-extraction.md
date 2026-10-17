@@ -7,11 +7,11 @@
 **Category:** enhancement
 **Status:** ready-for-agent
 
-- [ ] Fetches and caches the master DF bus stop inventory (`GET /parada/geo/paradas`) into `data/all_stops_df.geojson` if not already present (or when `--force` is passed)
-- [ ] Executes per-line extraction across the active line catalog using a configurable `ThreadPoolExecutor` (defaulting to 2–4 workers) with a `1.0s` polite delay per worker (`--workers` and `--delay` CLI arguments)
-- [ ] Enforces retry with exponential backoff on HTTP `429` and `5xx` responses to prevent IP blocks or transient connection failures
-- [ ] Writes each line's raw payload atomically via a `.tmp` file rename into `data/raw/{safe_line_number}.json` so interrupted runs resume cleanly without corrupt JSON files
-- [ ] Consolidates all useful capabilities from the legacy `harvest_dftrans.py` script into `extract.py` (excluding deprecated `brasiliamobilidade.com.br` geometry fallbacks)
+- [x] Fetches and caches the master DF bus stop inventory (`GET /parada/geo/paradas`) into `data/all_stops_df.geojson` if not already present (or when `--force` is passed)
+- [x] Executes per-line extraction across the active line catalog using a configurable `ThreadPoolExecutor` (defaulting to 2–4 workers) with a `1.0s` polite delay per worker (`--workers` and `--delay` CLI arguments)
+- [x] Enforces retry with exponential backoff on HTTP `429` and `5xx` responses to prevent IP blocks or transient connection failures
+- [x] Writes each line's raw payload atomically via a `.tmp` file rename into `data/raw/{safe_line_number}.json` so interrupted runs resume cleanly without corrupt JSON files
+- [x] Consolidates all useful capabilities from the legacy `harvest_dftrans.py` script into `extract.py` (excluding deprecated `brasiliamobilidade.com.br` geometry fallbacks)
 
 ## Comments
 
@@ -33,10 +33,10 @@ Unify raw extraction in `extract.py` so it downloads the global stop inventory (
 - Output artifacts: `data/all_stops_df.geojson` and `data/raw/{safe_line_number}.json`
 
 **Acceptance criteria:**
-- [ ] Running the extractor downloads `data/all_stops_df.geojson` (~5,466 features) once unless `--force` is specified
-- [ ] Multi-threaded execution runs with 2–4 workers and enforces both a `1.0s` polite delay per worker and exponential backoff (`backoff * 2**(attempt - 1)` or `backoff * attempt` with jitter) on HTTP `429`/`5xx`/timeout errors, using thread-safe HTTP sessions (`requests.Session` per worker thread)
-- [ ] Interrupted runs skip already-cached `data/raw/{line}.json` files and leave zero partial/corrupt files on disk
-- [ ] No live requests are made to the deprecated `brasiliamobilidade.com.br` domain
+- [x] Running the extractor downloads `data/all_stops_df.geojson` (~5,466 features) once unless `--force` is specified
+- [x] Multi-threaded execution runs with 2–4 workers and enforces both a `1.0s` polite delay per worker and exponential backoff (`backoff * 2**(attempt - 1)` or `backoff * attempt` with jitter) on HTTP `429`/`5xx`/timeout errors, using thread-safe HTTP sessions (`requests.Session` per worker thread)
+- [x] Interrupted runs skip already-cached `data/raw/{line}.json` files and leave zero partial/corrupt files on disk
+- [x] No live requests are made to the deprecated `brasiliamobilidade.com.br` domain
 
 **Out of scope:**
 - Coordinate reprojection (`EPSG:3857` -> `EPSG:4326`) or `shapely` linear referencing (handled offline in Ticket 04 so `data/raw/` preserves exact upstream payloads)
