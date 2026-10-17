@@ -6,7 +6,7 @@
 
 ## 1. Contexto e Motivação da Engenharia Reversa
 
-No Distrito Federal, a Secretaria de Transporte e Mobilidade (Semob-DF) não disponibiliza publicamente arquivos padronizados no formato *General Transit Feed Specification* (GTFS), tampouco camadas vetoriais abertas e atualizadas de itinerários e pontos de parada via GeoPortal ou WFS. 
+No Distrito Federal, a Secretaria de Transporte e Mobilidade (Semob-DF) não disponibiliza publicamente arquivos padronizados no formato *General Transit Feed Specification* (GTFS), tampouco camadas vetoriais abertas e atualizadas de itinerários e pontos de parada via GeoPortal ou WFS.
 
 Para viabilizar a modelagem computacional de acessibilidade multimodais com o motor de roteamento `r5py` (baseado na biblioteca Conveyal R5 / OpenTripPlanner), foi desenvolvido um pipeline automatizado de extração, estruturação e síntese GTFS a partir da API REST oficial de suporte operacional do DFTrans (`https://www.sistemas.dftrans.df.gov.br`).
 
@@ -40,6 +40,17 @@ Para que um feed GTFS seja computacionalmente válido e não gere inconsistênci
 | **Disponibilidade de Tabela Horária** | Linhas ativas no cadastro sem partidas cadastradas em `/horario`. | Linhas puramente administrativas, sazonais desativadas ou sem operação regular no período amostrado. | Descarte da geração de viagens estáticas (`trips.txt`); registro em log. |
 | **Projeção e Ordenação Topológica** | Paradas com pequenas discrepâncias de vetor em relação ao eixo da via. | Evita inversão de sequência de atendimento por imprecisão de GPS/CAD. | Projeção ortogonal das paradas sobre a polilinha (`LineString`) e ordenação estritamente monotônica pela distância linear acumulada (`shape_dist_traveled`). |
 
+### 3.1 Dinâmica Temporal da Rede: O Paradoxo "Mais Linhas ≠ Melhor Base"
+
+Na modelagem de sistemas de transporte coletivo, a qualidade de uma base de dados não pode ser avaliada unicamente pela sua cardinalidade bruta (número total de linhas catalogadas). As redes de transporte público urbano são dinâmicas: linhas são frequentemente extintas, fundidas, divididas ou suspensas por decisões operacionais do poder concedente (Semob-DF).
+
+Dessa forma, catálogos históricos ou obtidos por compilação ampla de múltiplas fontes podem reter "linhas fantasmas" — itinerários que constam nos cadastros administrativos do órgão, mas que já não operam na prática. A inclusão indiscriminada dessas linhas em modelos de acessibilidade (`r5py` / OpenTripPlanner) distorceria os resultados de pesquisa, superestimando artificialmente a conectividade e a equidade espacial de determinadas regiões administrativas.
+
+Por essa razão, a metodologia adota um protocolo em dois níveis:
+
+1. **Catálogo Amplo de Candidatas:** O arquivo mestre (`data/catalog/lines.json`, 933 linhas atualmente) captura a totalidade das linhas urbanas referenciadas nos sistemas DFTrans e Bus2.
+2. **Filtro de Atividade Operacional Efetiva:** Durante a síntese GTFS, cada linha é submetida ao filtro de partidas ativas (`/horario/`). Se uma linha cadastrada não apresentar viagens reais programadas no horizonte temporal de análise, ela não é convertida em entidades `trips.txt`, sendo classificada e auditada em `data/catalog/skipped_lines.json`. Isso assegura que o feed final represente com precisão a oferta efetiva de mobilidade vivenciada pela população.
+
 ---
 
 ## 4. Transformação de Coordenadas e Síntese Temporal
@@ -50,6 +61,5 @@ Para que um feed GTFS seja computacionalmente válido e não gere inconsistênci
    Como a API do DFTrans informa exclusivamente os horários de partida dos terminais de origem, os horários de chegada e partida em cada parada intermediária foram sintetizados a partir da distância acumulada ao longo do traçado (`shapes.txt`), associando tempo de embarque/desembarque fixo (*dwell time* de 30 segundos por parada) e velocidades comerciais operacionais estratificadas por tipologia de serviço:
    * **Linhas Convencionais (Alimentadoras e Troncais em Tráfego Misto)**: Velocidade média calibrada em **20 km/h**, representativa do tráfego urbano e paradas frequentes;
    * **Linhas BRT (Expresso DF Sul e Corredores Exclusivos)**: Velocidade média calibrada em **40 km/h** (alcançando picos de até 60 km/h em via segregada e paradas em estações BRT com pagamento antecipado), identificadas a partir dos metadados de frota (`tiposOnibus` contendo veículos Padron ou Articulado BRT) e códigos troncais operacionais (`TR 20`, `2201`, `2202`, `2205`, `2301`, etc.).
-   
-   Essa abordagem garante trajetórias monotônicas no espaço-tempo exigidas pelo algoritmo RAPTOR/R5, sem gerar anomalias de ultrapassagem ou retrocesso temporal.
 
+   Essa abordagem garante trajetórias monotônicas no espaço-tempo exigidas pelo algoritmo RAPTOR/R5, sem gerar anomalias de ultrapassagem ou retrocesso temporal.

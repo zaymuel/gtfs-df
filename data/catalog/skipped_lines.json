@@ -1,0 +1,12 @@
+[
+  {
+    "numero": "0.110",
+    "sentido": "default",
+    "reason": "Menos de 2 paradas identificadas ao longo do traçado"
+  },
+  {
+    "numero": "2304",
+    "sentido": "default",
+    "reason": "Menos de 2 paradas identificadas ao longo do traçado"
+  }
+]

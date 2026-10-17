@@ -150,11 +150,6 @@ def run_discovery() -> List[Dict[str, Any]]:
     logger.info("Mapeamento de rotas do Bus2 gravado em: %s (%d entradas)",
                 config.BUS2_ROUTE_MAP_PATH, len(route_map))
 
-    # Também atualiza data/lines.json para compatibilidade total mantendo schema limpo
-    with open(config.LEGACY_CATALOG_PATH, "w", encoding="utf-8") as f:
-        json.dump(catalog_entries, f, ensure_ascii=False, indent=2)
-    logger.info("data/lines.json atualizado de forma compacta.")
-
     return catalog_entries
 
 

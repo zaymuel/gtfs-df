@@ -74,7 +74,11 @@ class PoliteClient:
         time.sleep(delay + jitter)
 
     # -- operações públicas --------------------------------------------------
-    def get_json(self, url_or_path: str, params: Optional[Dict[str, Any]] = None) -> Optional[Any]:
+    def get_response(self, url_or_path: str, params: Optional[Dict[str, Any]] = None) -> requests.Response:
+        """
+        Executa requisição GET com retries automáticos, backoff exponencial e jitter.
+        Retorna o objeto requests.Response preservando status_code, url, headers e text.
+        """
         url = url_or_path if url_or_path.startswith(
             "http") else f"{self.base_url}/{url_or_path.lstrip('/')}"
         last_exc: Optional[Exception] = None
@@ -86,10 +90,10 @@ class PoliteClient:
                     url, params=params, timeout=self.timeout)
                 if resp.status_code == 200:
                     time.sleep(self.delay)
-                    return resp.json()
+                    return resp
                 if resp.status_code in (404, 204):
                     time.sleep(self.delay)
-                    return None
+                    return resp
                 if resp.status_code in (429, 500, 502, 503, 504):
                     self._bump("retry_count")
                     if attempt == self.retries:
@@ -99,6 +103,7 @@ class PoliteClient:
                         attempt, resp.headers.get("Retry-After"))
                     continue
                 resp.raise_for_status()
+                return resp
             except (requests.exceptions.RequestException, ValueError) as exc:
                 self._bump("retry_count")
                 last_exc = exc
@@ -108,3 +113,10 @@ class PoliteClient:
 
         raise HttpRequestError(
             f"Falha definitiva ao consultar {url}: {last_exc}")
+
+    def get_json(self, url_or_path: str, params: Optional[Dict[str, Any]] = None) -> Optional[Any]:
+        """Obtém payload JSON de um endpoint. Retorna None para HTTP 404/204."""
+        resp = self.get_response(url_or_path, params=params)
+        if resp.status_code in (404, 204):
+            return None
+        return resp.json()
