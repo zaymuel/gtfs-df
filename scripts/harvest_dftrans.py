@@ -1,14 +1,25 @@
+"""
+harvest_dftrans.py - Script original de colheita direta do DFTrans (legado/protótipo).
+Preservado em scripts/ para histórico e referência de engenharia reversa.
+"""
+
 import os
 import re
 import json
 import time
 import math
+import sys
+from pathlib import Path
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 BASE_DFTRANS = "https://www.sistemas.dftrans.df.gov.br"
 BASE_BMOB = "https://brasiliamobilidade.com.br"
-OUT_DIR = "data/raw_lines"
+OUT_DIR = str(ROOT / "data" / "raw_lines")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 SESSION = requests.Session()
@@ -107,7 +118,14 @@ def process_line(item: dict) -> str:
     return f"OK: {numero}"
 
 def main():
-    with open("data/catalog.json", "r", encoding="utf-8") as f:
+    catalog_path = ROOT / "data" / "catalog.json"
+    if not catalog_path.exists():
+        catalog_path = ROOT / "data" / "lines.json"
+    if not catalog_path.exists():
+        print(f"Error: Catalog not found at {catalog_path}")
+        return
+
+    with open(catalog_path, "r", encoding="utf-8") as f:
         catalog = json.load(f)
 
     # Deduplicate by line number
@@ -115,14 +133,15 @@ def main():
     print(f"Total unique lines to harvest: {len(unique_lines)}")
 
     # Also grab the master DF stops file once
-    if not os.path.exists("data/all_stops_df.geojson"):
+    stops_path = ROOT / "data" / "all_stops_df.geojson"
+    if not stops_path.exists():
         print("Downloading master bus stops GeoJSON...")
         all_stops = get_json(f"{BASE_DFTRANS}/parada/geo/paradas")
         if all_stops:
-            with open("data/all_stops_df.geojson", "w", encoding="utf-8") as f:
+            with open(stops_path, "w", encoding="utf-8") as f:
                 json.dump(all_stops, f, ensure_ascii=False)
 
-    # Run with 4 threads (fast, but avoids IP ban)
+    # Run with 4 threads
     with ThreadPoolExecutor(max_workers=4) as pool:
         futures = [pool.submit(process_line, item) for item in unique_lines]
         for i, fut in enumerate(as_completed(futures), 1):
@@ -131,3 +150,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
